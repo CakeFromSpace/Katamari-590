@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4406112570605828149}
   m_Layer: 0
   m_Name: long test cube
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f91992a5310775428abb1c6a5e72e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 0
+  size: 0.005
+  player: {fileID: 2678142863938078587, guid: 077412080e9d0ce43bf93752ad743796, type: 3}
 --- !u!54 &4406112570605828149
 Rigidbody:
   m_ObjectHideFlags: 0

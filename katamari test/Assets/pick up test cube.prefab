@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7299869905259825207}
   m_Layer: 0
   m_Name: pick up test cube
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f91992a5310775428abb1c6a5e72e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 0
+  size: 0.001
+  player: {fileID: 6823684668150643724, guid: 93fd13d94f58f9142b85363682880481, type: 3}
 --- !u!54 &7299869905259825207
 Rigidbody:
   m_ObjectHideFlags: 0
