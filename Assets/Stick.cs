@@ -25,7 +25,7 @@ public class Stick : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.gameObject.tag == "sticky" || collision.collider.gameObject.tag == "pickup")
+        if(collision.collider.gameObject.tag == "sticky" || (collision.collider.gameObject.tag == "pickup" && collision.collider.gameObject.transform.parent.gameObject.tag == "sticky"))
         {
             Debug.Log(name + collision.collider.gameObject.name);
 
@@ -33,13 +33,13 @@ public class Stick : MonoBehaviour
 
             Debug.Log(loc);
             
-            
             transform.position = transform.TransformPoint(loc);
             transform.parent = player.transform;
-            //gameObject.tag = "sticky";
+            gameObject.tag = "sticky";
             SphereCollider s = player.gameObject.GetComponent<SphereCollider>();
             s.radius += size;
             Destroy(rd);
+
         }
         else if(collision.collider.gameObject.tag == "pickup")
         {

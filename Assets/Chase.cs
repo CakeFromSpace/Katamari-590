@@ -17,6 +17,9 @@ public class Chase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SphereCollider s = target.gameObject.GetComponent<SphereCollider>();
+        trailingdistance = 10 * target.transform.localScale.x * s.radius;
+        height = 2 * target.transform.localScale.x * s.radius;
         transform.rotation = Quaternion.LookRotation(targetinfo.forward);
         transform.Rotate(new Vector3(pandown,0,0));
 

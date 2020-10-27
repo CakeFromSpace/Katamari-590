@@ -23,11 +23,11 @@ public class Movement : MonoBehaviour
         Vector3 pos = transform.position;
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            rb.AddForce(forward*speed);
+            rb.AddForce(forward*speed*transform.localScale.x);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            rb.AddForce(-forward * speed);
+            rb.AddForce(-forward * speed*transform.localScale.x);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
