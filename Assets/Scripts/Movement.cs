@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     public float speed;
     public float turnspeed;
     public Vector3 forward;
-    public float sqrMaxVelocity;
+    public float max_velocity;
     public SphereCollider s;
     float theta;
 
@@ -24,12 +24,20 @@ public class Movement : MonoBehaviour
     void Update()
     {
         Vector3 pos = transform.position;
-        if (Input.GetKey(KeyCode.UpArrow) && rb.velocity.sqrMagnitude < sqrMaxVelocity * transform.localScale.x * s.radius)
+        if (Input.GetKey(KeyCode.UpArrow))
         {
+            if(rb.velocity.magnitude < max_velocity * transform.localScale.x * s.radius)
+            {
+                rb.velocity = new Vector3((max_velocity * forward).x, rb.velocity.y, (max_velocity * forward).z);
+            }
             rb.AddForce(forward*speed*transform.localScale.x * s.radius);
         }
-        if (Input.GetKey(KeyCode.DownArrow) && rb.velocity.sqrMagnitude < sqrMaxVelocity * transform.localScale.x * s.radius / 2)
+        if (Input.GetKey(KeyCode.DownArrow))
         {
+            if(rb.velocity.magnitude < max_velocity * transform.localScale.x * s.radius / 2)
+            {
+                rb.velocity = new Vector3((max_velocity / 2 * -forward).x, rb.velocity.y, (max_velocity / 2 * -forward).z);
+            }
             rb.AddForce(-forward * speed*transform.localScale.x * s.radius);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
