@@ -58,6 +58,8 @@
     <Compile Include="Assets\Chase.cs" />
     <Compile Include="Assets\Movement.cs" />
     <Compile Include="Assets\Stick.cs" />
+    <Compile Include="Assets\PlayerStick.cs" />
+    <Compile Include="Assets\Vacuum.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />

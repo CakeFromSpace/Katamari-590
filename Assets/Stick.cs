@@ -29,7 +29,7 @@ public class Stick : MonoBehaviour
         if(collision.collider.gameObject.tag== "sticky")
         {
             Vector3 loc = Vector3.Normalize(katamari.transform.position - transform.position) * katamari.GetComponent<SphereCollider>().radius*-1;
-            Debug.Log(loc.magnitude);
+            //Debug.Log(loc.magnitude);
             transform.position = katamari.transform.position + loc;//  transform.TransformPoint(loc);
             transform.parent = constellation.transform;
             gameObject.tag = "sticky";
