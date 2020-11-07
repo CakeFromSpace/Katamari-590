@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     private Rigidbody rb;
     public float speed;
+    public float maxvelocity;
     public float turnspeed;
     public Vector3 forward;
     float theta;
@@ -21,9 +22,10 @@ public class Movement : MonoBehaviour
     void Update()
     {
         Vector3 pos = transform.position;
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow)&&rb.velocity.magnitude<maxvelocity)
         {
             rb.AddForce(forward*speed);
+            //rb.AddTorque(Quaternion.AngleAxis(90,Vector3.up)*forward * speed);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
