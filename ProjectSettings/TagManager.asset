@@ -15,12 +15,12 @@ TagManager:
   - UI
   - 
   - 
+  - constellation
+  - pickup
+  - terrain
+  - longobject
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - UICamera
   - 
   - 
   - 
