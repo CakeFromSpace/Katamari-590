@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1397
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 332, y: 271}
   m_MaxSize: {x: 14002, y: 10021}
   vertical: 0
-  controlID: 136
+  controlID: 175
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 174
+  controlID: 166
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
-  controlID: 175
+  controlID: 167
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 221}
   m_MaxSize: {x: 12004, y: 4021}
   vertical: 0
-  controlID: 176
+  controlID: 168
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -553,21 +553,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Joe\Desktop\Katamari-590
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0a3a0000
-    m_LastClickedID: 14858
-    m_ExpandedIDs: 00000000ea390000ec390000ee390000f0390000f2390000f4390000f6390000f8390000fa390000fc390000
+    scrollPos: {x: 0, y: 100}
+    m_SelectedIDs: e23a0000
+    m_LastClickedID: 15074
+    m_ExpandedIDs: 00000000e23a0000e43a0000e63a0000e83a0000ea3a0000ec3a0000ee3a0000f03a0000f23a0000f43a0000063b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -595,7 +595,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ea390000ec390000ee390000f0390000f2390000f4390000f6390000f8390000fa390000fc390000
+    m_ExpandedIDs: 00000000e23a0000e43a0000e63a0000e83a0000ea3a0000ec3a0000ee3a0000f03a0000f23a0000f43a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -679,9 +679,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 90350000
+      m_SelectedIDs: 5a3a0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 4efbffff
+      m_ExpandedIDs: 18f9ffff4efbffff0000803f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -792,11 +792,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.3278451, y: -0.1387606, z: 0.048796486, w: -0.9333236}
     speed: 2
-    m_Value: {x: -0.32773697, y: -0.14014564, z: 0.049282998, w: -0.933016}
+    m_Value: {x: -0.3278451, y: -0.1387606, z: 0.048796486, w: -0.93332356}
   m_Size:
     m_Target: 1643.2142
     speed: 2
-    m_Value: 1572.4539
+    m_Value: 1643.2142
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -869,8 +869,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -735.5
     m_HBaseRangeMax: 735.5
-    m_VBaseRangeMin: -482
-    m_VBaseRangeMax: 482
+    m_VBaseRangeMin: -492.5
+    m_VBaseRangeMax: 492.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -887,11 +887,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 21
+      y: 0
       width: 1471
-      height: 964
+      height: 985
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 735.5, y: 482}
+    m_Translation: {x: 735.5, y: 492.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -899,9 +899,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -735.5
-      y: -482
+      y: -492.5
       width: 1471
-      height: 964
+      height: 985
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1471, y: 985}
