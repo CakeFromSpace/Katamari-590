@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/judge_level.unity
+=======
+- path: Assets/Scenes/mountain coast.unity
+>>>>>>> JoeControls
   isLoaded: 1
   isActive: 1
   isSubScene: 0
