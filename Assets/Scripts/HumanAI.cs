@@ -30,7 +30,7 @@ public class HumanAI : MonoBehaviour
         chase = false;
         direction_timer = 0;
         moveAngle = Random.Range(0, 360);
-        size = bounds.size.x * bounds.size.y * bounds.size.z * transform.localScale.x * transform.localScale.y * transform.localScale.z;
+        size = bounds.size.x * bounds.size.y * bounds.size.z;
     }
 
     // Update is called once per frame
@@ -128,26 +128,32 @@ public class HumanAI : MonoBehaviour
 
     void TurnAround()
     {
+        // turn 180 degrees w quaternion slerp
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(-1 * transform.forward), 10 * Time.deltaTime);
     }
 
     void AvoidObstacle(RaycastHit hit)
     {
+        // adjust forward in the direction of the norm of the hit
         Vector3 norm = hit.normal;
         norm.y = 0;
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(transform.forward + norm * 30.0f), 2 * Time.deltaTime);
         
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
+        // if entering the katamaris trigger
         if (other.gameObject.name == "katamari")
         {
+            // start running, get reference to katamari
             animation_controller.SetBool("run", true);
             player = other.gameObject;
 
+            // depending on size, run away or towards it
             SphereCollider s = player.GetComponent<SphereCollider>();
-            if(Mathf.Pow(s.radius,3)*4/3*Mathf.PI > size)
+            if(s.bounds.size.magnitude > size)
             {
                 flee = true;
             }
@@ -160,6 +166,7 @@ public class HumanAI : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        // reset state on trigger exit
         if (other.gameObject.name == "katamari")
         {
             animation_controller.SetBool("run", false);

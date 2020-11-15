@@ -21,7 +21,7 @@ TagManager:
   - longobject
   - 
   - UICamera
-  - 
+  - noprojectilecollision
   - 
   - 
   - 
