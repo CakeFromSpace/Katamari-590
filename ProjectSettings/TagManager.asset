@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - sticky
   - pickup
+  - sticky
   layers:
   - Default
   - TransparentFX
@@ -15,17 +15,13 @@ TagManager:
   - UI
   - 
   - 
-  - constellation
-  - pickup
-  - terrain
-  - longobject
+  - Pickup
+  - Terrain
+  - 
+  - LongObject
   - 
   - UICamera
-<<<<<<< HEAD
-  - noprojectilecollision
-=======
   - 
->>>>>>> JoeControls
   - 
   - 
   - 

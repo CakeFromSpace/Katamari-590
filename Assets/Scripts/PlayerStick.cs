@@ -13,7 +13,7 @@ public class PlayerStick : MonoBehaviour
     public Text RadiusUIText;
     public Text PickupUIText;
     public GameObject UIPickup;
-    
+    public float attachablemultiplier;
     private Rigidbody rb;
     private float vel_threshold;
     // Start is called before the first frame update
@@ -54,7 +54,7 @@ public class PlayerStick : MonoBehaviour
             float sizeofobject = m.bounds.size.magnitude;
             float sizeofplayer = s.bounds.size.magnitude;
             Debug.Log(sizeofobject + " " + sizeofplayer);
-            if (sizeofplayer / 2 > sizeofobject)
+            if (sizeofplayer * attachablemultiplier > sizeofobject)
             {
                 Debug.Log("pickup");
                 other.transform.position = transform.position + loc;

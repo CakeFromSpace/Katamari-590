@@ -24,19 +24,8 @@ public class Movement : MonoBehaviour
         Vector3 pos = transform.position;
         if (Input.GetKey(KeyCode.UpArrow)&&rb.velocity.magnitude<maxvelocity)
         {
-<<<<<<< HEAD:Assets/Scripts/Movement.cs
-            if(rb.velocity.magnitude > maxvelocity * transform.localScale.x)
-            {
-                rb.velocity = new Vector3((maxvelocity * forward).x, rb.velocity.y, (maxvelocity * forward).z);
-            }
-            else
-            {
-                rb.AddForce(forward*speed*transform.localScale.x);
-            }
-=======
             rb.AddForce(forward*speed);
             //rb.AddTorque(Quaternion.AngleAxis(90,Vector3.up)*forward * speed);
->>>>>>> JoeControls:Assets/Movement.cs
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
