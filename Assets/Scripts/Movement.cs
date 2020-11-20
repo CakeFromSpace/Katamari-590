@@ -10,6 +10,10 @@ public class Movement : MonoBehaviour
     public float turnspeed;
     public Vector3 forward;
     float theta;
+    public KeyCode up;
+    public KeyCode down;
+    public KeyCode left;
+    public KeyCode right;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -22,30 +26,23 @@ public class Movement : MonoBehaviour
     void Update()
     {
         Vector3 pos = transform.position;
-        if (Input.GetKey(KeyCode.UpArrow)&&rb.velocity.magnitude<maxvelocity)
+        if (Input.GetKey(up)&&rb.velocity.magnitude<maxvelocity)
         {
             rb.AddForce(forward*speed);
             //rb.AddTorque(Quaternion.AngleAxis(90,Vector3.up)*forward * speed);
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(down) && rb.velocity.magnitude < maxvelocity)
         {
-            if(rb.velocity.magnitude > maxvelocity * transform.localScale.x / 2)
-            {
-                rb.velocity = new Vector3((maxvelocity / 2 * -forward).x, rb.velocity.y, (maxvelocity / 2 * -forward).z);
-            }
-            else
-            {
-                rb.AddForce(-forward * speed*transform.localScale.x);
-            }    
+            rb.AddForce(-forward * speed);  
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(left))
         {
             theta -= turnspeed/100f;
             
             forward = new Vector3(Mathf.Sin(theta), 0, Mathf.Cos(theta));
             forward.Normalize();
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(right))
         {
             theta += turnspeed/100f;
 

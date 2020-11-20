@@ -31,11 +31,11 @@ public class PlayerStick : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        GameObject other = collision.collider.gameObject;
+        GameObject other = collision.GetComponent<Collider>().gameObject;
 
-        if (collision.collider.gameObject.tag == "pickup")
+        if (collision.GetComponent<Collider>().gameObject.tag == "pickup")
         {
 
             //Debug.Log(name + other.name);
