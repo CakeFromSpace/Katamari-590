@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TankMovement : MonoBehaviour
 {
+    public GameObject katamari;
     public KeyCode leftup;
     public KeyCode leftdown;
     public KeyCode leftleft;
@@ -50,43 +51,43 @@ public class TankMovement : MonoBehaviour
         }
         if (Input.GetKey(leftup))
         {
-            rb.AddForce(forward * speed/2f);
+            rb.AddForce(forward * speed/2f * katamari.transform.localScale.x);
             theta += turnspeed/100f;
 
         }
         if (Input.GetKey(rightup))
         {
-            rb.AddForce(forward * speed/2f);
+            rb.AddForce(forward * speed/2f * katamari.transform.localScale.x);
             theta -= turnspeed/100f;
         }
         if (Input.GetKey(leftdown))
         {
-            rb.AddForce(-forward * speed/2f);
+            rb.AddForce(-forward * speed/2f * katamari.transform.localScale.x);
             theta -= turnspeed / 100f;
 
         }
         if (Input.GetKey(rightdown))
         {
-            rb.AddForce(-forward * speed/2f);
+            rb.AddForce(-forward * speed/2f * katamari.transform.localScale.x);
             theta += turnspeed / 100f;
         }
         if (Input.GetKey(leftleft))
         {
-            rb.AddForce(Quaternion.Euler(0,-90,0)*forward * speed/2f);
+            rb.AddForce(Quaternion.Euler(0,-90,0)*forward * speed/2f * katamari.transform.localScale.x);
 
         }
         if (Input.GetKey(rightleft))
         {
-            rb.AddForce(Quaternion.Euler(0, -90, 0) * forward * speed/2f);
+            rb.AddForce(Quaternion.Euler(0, -90, 0) * forward * speed/2f * katamari.transform.localScale.x);
         }
         if (Input.GetKey(leftright))
         {
-            rb.AddForce(Quaternion.Euler(0, 90, 0) * forward * speed/2f);
+            rb.AddForce(Quaternion.Euler(0, 90, 0) * forward * speed/2f * katamari.transform.localScale.x);
 
         }
         if (Input.GetKey(rightright))
         {
-            rb.AddForce(Quaternion.Euler(0, 90, 0) * forward * speed/2f);
+            rb.AddForce(Quaternion.Euler(0, 90, 0) * forward * speed/2f * katamari.transform.localScale.x);
         }
         if (Input.GetKey(spin))
         {
