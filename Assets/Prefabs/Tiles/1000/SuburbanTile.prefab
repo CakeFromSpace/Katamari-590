@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 1144050100819565954}
   m_Layer: 0
   m_Name: Light_01 (10)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 7811314738358837913}
   m_Layer: 0
   m_Name: Light_01
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 5326302784448066520}
   m_Layer: 0
   m_Name: Light_01 (18)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2264,7 +2264,7 @@ GameObject:
   - component: {fileID: 4398818320096478302}
   m_Layer: 0
   m_Name: Light_01 (16)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2645,7 +2645,7 @@ GameObject:
   - component: {fileID: 1833263457658634148}
   m_Layer: 9
   m_Name: Male Bones
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2677,7 +2677,7 @@ GameObject:
   - component: {fileID: 1833263457661972176}
   m_Layer: 9
   m_Name: Torso Male Short Sleeves
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2789,7 +2789,7 @@ GameObject:
   - component: {fileID: 1833263457661972180}
   m_Layer: 9
   m_Name: Shorts Male
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2900,7 +2900,7 @@ GameObject:
   - component: {fileID: 1833263457658634162}
   m_Layer: 9
   m_Name: LowManSpine2
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2933,7 +2933,7 @@ GameObject:
   - component: {fileID: 1833263457658634164}
   m_Layer: 9
   m_Name: LowManSpine1
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2964,7 +2964,7 @@ GameObject:
   - component: {fileID: 1833263457658634166}
   m_Layer: 9
   m_Name: LowManSpine
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2995,7 +2995,7 @@ GameObject:
   - component: {fileID: 1833263457658634168}
   m_Layer: 9
   m_Name: LowManRightUpLeg
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3026,7 +3026,7 @@ GameObject:
   - component: {fileID: 1833263457658634170}
   m_Layer: 9
   m_Name: LowManRightToeBase_end
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3056,7 +3056,7 @@ GameObject:
   - component: {fileID: 1833263457658634172}
   m_Layer: 9
   m_Name: LowManRightToeBase
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3087,7 +3087,7 @@ GameObject:
   - component: {fileID: 1833263457658634174}
   m_Layer: 9
   m_Name: LowManRightShoulder
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3118,7 +3118,7 @@ GameObject:
   - component: {fileID: 1833263457658634176}
   m_Layer: 9
   m_Name: LowManRightLeg
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3149,7 +3149,7 @@ GameObject:
   - component: {fileID: 1833263457658634178}
   m_Layer: 9
   m_Name: LowManRightHandThumb1_end
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3179,7 +3179,7 @@ GameObject:
   - component: {fileID: 1833263457658634180}
   m_Layer: 9
   m_Name: LowManRightHandThumb1
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3210,7 +3210,7 @@ GameObject:
   - component: {fileID: 1833263457658634182}
   m_Layer: 9
   m_Name: LowManRightHandMiddle2_end
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3240,7 +3240,7 @@ GameObject:
   - component: {fileID: 1833263457658634184}
   m_Layer: 9
   m_Name: LowManRightHandMiddle2
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3271,7 +3271,7 @@ GameObject:
   - component: {fileID: 1833263457658634186}
   m_Layer: 9
   m_Name: LowManRightHandMiddle1
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3302,7 +3302,7 @@ GameObject:
   - component: {fileID: 1833263457658634188}
   m_Layer: 9
   m_Name: LowManRightHand
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3334,7 +3334,7 @@ GameObject:
   - component: {fileID: 1833263457658634190}
   m_Layer: 9
   m_Name: LowManRightForeArm
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3365,7 +3365,7 @@ GameObject:
   - component: {fileID: 1833263457658634192}
   m_Layer: 9
   m_Name: LowManRightFoot
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3396,7 +3396,7 @@ GameObject:
   - component: {fileID: 1833263457658634194}
   m_Layer: 9
   m_Name: LowManRightArm
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3427,7 +3427,7 @@ GameObject:
   - component: {fileID: 1833263457658634196}
   m_Layer: 9
   m_Name: LowManNeck
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3458,7 +3458,7 @@ GameObject:
   - component: {fileID: 1833263457658634198}
   m_Layer: 9
   m_Name: LowManLeftUpLeg
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3489,7 +3489,7 @@ GameObject:
   - component: {fileID: 1833263457658634200}
   m_Layer: 9
   m_Name: LowManLeftToeBase_end
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3519,7 +3519,7 @@ GameObject:
   - component: {fileID: 1833263457658634202}
   m_Layer: 9
   m_Name: LowManLeftToeBase
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3550,7 +3550,7 @@ GameObject:
   - component: {fileID: 1833263457658634204}
   m_Layer: 9
   m_Name: LowManLeftShoulder
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3581,7 +3581,7 @@ GameObject:
   - component: {fileID: 1833263457658634206}
   m_Layer: 9
   m_Name: LowManLeftLeg
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3612,7 +3612,7 @@ GameObject:
   - component: {fileID: 1833263457658634208}
   m_Layer: 9
   m_Name: LowManLeftHandThumb1_end
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3642,7 +3642,7 @@ GameObject:
   - component: {fileID: 1833263457658634210}
   m_Layer: 9
   m_Name: LowManLeftHandThumb1
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3673,7 +3673,7 @@ GameObject:
   - component: {fileID: 1833263457658634212}
   m_Layer: 9
   m_Name: LowManLeftHandMiddle2_end
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3703,7 +3703,7 @@ GameObject:
   - component: {fileID: 1833263457658634214}
   m_Layer: 9
   m_Name: LowManLeftHandMiddle2
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3734,7 +3734,7 @@ GameObject:
   - component: {fileID: 1833263457658634216}
   m_Layer: 9
   m_Name: LowManLeftHandMiddle1
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3765,7 +3765,7 @@ GameObject:
   - component: {fileID: 1833263457658634218}
   m_Layer: 9
   m_Name: LowManLeftHand
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3797,7 +3797,7 @@ GameObject:
   - component: {fileID: 1833263457658634220}
   m_Layer: 9
   m_Name: LowManLeftForeArm
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3828,7 +3828,7 @@ GameObject:
   - component: {fileID: 1833263457658634222}
   m_Layer: 9
   m_Name: LowManLeftFoot
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3859,7 +3859,7 @@ GameObject:
   - component: {fileID: 1833263457658634224}
   m_Layer: 9
   m_Name: LowManLeftArm
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3890,7 +3890,7 @@ GameObject:
   - component: {fileID: 1833263457658634226}
   m_Layer: 9
   m_Name: LowManHips
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3923,7 +3923,7 @@ GameObject:
   - component: {fileID: 1833263457658634228}
   m_Layer: 9
   m_Name: LowManHead_end
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3953,7 +3953,7 @@ GameObject:
   - component: {fileID: 1833263457658634230}
   m_Layer: 9
   m_Name: LowManHead
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3985,7 +3985,7 @@ GameObject:
   - component: {fileID: 1833263457661972186}
   m_Layer: 9
   m_Name: Head 1 Male Hair 2
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4097,7 +4097,7 @@ GameObject:
   - component: {fileID: 1833263457661972188}
   m_Layer: 9
   m_Name: Head 1 Male Hair 1
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4209,7 +4209,7 @@ GameObject:
   - component: {fileID: 1833263457661972190}
   m_Layer: 9
   m_Name: Head 1 Male Bald
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4511,7 +4511,7 @@ GameObject:
   - component: {fileID: 2060270590264258176}
   m_Layer: 9
   m_Name: LowManLeftHandThumb1
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4542,7 +4542,7 @@ GameObject:
   - component: {fileID: 2060270590264258178}
   m_Layer: 9
   m_Name: LowManLeftHandThumb1_end
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4572,7 +4572,7 @@ GameObject:
   - component: {fileID: 2060270590264258180}
   m_Layer: 9
   m_Name: LowManLeftHandMiddle2
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4603,7 +4603,7 @@ GameObject:
   - component: {fileID: 2060270590264258182}
   m_Layer: 9
   m_Name: LowManLeftHandMiddle2_end
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4633,7 +4633,7 @@ GameObject:
   - component: {fileID: 2060270590264258184}
   m_Layer: 9
   m_Name: LowManLeftHand
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4665,7 +4665,7 @@ GameObject:
   - component: {fileID: 2060270590264258186}
   m_Layer: 9
   m_Name: LowManLeftHandMiddle1
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4696,7 +4696,7 @@ GameObject:
   - component: {fileID: 2060270590264258188}
   m_Layer: 9
   m_Name: LowManLeftFoot
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4727,7 +4727,7 @@ GameObject:
   - component: {fileID: 2060270590264258190}
   m_Layer: 9
   m_Name: LowManLeftForeArm
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4758,7 +4758,7 @@ GameObject:
   - component: {fileID: 2060270590264258192}
   m_Layer: 9
   m_Name: LowManHips
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4791,7 +4791,7 @@ GameObject:
   - component: {fileID: 2060270590264258194}
   m_Layer: 9
   m_Name: LowManLeftArm
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4822,7 +4822,7 @@ GameObject:
   - component: {fileID: 2060270590264258196}
   m_Layer: 9
   m_Name: LowManHead
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4853,7 +4853,7 @@ GameObject:
   - component: {fileID: 2060270590264258198}
   m_Layer: 9
   m_Name: LowManHead_end
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4884,7 +4884,7 @@ GameObject:
   - component: {fileID: 2060270590252924856}
   m_Layer: 9
   m_Name: Head 1 Male Hair 2
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4996,7 +4996,7 @@ GameObject:
   - component: {fileID: 2060270590252924858}
   m_Layer: 9
   m_Name: Head 1 Male Hair 3
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5108,7 +5108,7 @@ GameObject:
   - component: {fileID: 2060270590252924860}
   m_Layer: 9
   m_Name: Head 1 Male Bald
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5219,7 +5219,7 @@ GameObject:
   - component: {fileID: 2060270590252924862}
   m_Layer: 9
   m_Name: Head 1 Male Hair 1
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5330,7 +5330,7 @@ GameObject:
   - component: {fileID: 2060270590264258208}
   m_Layer: 9
   m_Name: LowManRightHandThumb1_end
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5360,7 +5360,7 @@ GameObject:
   - component: {fileID: 2060270590264258210}
   m_Layer: 9
   m_Name: LowManRightLeg
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5391,7 +5391,7 @@ GameObject:
   - component: {fileID: 2060270590264258212}
   m_Layer: 9
   m_Name: LowManRightHandMiddle2_end
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5421,7 +5421,7 @@ GameObject:
   - component: {fileID: 2060270590264258214}
   m_Layer: 9
   m_Name: LowManRightHandThumb1
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5452,7 +5452,7 @@ GameObject:
   - component: {fileID: 2060270590264258216}
   m_Layer: 9
   m_Name: LowManRightHandMiddle1
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5483,7 +5483,7 @@ GameObject:
   - component: {fileID: 2060270590264258218}
   m_Layer: 9
   m_Name: LowManRightHandMiddle2
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5514,7 +5514,7 @@ GameObject:
   - component: {fileID: 2060270590264258220}
   m_Layer: 9
   m_Name: LowManRightForeArm
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5545,7 +5545,7 @@ GameObject:
   - component: {fileID: 2060270590264258222}
   m_Layer: 9
   m_Name: LowManRightHand
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5577,7 +5577,7 @@ GameObject:
   - component: {fileID: 2060270590264258224}
   m_Layer: 9
   m_Name: LowManRightArm
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5608,7 +5608,7 @@ GameObject:
   - component: {fileID: 2060270590264258226}
   m_Layer: 9
   m_Name: LowManRightFoot
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5639,7 +5639,7 @@ GameObject:
   - component: {fileID: 2060270590264258228}
   m_Layer: 9
   m_Name: LowManLeftUpLeg
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5670,7 +5670,7 @@ GameObject:
   - component: {fileID: 2060270590264258230}
   m_Layer: 9
   m_Name: LowManNeck
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5701,7 +5701,7 @@ GameObject:
   - component: {fileID: 2060270590264258232}
   m_Layer: 9
   m_Name: LowManLeftToeBase
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5732,7 +5732,7 @@ GameObject:
   - component: {fileID: 2060270590264258234}
   m_Layer: 9
   m_Name: LowManLeftToeBase_end
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5762,7 +5762,7 @@ GameObject:
   - component: {fileID: 2060270590264258236}
   m_Layer: 9
   m_Name: LowManLeftLeg
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5793,7 +5793,7 @@ GameObject:
   - component: {fileID: 2060270590264258238}
   m_Layer: 9
   m_Name: LowManLeftShoulder
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5825,7 +5825,7 @@ GameObject:
   - component: {fileID: 2060270590252924850}
   m_Layer: 9
   m_Name: Torso Male Short Sleeves
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5936,7 +5936,7 @@ GameObject:
   - component: {fileID: 2060270590264258246}
   m_Layer: 9
   m_Name: Male Bones
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5968,7 +5968,7 @@ GameObject:
   - component: {fileID: 2060270590252924854}
   m_Layer: 9
   m_Name: Shorts Male
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6080,7 +6080,7 @@ GameObject:
   - component: {fileID: 2060270590252924848}
   m_Layer: 9
   m_Name: Torso Male Long Sleeves
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6193,7 +6193,7 @@ GameObject:
   - component: {fileID: 2060270590252924852}
   m_Layer: 9
   m_Name: Pants Male
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6304,7 +6304,7 @@ GameObject:
   - component: {fileID: 2060270590264258256}
   m_Layer: 9
   m_Name: LowManSpine2
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6430,7 +6430,7 @@ GameObject:
   - component: {fileID: 2060270590264258260}
   m_Layer: 9
   m_Name: LowManSpine
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6461,7 +6461,7 @@ GameObject:
   - component: {fileID: 2060270590264258262}
   m_Layer: 9
   m_Name: LowManSpine1
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6492,7 +6492,7 @@ GameObject:
   - component: {fileID: 2060270590264258264}
   m_Layer: 9
   m_Name: LowManRightToeBase_end
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6522,7 +6522,7 @@ GameObject:
   - component: {fileID: 2060270590264258266}
   m_Layer: 9
   m_Name: LowManRightUpLeg
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6553,7 +6553,7 @@ GameObject:
   - component: {fileID: 2060270590264258268}
   m_Layer: 9
   m_Name: LowManRightShoulder
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6584,7 +6584,7 @@ GameObject:
   - component: {fileID: 2060270590264258270}
   m_Layer: 9
   m_Name: LowManRightToeBase
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6618,7 +6618,7 @@ GameObject:
   - component: {fileID: 8398954443747824311}
   m_Layer: 0
   m_Name: Light_01 (4)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6714,7 +6714,7 @@ GameObject:
   - component: {fileID: 721293447716339304}
   m_Layer: 0
   m_Name: Light_01 (19)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6810,7 +6810,7 @@ GameObject:
   - component: {fileID: 249672210644637707}
   m_Layer: 0
   m_Name: Light_01 (14)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7002,7 +7002,7 @@ GameObject:
   - component: {fileID: 2266931364494640188}
   m_Layer: 0
   m_Name: Light_01 (11)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7098,7 +7098,7 @@ GameObject:
   - component: {fileID: 5306319147218796166}
   m_Layer: 0
   m_Name: Light_01 (2)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7194,7 +7194,7 @@ GameObject:
   - component: {fileID: 5191809870758251719}
   m_Layer: 0
   m_Name: Light_01 (3)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8055,7 +8055,7 @@ GameObject:
   - component: {fileID: 2012543683046054486}
   m_Layer: 0
   m_Name: Light_01 (13)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8535,7 +8535,7 @@ GameObject:
   - component: {fileID: 4957873634116940376}
   m_Layer: 0
   m_Name: Light_01 (5)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8821,7 +8821,7 @@ GameObject:
   - component: {fileID: 3442764868449862538}
   m_Layer: 9
   m_Name: Head 1 Male Hair 3
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8933,7 +8933,7 @@ GameObject:
   - component: {fileID: 3442764868449862528}
   m_Layer: 9
   m_Name: Torso Male Long Sleeves
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9046,7 +9046,7 @@ GameObject:
   - component: {fileID: 3442764868449862532}
   m_Layer: 9
   m_Name: Pants Male
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9544,7 +9544,7 @@ GameObject:
   - component: {fileID: 5826665684578874847}
   m_Layer: 0
   m_Name: Light_01 (7)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10024,7 +10024,7 @@ GameObject:
   - component: {fileID: 2471459592635119948}
   m_Layer: 0
   m_Name: Light_01 (6)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11080,7 +11080,7 @@ GameObject:
   - component: {fileID: 4604162895577438228}
   m_Layer: 0
   m_Name: Light_01 (8)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11590,7 +11590,7 @@ GameObject:
   - component: {fileID: 3090147953910878396}
   m_Layer: 0
   m_Name: Light_01 (17)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11782,7 +11782,7 @@ GameObject:
   - component: {fileID: 681694741750976898}
   m_Layer: 0
   m_Name: Light_01 (9)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12262,7 +12262,7 @@ GameObject:
   - component: {fileID: 3829498730206600125}
   m_Layer: 0
   m_Name: Light_01 (15)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12934,7 +12934,7 @@ GameObject:
   - component: {fileID: 1110221327715334169}
   m_Layer: 0
   m_Name: Light_01 (12)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13798,7 +13798,7 @@ GameObject:
   - component: {fileID: 1620464778232131391}
   m_Layer: 0
   m_Name: Light_01 (1)
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -224,10 +224,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1081131603}
-  - component: {fileID: 1081131602}
   - component: {fileID: 1081131601}
   - component: {fileID: 1081131600}
   - component: {fileID: 1081131599}
+  - component: {fileID: 1081131602}
   m_Layer: 0
   m_Name: LevelDesigner
   m_TagString: Untagged
@@ -248,7 +248,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1081131600
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -310,15 +310,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 297e15f2d5d21374584f31879baab754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_size: 0
+  length: 8
+  current_size: 3
   size_1_prefabs: []
   size_2_prefabs: []
-  size_3_prefabs:
-  - {fileID: 0}
-  - {fileID: 0}
+  size_3_prefabs: []
   size_4_prefabs:
   - {fileID: 1190817896268380291, guid: c0066de7f528678459fe59363a0d8eca, type: 3}
-  - {fileID: 3022704810019773001, guid: 3a2b9e1d43fd8e046b385d67a695ebe7, type: 3}
+  - {fileID: 1190817896268380291, guid: b557268087a9e044c85654afc1964c17, type: 3}
+  - {fileID: 1190817896268380291, guid: 552680d0f9561774e9410e6eb0040f5d, type: 3}
   - {fileID: 1190817896268380291, guid: 3c27e242f0fd8494eacc730c1791546e, type: 3}
 --- !u!4 &1081131603
 Transform:
