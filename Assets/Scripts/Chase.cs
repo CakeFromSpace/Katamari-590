@@ -12,7 +12,7 @@ public class Chase : MonoBehaviour
     public float _trail;
     public float _height;
     Movement targetinfo;
-    TankMovement targetinfotank;
+    NewInputSystemControls targetnewcontrol;
     string movetype;
     void Start()
     {
@@ -21,10 +21,10 @@ public class Chase : MonoBehaviour
             targetinfo = target.GetComponent<Movement>();
             movetype = "normal";
         }
-        else if (target.GetComponent<TankMovement>().enabled)
+        else if (target.GetComponent<NewInputSystemControls>().enabled)
         {
-            targetinfotank = target.GetComponent<TankMovement>();
-            movetype = "tank";
+            targetnewcontrol = target.GetComponent<NewInputSystemControls>();
+            movetype = "newcontrol";
         }
         else
         {
@@ -48,10 +48,10 @@ public class Chase : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(targetinfo.forward);
             targetpos -= _trail * targetinfo.forward;
         }
-        else if(movetype == "tank")
+        else if(movetype == "newcontrol")
         {
-            transform.rotation = Quaternion.LookRotation(targetinfotank.forward);
-            targetpos -= _trail * targetinfotank.forward;
+            transform.rotation = Quaternion.LookRotation(targetnewcontrol.forward);
+            targetpos -= _trail * targetnewcontrol.forward;
         }
         transform.position = targetpos;
         transform.Rotate(new Vector3(pandown,0,0));
