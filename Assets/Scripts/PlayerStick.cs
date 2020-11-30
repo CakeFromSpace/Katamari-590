@@ -68,6 +68,7 @@ public class PlayerStick : MonoBehaviour
                 else
                 {
                     other.layer = 8;
+                    Destroy(m);//get rid of collider so that rigidbody doesnt get lopsided
                 }
                 
                 Debug.Log(new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate);

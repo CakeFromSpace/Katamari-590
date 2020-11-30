@@ -16,6 +16,7 @@ public class Chase : MonoBehaviour
     string movetype;
     void Start()
     {
+        transform.parent = null;
         if (target.GetComponent<Movement>().enabled)
         {
             targetinfo = target.GetComponent<Movement>();
