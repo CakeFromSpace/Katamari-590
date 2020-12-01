@@ -17,7 +17,7 @@ TagManager:
   - 
   - Pickup
   - Terrain
-  - 
+  - Player
   - LongObject
   - 
   - UICamera
