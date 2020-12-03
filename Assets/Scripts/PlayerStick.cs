@@ -26,11 +26,7 @@ public class PlayerStick : MonoBehaviour
         vel_threshold = GetComponent<Movement>().maxvelocity / 2;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 
     private void OnTriggerEnter(Collider collision)
     {

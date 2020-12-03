@@ -16,11 +16,24 @@ public class HumanAI : AI
     private float size;
     private bool flee;
     private bool chase;
-    private bool dead;
+    //private bool dead;
     private Vector3 y_offset;
     private GameObject player;
     private Animator animation_controller;
     private AudioSource sound;
+
+    //Edit 12/3 Joe
+    //Disable AI if distance is far away
+    private void Awake()
+    {
+        GameObject s = new GameObject();
+        s.AddComponent<AISwitch>();
+        s.transform.parent = transform;
+    }
+
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +53,7 @@ public class HumanAI : AI
     // Update is called once per frame
     void Update()
     {
+        
         direction_timer += Time.deltaTime;
         
         if(gameObject.tag != "sticky")

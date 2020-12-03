@@ -83,21 +83,21 @@ public class NewInputSystemControls : MonoBehaviour
 
         if (lmove.y != 0)
         {
-            rb.AddForce(forward * lmove.y * speed);
+            rb.AddForce(forward * lmove.y * speed * katamari.transform.localScale.x);
             if(lmove.y> turnbounds || lmove.y<-turnbounds) theta += turnspeed / 100f*lmove.y;
         }
         if (rmove.y != 0)
         {
-            rb.AddForce(forward * rmove.y * speed);
+            rb.AddForce(forward * rmove.y * speed * katamari.transform.localScale.x);
             if (rmove.y > turnbounds || rmove.y < -turnbounds) theta -=turnspeed/100f*rmove.y;
         }
         if (lmove.x != 0)
         {
-            if (lmove.y < turnbounds && lmove.y > -turnbounds) rb.AddForce(Quaternion.Euler(0, 90, 0) * forward * lmove.x * speed);
+            if (lmove.y < turnbounds && lmove.y > -turnbounds) rb.AddForce(Quaternion.Euler(0, 90, 0) * forward * lmove.x * speed * katamari.transform.localScale.x);
         }
         if (rmove.x != 0)
         {
-            if (rmove.y < turnbounds && rmove.y > -turnbounds) rb.AddForce(Quaternion.Euler(0, 90, 0) * forward * rmove.x * speed);
+            if (rmove.y < turnbounds && rmove.y > -turnbounds) rb.AddForce(Quaternion.Euler(0, 90, 0) * forward * rmove.x * speed * katamari.transform.localScale.x);
         }
     }
 
