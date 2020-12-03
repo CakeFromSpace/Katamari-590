@@ -6,13 +6,16 @@ using System;
 
 public class LevelDesigner : MonoBehaviour
 {
+    public GameObject katamari;
     public int length = 8;
-    public int current_size = 3;
+    public int current_size;
 
+
+    public GameObject[] size_0_prefabs;
     public GameObject[] size_1_prefabs;
     public GameObject[] size_2_prefabs;
     public GameObject[] size_3_prefabs;
-    public GameObject[] size_4_prefabs;
+
 
     private GameObject[][] tiles;
     private Bounds bounds;
@@ -21,17 +24,31 @@ public class LevelDesigner : MonoBehaviour
 
     private int[,] level;
 
+    private float katamari_size;   
     private float grid_actual_size;
     private float tile_size;
+    private float level_offset;
 
     // Start is called before the first frame update
     void Start()
     {
+        
+        katamari_size = katamari.transform.localScale.x;
         bounds = GetComponent<Collider>().bounds; 
         grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
         tile_size = grid_actual_size / 8;
+        level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * 4;
         level = new int[length, length];
-        tiles = new GameObject[][] {size_1_prefabs, size_2_prefabs, size_3_prefabs, size_4_prefabs};
+
+        for(int i = 0; i<length; i++)
+        {
+            for(int j = 0; j<length; j++)
+            {
+                level[i, j] = -1;
+            }    
+        }
+
+        tiles = new GameObject[][] {size_0_prefabs, size_1_prefabs, size_2_prefabs, size_3_prefabs};
         types = new List<int>();
         GenerateLevel();
         DrawLevel();
@@ -40,7 +57,35 @@ public class LevelDesigner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(katamari.transform.localScale.x >= 1 && katamari_size < 1)
+        {
+            current_size = 1;
+            grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
+            tile_size = grid_actual_size / 8;
+            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * 4;
+            //GenerateLevel();
+            //DrawLevel();
+        }
+        if(katamari.transform.localScale.x >= 25 && katamari_size < 25)
+        {
+            current_size = 2;
+            grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
+            tile_size = grid_actual_size / 8;
+            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * 4;
+            GenerateLevel();
+            DrawLevel();
+        }
+        if(katamari.transform.localScale.x >= 100 && katamari_size < 100)
+        {
+            current_size = 3;
+            grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
+            tile_size = grid_actual_size / 8;
+            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * 4;
+            GenerateLevel();
+            DrawLevel();
+        }
+    
+        katamari_size = katamari.transform.localScale.x;
     }
 
     private void Shuffle<T>(ref List<T> list)
@@ -114,7 +159,7 @@ public class LevelDesigner : MonoBehaviour
             }
         }
         
-        for(int i = 1; i <= tiles[current_size].Length; i++)
+        for(int i = 0; i < tiles[current_size].Length; i++)
         {
             types.Add(i);
         } 
@@ -128,11 +173,11 @@ public class LevelDesigner : MonoBehaviour
         {
             for(int j=0; j<length; j++)
             {
-                if(level[i, j] != 0)
+                if(level[i, j] != -1)
                 {
-                    GameObject current_tile = Instantiate(tiles[current_size][level[i, j] - 1], new Vector3(0, 0, 0), Quaternion.identity);
-                    current_tile.transform.position = new Vector3(bounds.min[0] + tile_size * (i + 0.5f), 0, bounds.min[2] + tile_size * (j + 0.5f));
-                }
+                    GameObject current_tile = Instantiate(tiles[current_size][level[i, j]], new Vector3(0, 0, 0), Quaternion.identity);
+                    current_tile.transform.position = new Vector3(bounds.min[0] + level_offset + tile_size * (i + 0.5f), 0, bounds.min[2] + level_offset + tile_size * (j + 0.5f));
+                } 
             }
         }
     }

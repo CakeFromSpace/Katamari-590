@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankAI : MonoBehaviour
+public class TankAI : AI
 {
 
     // most of this code is from the humanAI, it may make sense to reformat this code so tank and human both pull from the same AI class but ... maybe tomorrow
 
-    private Animator animation_controller;
     public float velocity;
     public float change_direction_time;
     public float complete_turn_time;
@@ -17,7 +16,7 @@ public class TankAI : MonoBehaviour
     public float turn_speed;
     public LayerMask mask;
     public GameObject projectilePrefab;
-    public GameObject player;
+    public GameObject tower;
     private float direction_timer;
     private float moveAngle;
     private float size;
@@ -25,15 +24,13 @@ public class TankAI : MonoBehaviour
     private bool chase;
     private Vector3 y_offset;
     private GameObject current_projectile;
-    private GameObject tower;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {   
         Bounds bounds = GetComponent<Collider>().bounds;
         y_offset = new Vector3(0, bounds.center.y / 2, 0);
-        animation_controller = GetComponent<Animator>();
-        tower = GameObject.Find("TankFree_Tower");
         flee = false;
         chase = false;
         direction_timer = 0;
@@ -47,8 +44,8 @@ public class TankAI : MonoBehaviour
         direction_timer += Time.deltaTime;
         if(gameObject.tag != "sticky")
         {
-            
-            if((transform.position - player.transform.position).magnitude > looking_distance * 5)
+            Debug.Log(player);
+            if(player != null && (transform.position - player.transform.position).magnitude < looking_distance * 10)
             {
                 tower.transform.rotation = Quaternion.Slerp(tower.transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), turn_speed * Time.deltaTime); 
 
@@ -114,11 +111,12 @@ public class TankAI : MonoBehaviour
 
     void Chase()
     {
+        Debug.Log("Chase");
         // get direction of player
         Vector3 direction_of_player = player.transform.position - transform.position;
-        if(direction_of_player.magnitude < looking_distance)
+        if(direction_of_player.magnitude < looking_distance / 2)
         {
-            Vector3 push = Vector3.Normalize(player.transform.position - transform.position) * push_strength;
+            Vector3 push = Vector3.Normalize(player.transform.position - transform.position) * push_strength * 10;
             push.y = 0;
             player.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce(push);
             return;
@@ -126,25 +124,28 @@ public class TankAI : MonoBehaviour
         direction_of_player = Vector3.Normalize(new Vector3(direction_of_player.x, 0, direction_of_player.z));
 
         // lerp rotation away from player and move at double speed
-        transform.forward = Vector3.Lerp(transform.forward, 1 * direction_of_player, 10 * t);
-        transform.position += (1 * 2 * velocity * direction_of_player) * Time.deltaTime;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction_of_player), 1);
+        transform.position += (2 * velocity * direction_of_player) * Time.deltaTime;
     
     }
 
     void Flee()
     {
+        Debug.Log("Flee");
         // get direction of player
-        Vector3 direction_of_player = player.transform.position - transform.position;
+        Vector3 direction_of_player = transform.position - player.transform.position;
         direction_of_player = Vector3.Normalize(new Vector3(direction_of_player.x, 0, direction_of_player.z));
 
         // lerp rotation away from player and move at double speed
-        transform.forward = Vector3.Lerp(transform.forward, -1 * direction_of_player, 10 * t);
-        transform.position += (-1 * 2 * velocity * direction_of_player) * Time.deltaTime;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction_of_player), 1);
+        transform.position += (2 * velocity * direction_of_player) * Time.deltaTime;
     }
 
     void TurnAround()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(-1 * transform.forward), 10 * Time.deltaTime);
+        float[] angles = {90, 180, 270};
+        float turn_angle = angles[UnityEngine.Random.Range(0, angles.Length)];
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(transform.eulerAngles.y + turn_angle, new Vector3(0, 1, 0)), 1);
     }
 
     void AvoidObstacle(RaycastHit hit)
@@ -169,7 +170,6 @@ public class TankAI : MonoBehaviour
     {
         if (other.gameObject.name == "katamari")
         {
-            animation_controller.SetBool("run", true);
             player = other.gameObject;
 
             SphereCollider s = player.GetComponent<SphereCollider>();
@@ -188,7 +188,6 @@ public class TankAI : MonoBehaviour
     {
         if (other.gameObject.name == "katamari")
         {
-            animation_controller.SetBool("run", false);
             flee = false;
             chase = false;
         }

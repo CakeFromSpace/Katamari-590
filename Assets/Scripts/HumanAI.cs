@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HumanAI : MonoBehaviour
+public class HumanAI : AI
 {
-    private Animator animation_controller;
     public float velocity;
     public float change_direction_time;
     public float complete_turn_time;
@@ -17,20 +16,25 @@ public class HumanAI : MonoBehaviour
     private float size;
     private bool flee;
     private bool chase;
+    private bool dead;
     private Vector3 y_offset;
     private GameObject player;
+    private Animator animation_controller;
+    private AudioSource sound;
 
     // Start is called before the first frame update
     void Start()
     {   
+        sound = GetComponent<AudioSource>();
         Bounds bounds = GetComponent<Collider>().bounds;
         y_offset = new Vector3(0, bounds.center.y / 2, 0);
         animation_controller = GetComponent<Animator>();
         flee = false;
         chase = false;
+        dead = false;
         direction_timer = 0;
         moveAngle = Random.Range(0, 360);
-        size = bounds.size.x * bounds.size.y * bounds.size.z;
+        size = bounds.size.magnitude;
     }
 
     // Update is called once per frame
@@ -50,11 +54,11 @@ public class HumanAI : MonoBehaviour
             RaycastHit hit;
             
             // if raycast hits
-            if((Physics.Raycast(l, out hit, looking_distance, mask) && Physics.Raycast(r, out hit, looking_distance, mask)) || Physics.Raycast(f, out hit, looking_distance, mask))
+            if((Physics.Raycast(l, out hit, looking_distance, mask, QueryTriggerInteraction.Ignore) && Physics.Raycast(r, out hit, looking_distance, mask, QueryTriggerInteraction.Ignore)) || Physics.Raycast(f, out hit, looking_distance, mask, QueryTriggerInteraction.Ignore))
             {
                 TurnAround();
             }
-            if(Physics.Raycast(l, out hit, looking_distance, mask) || Physics.Raycast(r, out hit, looking_distance, mask) || Physics.Raycast(f, out hit, looking_distance, mask))
+            if(Physics.Raycast(l, out hit, looking_distance, mask, QueryTriggerInteraction.Ignore) || Physics.Raycast(r, out hit, looking_distance, mask, QueryTriggerInteraction.Ignore) || Physics.Raycast(f, out hit, looking_distance, mask, QueryTriggerInteraction.Ignore))
             {
                 Debug.DrawLine(transform.position + transform.forward * 1.5f + y_offset, transform.position + transform.forward * 1.5f + y_offset + transform.forward * looking_distance, Color.white, 1f);
                 Debug.DrawLine(transform.position + transform.forward * 1.5f + transform.right * 3 + y_offset, transform.position + transform.forward * 1.5f + transform.right * 3 + y_offset + transform.forward * looking_distance, Color.red, 1f);
@@ -74,6 +78,14 @@ public class HumanAI : MonoBehaviour
             else
             {
                 Wander();
+            }
+        }
+        else if(!dead)
+        {
+            dead = true;
+            if(sound != null)
+            {
+                sound.Play();
             }
         }
     }
@@ -98,38 +110,45 @@ public class HumanAI : MonoBehaviour
 
     void Chase()
     {
+        Debug.Log("Chase");
         // get direction of player
         Vector3 direction_of_player = player.transform.position - transform.position;
-        if(direction_of_player.magnitude < looking_distance)
+        if(direction_of_player.magnitude < looking_distance * 2)
         {
-            Vector3 push = Vector3.Normalize(player.transform.position - transform.position) * push_strength;
+            Vector3 push = Vector3.Normalize(player.transform.position - transform.position) * push_strength * 10;
             push.y = 0;
             player.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce(push);
+            if(sound != null)
+            {
+                sound.Play();
+            }
             return;
         }
         direction_of_player = Vector3.Normalize(new Vector3(direction_of_player.x, 0, direction_of_player.z));
 
         // lerp rotation away from player and move at double speed
-        transform.forward = Vector3.Lerp(transform.forward, 1 * direction_of_player, 10 * t);
-        transform.position += (1 * 2 * velocity * direction_of_player) * Time.deltaTime;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction_of_player), 1);
+        transform.position += (2 * velocity * direction_of_player) * Time.deltaTime;
     
     }
 
     void Flee()
     {
+        Debug.Log("Flee");
         // get direction of player
-        Vector3 direction_of_player = player.transform.position - transform.position;
+        Vector3 direction_of_player = transform.position - player.transform.position;
         direction_of_player = Vector3.Normalize(new Vector3(direction_of_player.x, 0, direction_of_player.z));
 
         // lerp rotation away from player and move at double speed
-        transform.forward = Vector3.Lerp(transform.forward, -1 * direction_of_player, 10 * t);
-        transform.position += (-1 * 2 * velocity * direction_of_player) * Time.deltaTime;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction_of_player), 1);
+        transform.position += (2 * velocity * direction_of_player) * Time.deltaTime;
     }
 
     void TurnAround()
     {
-        // turn 180 degrees w quaternion slerp
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(-1 * transform.forward), 10 * Time.deltaTime);
+        float[] angles = {90, 180, 270};
+        float turn_angle = angles[UnityEngine.Random.Range(0, angles.Length)];
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(transform.eulerAngles.y + turn_angle, new Vector3(0, 1, 0)), 1);
     }
 
     void AvoidObstacle(RaycastHit hit)
@@ -153,7 +172,7 @@ public class HumanAI : MonoBehaviour
 
             // depending on size, run away or towards it
             SphereCollider s = player.GetComponent<SphereCollider>();
-            if(s.bounds.size.magnitude > size)
+            if(s.bounds.size.magnitude * .7 > size)
             {
                 flee = true;
             }
