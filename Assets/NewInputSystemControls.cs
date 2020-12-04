@@ -62,7 +62,7 @@ public class NewInputSystemControls : MonoBehaviour
         theta = 0;
         forward = new Vector3(Mathf.Sin(theta), 0, Mathf.Cos(theta));
     }
-    void Update()
+    void FixedUpdate()
     {
         //Debug.Log(lmove + " "+rmove);
         forward = new Vector3(Mathf.Sin(theta), 0, Mathf.Cos(theta));
