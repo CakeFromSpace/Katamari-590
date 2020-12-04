@@ -72,11 +72,15 @@ public class PlayerStick : MonoBehaviour
                     Destroy(m);//get rid of collider so that rigidbody doesnt get lopsided
                 }
 
+                if (other.gameObject.GetComponent<HumanAI>() != null)
+                {
+                    Destroy(other.gameObject.transform.Find("AISwitch").gameObject);
+                }
                 // hi this is judge I added this in to make the AI stop moving once you get them
                 other.tag = "sticky";
                 
                 Debug.Log(new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate);
-                katamari.transform.localScale += new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate;
+                katamari.transform.localScale += new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate/s.transform.localScale.x;
                 RadiusUIText.GetComponent<Text>().text = (System.Math.Round(katamari.transform.localScale.x,2) * 10)+" CM";
                 
 

@@ -26,7 +26,7 @@ public class HumanAI : AI
     //Disable AI if distance is far away
     private void Awake()
     {
-        GameObject s = new GameObject();
+        GameObject s = new GameObject("AISwitch");
         s.AddComponent<AISwitch>();
         s.transform.parent = transform;
     }

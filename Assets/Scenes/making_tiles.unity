@@ -720,6 +720,10 @@ PrefabInstance:
       propertyPath: UIPickup
       value: 
       objectReference: {fileID: 1025368885}
+    - target: {fileID: 4425006128879335534, guid: 0b4bbbbca4f6aea4893e5fa48089bc78, type: 3}
+      propertyPath: growrate
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 4425006129168421779, guid: 0b4bbbbca4f6aea4893e5fa48089bc78, type: 3}
       propertyPath: m_LocalScale.x
       value: 10
