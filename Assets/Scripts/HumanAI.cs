@@ -22,14 +22,7 @@ public class HumanAI : AI
     private Animator animation_controller;
     private AudioSource sound;
 
-    //Edit 12/3 Joe
-    //Disable AI if distance is far away
-    private void Awake()
-    {
-        GameObject s = new GameObject("AISwitch");
-        s.AddComponent<AISwitch>();
-        s.transform.parent = transform;
-    }
+    
 
 
 

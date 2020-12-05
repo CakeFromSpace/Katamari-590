@@ -52,6 +52,7 @@ public class LevelDesigner : MonoBehaviour
         types = new List<int>();
         GenerateLevel();
         DrawLevel();
+        
     }
 
     // Update is called once per frame

@@ -30,10 +30,11 @@ public class PlayerStick : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        GameObject other = collision.GetComponent<Collider>().gameObject;
+        
 
         if (collision.GetComponent<Collider>().gameObject.tag == "pickup" && !collision.isTrigger)
         {
+            GameObject other = collision.GetComponent<Collider>().gameObject;
 
             //Debug.Log(name + other.name);
 
@@ -60,7 +61,14 @@ public class PlayerStick : MonoBehaviour
                 }
 
 
-                
+                //Finding the tile object the item is part of
+                GameObject p = other;
+                while (p.transform.parent != null)
+                {
+                    p = p.transform.parent.gameObject;
+                }
+                //remove the item on the katamari from the loading and unloading script
+                p.GetComponentInChildren<LoadUnload>().rend.Remove(other.GetComponent<MeshRenderer>());
                 //if(m.size.x*m.transform.localScale.x> katamari.transform.lossyScale.x || m.size.y * m.transform.localScale.y > katamari.transform.lossyScale.x|| m.size.z * m.transform.localScale.z >  katamari.transform.lossyScale.x )
                 if(m.bounds.size.x> katamari.transform.lossyScale.x || m.bounds.size.y> katamari.transform.lossyScale.x|| m.bounds.size.z >  katamari.transform.lossyScale.x )
                 {
@@ -72,7 +80,7 @@ public class PlayerStick : MonoBehaviour
                     Destroy(m);//get rid of collider so that rigidbody doesnt get lopsided
                 }
 
-                if (other.gameObject.GetComponent<HumanAI>() != null)
+                if (other.gameObject.GetComponent<AI>() != null)
                 {
                     Destroy(other.gameObject.transform.Find("AISwitch").gameObject);
                 }
@@ -81,7 +89,24 @@ public class PlayerStick : MonoBehaviour
                 
                 Debug.Log(new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate);
                 katamari.transform.localScale += new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate/s.transform.localScale.x;
-                RadiusUIText.GetComponent<Text>().text = (System.Math.Round(katamari.transform.localScale.x,2) * 10)+" CM";
+                float uisize = katamari.transform.localScale.x;
+                string label;
+                if (uisize > 100000)
+                {
+                    label = "KM";
+                    uisize %= 100000;
+                }
+                else if (uisize > 100)
+                {
+                    label = "M";
+                    uisize %= 100;
+                }
+                else
+                {
+                    label = "CM";
+                }
+                uisize = Mathf.Round(uisize*10)/10f;
+                RadiusUIText.GetComponent<Text>().text = uisize + " "+label;
                 
 
                 foreach (Transform child in UIPickup.transform)
