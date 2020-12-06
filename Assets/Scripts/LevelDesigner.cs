@@ -7,7 +7,7 @@ using System;
 public class LevelDesigner : MonoBehaviour
 {
     public GameObject katamari;
-    public int length = 8;
+    public int length;
     public int current_size;
 
 
@@ -39,8 +39,8 @@ public class LevelDesigner : MonoBehaviour
         katamari_size = katamari.transform.localScale.x;
         bounds = GetComponent<Collider>().bounds; 
         grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
-        tile_size = grid_actual_size / 8;
-        level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * 4;
+        tile_size = grid_actual_size / length;
+        level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * length / 2;
         level = new int[length, length];
         generated = new bool[4];
 
@@ -79,8 +79,8 @@ public class LevelDesigner : MonoBehaviour
             current_size = 0;
             generated[current_size] = true;
             grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
-            tile_size = grid_actual_size / 8;
-            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * 4;
+            tile_size = grid_actual_size / length;
+            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * length / 2;
             GenerateLevel();
             DrawLevel();
         }
@@ -89,8 +89,8 @@ public class LevelDesigner : MonoBehaviour
             current_size = 1;
             generated[current_size] = true;
             grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
-            tile_size = grid_actual_size / 8;
-            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * 4;
+            tile_size = grid_actual_size / length;
+            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * length / 2;
             GenerateLevel();
             DrawLevel();
         }
@@ -100,8 +100,8 @@ public class LevelDesigner : MonoBehaviour
             current_size = 2;
             generated[current_size] = true;
             grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
-            tile_size = grid_actual_size / 8;
-            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * 4;
+            tile_size = grid_actual_size / length;
+            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * length / 2;
             GenerateLevel();
             DrawLevel();
         }
@@ -111,8 +111,8 @@ public class LevelDesigner : MonoBehaviour
             current_size = 3;
             generated[current_size] = true;
             grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
-            tile_size = grid_actual_size / 8;
-            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * 4;
+            tile_size = grid_actual_size / length;
+            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * length / 2;
             GenerateLevel();
             DrawLevel();
         }
