@@ -23,6 +23,7 @@ public class LevelDesigner : MonoBehaviour
     private List<int> types;
 
     private int[,] level;
+    private bool[] generated;
 
     private float katamari_size;   
     private float grid_actual_size;
@@ -39,6 +40,7 @@ public class LevelDesigner : MonoBehaviour
         tile_size = grid_actual_size / 8;
         level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * 4;
         level = new int[length, length];
+        generated = new bool[4];
 
         for(int i = 0; i<length; i++)
         {
@@ -46,6 +48,18 @@ public class LevelDesigner : MonoBehaviour
             {
                 level[i, j] = -1;
             }    
+        }
+
+        for(int i = 0; i < generated.Length; i++)
+        {
+            if(i <= current_size)
+            {
+                generated[i] = true;
+            }
+            else
+            {
+                generated[i] = false;
+            }
         }
 
         tiles = new GameObject[][] {size_0_prefabs, size_1_prefabs, size_2_prefabs, size_3_prefabs};
@@ -57,27 +71,40 @@ public class LevelDesigner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(katamari.transform.localScale.x >= 1 && katamari_size < 1)
+        if(katamari.transform.localScale.x >= 1 && katamari_size < 1 && !generated[0])
         {
-            current_size = 1;
-            grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
-            tile_size = grid_actual_size / 8;
-            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * 4;
-            //GenerateLevel();
-            //DrawLevel();
-        }
-        if(katamari.transform.localScale.x >= 25 && katamari_size < 25)
-        {
-            current_size = 2;
+            current_size = 0;
+            generated[current_size] = true;
             grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
             tile_size = grid_actual_size / 8;
             level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * 4;
             GenerateLevel();
             DrawLevel();
         }
-        if(katamari.transform.localScale.x >= 100 && katamari_size < 100)
+        if(katamari.transform.localScale.x >= 10 && katamari_size < 10 && !generated[1])
+        {
+            current_size = 1;
+            generated[current_size] = true;
+            grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
+            tile_size = grid_actual_size / 8;
+            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * 4;
+            GenerateLevel();
+            DrawLevel();
+        }
+        if(katamari.transform.localScale.x >= 25 && katamari_size < 25 && !generated[2])
+        {
+            current_size = 2;
+            generated[current_size] = true;
+            grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
+            tile_size = grid_actual_size / 8;
+            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * 4;
+            GenerateLevel();
+            DrawLevel();
+        }
+        if(katamari.transform.localScale.x >= 100 && katamari_size < 100 && !generated[3])
         {
             current_size = 3;
+            generated[current_size] = true;
             grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
             tile_size = grid_actual_size / 8;
             level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * 4;
