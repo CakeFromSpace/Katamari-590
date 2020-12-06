@@ -68,7 +68,14 @@ public class PlayerStick : MonoBehaviour
                     p = p.transform.parent.gameObject;
                 }
                 //remove the item on the katamari from the loading and unloading script
-                p.GetComponentInChildren<LoadUnload>().rend.Remove(other.GetComponent<MeshRenderer>());
+                try
+                {
+                    p.GetComponentInChildren<LoadUnload>().rend.Remove(other.GetComponent<MeshRenderer>());
+                }
+                catch(Exception e)
+                {
+                    Debug.Log("Hopefully this is the Tutorial Level");
+                }
                 //if(m.size.x*m.transform.localScale.x> katamari.transform.lossyScale.x || m.size.y * m.transform.localScale.y > katamari.transform.lossyScale.x|| m.size.z * m.transform.localScale.z >  katamari.transform.lossyScale.x )
                 if(m.bounds.size.x> katamari.transform.lossyScale.x || m.bounds.size.y> katamari.transform.lossyScale.x|| m.bounds.size.z >  katamari.transform.lossyScale.x )
                 {
@@ -87,8 +94,8 @@ public class PlayerStick : MonoBehaviour
                 // hi this is judge I added this in to make the AI stop moving once you get them
                 other.tag = "sticky";
                 
-                Debug.Log(new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate);
-                katamari.transform.localScale += new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate/s.transform.localScale.x;
+                //Debug.Log(new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate);
+                katamari.transform.localScale += new Vector3(sizeofobject, sizeofobject, sizeofobject) * growrate;
                 float uisize = katamari.transform.localScale.x;
                 string label;
                 if (uisize > 100000)
@@ -135,9 +142,9 @@ public class PlayerStick : MonoBehaviour
                 // changed by judge 12/1 ... added this condition so small objects will stop being rendered at large sizes, and moved it down here in order to keep the object camera working
                 if(sizeofplayer * attachablemultiplier < 5 * sizeofobject)
                 {
-                    Debug.Log("pickup");
-                    Debug.Log(sizeofplayer);
-                    Debug.Log(sizeofobject);
+                    //Debug.Log("pickup");
+                    //Debug.Log(sizeofplayer);
+                    //Debug.Log(sizeofobject);
                     other.transform.position = transform.position + loc;
                     other.transform.parent = constellation.transform;
                 }

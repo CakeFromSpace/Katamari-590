@@ -29,6 +29,8 @@ public class LevelDesigner : MonoBehaviour
     private float tile_size;
     private float level_offset;
 
+    public float cullmultiplier; //how much smaller than the katamari can the object be before it gets destroyed
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +71,7 @@ public class LevelDesigner : MonoBehaviour
         }
         if(katamari.transform.localScale.x >= 25 && katamari_size < 25)
         {
+            
             current_size = 2;
             grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
             tile_size = grid_actual_size / 8;
@@ -78,6 +81,7 @@ public class LevelDesigner : MonoBehaviour
         }
         if(katamari.transform.localScale.x >= 100 && katamari_size < 100)
         {
+            
             current_size = 3;
             grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
             tile_size = grid_actual_size / 8;
@@ -170,6 +174,7 @@ public class LevelDesigner : MonoBehaviour
 
     void DrawLevel()
     {
+        CullSmall();
         for(int i=0; i<length; i++)
         {
             for(int j=0; j<length; j++)
@@ -181,5 +186,21 @@ public class LevelDesigner : MonoBehaviour
                 } 
             }
         }
+    }
+
+    //Edit by Joe 12/5
+    //remove exceedingly small objects in comparison to player from scene
+    void CullSmall()
+    {
+        int i = 0;
+        foreach(GameObject g in GameObject.FindGameObjectsWithTag("pickup"))
+        {
+            if (g.transform.localScale.x < katamari.transform.localScale.x*cullmultiplier)
+            {
+                Destroy(g);
+                i += 1;
+            }
+        }
+        Debug.Log("Culled " + i + " objects");
     }
 }

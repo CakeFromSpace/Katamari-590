@@ -16,10 +16,10 @@ RenderSettings:
   serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
+  m_FogMode: 1
   m_FogDensity: 0.01
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_LinearFogStart: 300
+  m_LinearFogEnd: 4000
   m_AmbientSkyColor: {r: 1.4142135, g: 1.4142135, b: 1.4142135, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -722,11 +722,15 @@ PrefabInstance:
       objectReference: {fileID: 1025368885}
     - target: {fileID: 4425006128879335534, guid: 0b4bbbbca4f6aea4893e5fa48089bc78, type: 3}
       propertyPath: growrate
-      value: 0.01
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 4425006128879335534, guid: 0b4bbbbca4f6aea4893e5fa48089bc78, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425006128879335534, guid: 0b4bbbbca4f6aea4893e5fa48089bc78, type: 3}
+      propertyPath: cullmultiplier
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 4425006129168421779, guid: 0b4bbbbca4f6aea4893e5fa48089bc78, type: 3}
       propertyPath: m_LocalScale.x
@@ -1080,7 +1084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   katamari: {fileID: 56511945}
-  length: 8
+  length: 20
   current_size: 2
   size_0_prefabs: []
   size_1_prefabs: []
@@ -1093,7 +1097,6 @@ MonoBehaviour:
   - {fileID: 3381653485282777269, guid: 4843cd11a92cb5e49b950a3c11cfc473, type: 3}
   - {fileID: 3381653485282777269, guid: 0489e544fee3d824da735c1d3279abe9, type: 3}
   - {fileID: 1190817896268380291, guid: 9fa0894677fd88e45beba4c827bab5d0, type: 3}
-  - {fileID: 1190817896268380291, guid: a8510c881ccbe744e88904d7d5519c1b, type: 3}
   size_3_prefabs:
   - {fileID: 1190817896268380291, guid: c0066de7f528678459fe59363a0d8eca, type: 3}
   - {fileID: 1190817896268380291, guid: 75517a67d44cfcc4287bbff1ae9cabd0, type: 3}
@@ -1104,6 +1107,7 @@ MonoBehaviour:
   - {fileID: 1190817896268380291, guid: 3c27e242f0fd8494eacc730c1791546e, type: 3}
   - {fileID: 1190817896268380291, guid: e5407f08148edc645831bdb7f3fb4504, type: 3}
   - {fileID: 1190817896268380291, guid: d73fb4a94421184479cb623c9d664c89, type: 3}
+  cullmultiplier: 0.01
 --- !u!4 &1081131603
 Transform:
   m_ObjectHideFlags: 0
@@ -1188,7 +1192,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 10000
+  far clip plane: 100000
   field of view: 60
   orthographic: 0
   orthographic size: 5

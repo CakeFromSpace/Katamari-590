@@ -9,6 +9,7 @@ public class ItemRing : MonoBehaviour
     public int numberofitems;
     public float speed;
     public bool clockwise;
+    public float rotation;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,8 @@ public class ItemRing : MonoBehaviour
         {
             GameObject a = Instantiate(item, transform);
             a.transform.localPosition = new Vector3(Mathf.Sin(d*i),0,Mathf.Cos(d*i))*radius;
-            a.transform.rotation = Quaternion.Euler(0,360/numberofitems*i,0);
+            a.transform.rotation = Quaternion.Euler(0,(360/numberofitems*i)+rotation,0);
+            
         }
     }
 

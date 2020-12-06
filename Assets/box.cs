@@ -14,6 +14,6 @@ public class box : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(renderer.bounds.size);    
+        //Debug.Log(renderer.bounds.size);    
     }
 }

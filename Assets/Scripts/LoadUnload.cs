@@ -9,7 +9,8 @@ public class LoadUnload : MonoBehaviour
     {
         SphereCollider playerdetection;
         playerdetection = this.gameObject.AddComponent<SphereCollider>();
-        playerdetection.radius = 2000;
+        //playerdetection.radius = transform.parent.GetChild(0).localScale.x*2000;
+        playerdetection.radius = 10000;
         playerdetection.isTrigger = true;
 
         rend = new List<MeshRenderer>(transform.parent.gameObject.GetComponentsInChildren<MeshRenderer>());

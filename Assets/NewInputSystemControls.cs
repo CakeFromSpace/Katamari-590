@@ -20,31 +20,78 @@ public class NewInputSystemControls : MonoBehaviour
     bool spinning;
     float spintar;
     float lerp;
-   // private void Awake()
-   // {
 
-       // controls = new PlayerControls();
+    public bool isTutorial;
+    public GameObject ControllerTutorial;
+    public GameObject KeyboardTutorial;
+    // private void Awake()
+    // {
 
-       // controls.Controller.LeftMoveTank.performed += c => lmove = c.ReadValue<Vector2>();
-       // controls.Controller.LeftMoveTank.canceled += c => lmove = Vector2.zero;
+    // controls = new PlayerControls();
 
-        //controls.Controller.RightMoveTank.performed += c => rmove = c.ReadValue<Vector2>();
-        //controls.Controller.RightMoveTank.canceled += c => rmove = Vector2.zero;
+    // controls.Controller.LeftMoveTank.performed += c => lmove = c.ReadValue<Vector2>();
+    // controls.Controller.LeftMoveTank.canceled += c => lmove = Vector2.zero;
 
-        //controls.Controller.Spin.performed += c =>
-         //{
-         //    spinning = true;
-         //    spintar = theta + Mathf.PI;
-         //    lerp = 0f;
-         //};
+    //controls.Controller.RightMoveTank.performed += c => rmove = c.ReadValue<Vector2>();
+    //controls.Controller.RightMoveTank.canceled += c => rmove = Vector2.zero;
+
+    //controls.Controller.Spin.performed += c =>
+    //{
+    //    spinning = true;
+    //    spintar = theta + Mathf.PI;
+    //    lerp = 0f;
+    //};
 
 
     //}
 
-    public void LeftMove(InputAction.CallbackContext c) => lmove = c.ReadValue<Vector2>();
-    public void RightMove(InputAction.CallbackContext c) => rmove = c.ReadValue<Vector2>();
+    public void LeftMove(InputAction.CallbackContext c) {
+        if (isTutorial)
+        {
+            if (c.control.device.ToString().Contains("Keyboard"))
+            {
+                KeyboardTutorial.SetActive(true);
+                ControllerTutorial.SetActive(false);
+            }
+            else
+            {
+                KeyboardTutorial.SetActive(false);
+                ControllerTutorial.SetActive(true);
+            }
+        }
+        lmove = c.ReadValue<Vector2>(); 
+    }
+    public void RightMove(InputAction.CallbackContext c) {
+        if (isTutorial)
+        {
+            if (c.control.device.ToString().Contains("Keyboard"))
+            {
+                KeyboardTutorial.SetActive(true);
+                ControllerTutorial.SetActive(false);
+            }
+            else
+            {
+                KeyboardTutorial.SetActive(false);
+                ControllerTutorial.SetActive(true);
+            }
+        }
+        rmove = c.ReadValue<Vector2>(); 
+    }
     public void Spin(InputAction.CallbackContext c)
     {
+        if (isTutorial)
+        {
+            if (c.control.device.ToString().Contains("Keyboard"))
+            {
+                KeyboardTutorial.SetActive(true);
+                ControllerTutorial.SetActive(false);
+            }
+            else
+            {
+                KeyboardTutorial.SetActive(false);
+                ControllerTutorial.SetActive(true);
+            }
+        }
         if (!c.performed) return;
         Debug.Log("spin");
         spinning = true;
@@ -53,6 +100,19 @@ public class NewInputSystemControls : MonoBehaviour
     }
     public void PausePressed(InputAction.CallbackContext c)
     {
+        if (isTutorial)
+        {
+            if (c.control.device.ToString().Contains("Keyboard"))
+            {
+                KeyboardTutorial.SetActive(true);
+                ControllerTutorial.SetActive(false);
+            }
+            else
+            {
+                KeyboardTutorial.SetActive(false);
+                ControllerTutorial.SetActive(true);
+            }
+        }
         if (!c.performed) return;
         Debug.Log("imagine it paused");
     }
