@@ -32,10 +32,11 @@ public class PlayerStick : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        GameObject other = collision.GetComponent<Collider>().gameObject;
+        
 
         if (collision.GetComponent<Collider>().gameObject.tag == "pickup" && !collision.isTrigger)
         {
+            GameObject other = collision.GetComponent<Collider>().gameObject;
 
             //Debug.Log(name + other.name);
 
@@ -66,6 +67,21 @@ public class PlayerStick : MonoBehaviour
                 GameObject copy = Instantiate(other);
                 Destroy(copy.GetComponent<Rigidbody>());
 
+                //Finding the tile object the item is part of
+                GameObject p = other;
+                while (p.transform.parent != null)
+                {
+                    p = p.transform.parent.gameObject;
+                }
+                //remove the item on the katamari from the loading and unloading script
+                try
+                {
+                    p.GetComponentInChildren<LoadUnload>().rend.Remove(other.GetComponent<MeshRenderer>());
+                }
+                catch(Exception e)
+                {
+                    Debug.Log("Hopefully this is the Tutorial Level");
+                }
                 //if(m.size.x*m.transform.localScale.x> katamari.transform.lossyScale.x || m.size.y * m.transform.localScale.y > katamari.transform.lossyScale.x|| m.size.z * m.transform.localScale.z >  katamari.transform.lossyScale.x )
                 if(m.bounds.size.x> katamari.transform.lossyScale.x || m.bounds.size.y> katamari.transform.lossyScale.x|| m.bounds.size.z >  katamari.transform.lossyScale.x )
                 {
@@ -79,16 +95,33 @@ public class PlayerStick : MonoBehaviour
                     m.enabled = false;
                 }
 
-                if (other.gameObject.GetComponent<HumanAI>() != null)
+                if (other.gameObject.GetComponent<AI>() != null)
                 {
                     Destroy(other.gameObject.transform.Find("AISwitch").gameObject);
                 }
                 // hi this is judge I added this in to make the AI stop moving once you get them
                 other.tag = "sticky";
                 
-                Debug.Log(new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate);
-                katamari.transform.localScale += new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate/s.transform.localScale.x;
-                RadiusUIText.GetComponent<Text>().text = (System.Math.Round(katamari.transform.localScale.x,2) * 10)+" CM";
+                //Debug.Log(new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate);
+                katamari.transform.localScale += new Vector3(sizeofobject, sizeofobject, sizeofobject) * growrate;
+                float uisize = katamari.transform.localScale.x;
+                string label;
+                if (uisize > 100000)
+                {
+                    label = "KM";
+                    uisize %= 100000;
+                }
+                else if (uisize > 100)
+                {
+                    label = "M";
+                    uisize %= 100;
+                }
+                else
+                {
+                    label = "CM";
+                }
+                uisize = Mathf.Round(uisize*10)/10f;
+                RadiusUIText.GetComponent<Text>().text = uisize + " "+label;
                 
 
                 foreach (Transform child in UIPickup.transform)
@@ -115,9 +148,9 @@ public class PlayerStick : MonoBehaviour
                 // changed by judge 12/1 ... added this condition so small objects will stop being rendered at large sizes, and moved it down here in order to keep the object camera working
                 if(sizeofplayer * attachablemultiplier < 5 * sizeofobject)
                 {
-                    Debug.Log("pickup");
-                    Debug.Log(sizeofplayer);
-                    Debug.Log(sizeofobject);
+                    //Debug.Log("pickup");
+                    //Debug.Log(sizeofplayer);
+                    //Debug.Log(sizeofobject);
                     other.transform.position = transform.position + loc;
                     other.transform.parent = constellation.transform;
                 }
