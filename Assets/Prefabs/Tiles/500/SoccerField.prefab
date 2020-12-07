@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 812132209290863446}
   - component: {fileID: 812132209291929858}
   - component: {fileID: 812132209287653858}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GrassTile (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,18 +410,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 3350526288613248820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b2c1f36c7891044199a74bdbd35ad51, type: 3}
+  m_Script: {fileID: 11500000, guid: 01f94aeeb9ea7ca40b57fab4ea654e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 20
   change_direction_time: 2
   complete_turn_time: 1
-  t: 0.01
+  t: 0.001
   looking_distance: 10
   push_strength: 50
   mask:
     serializedVersion: 2
-    m_Bits: 8755
+    m_Bits: 12851
 --- !u!54 &4875773855088748139
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -534,18 +534,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 6390313336277589798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b2c1f36c7891044199a74bdbd35ad51, type: 3}
+  m_Script: {fileID: 11500000, guid: 01f94aeeb9ea7ca40b57fab4ea654e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 20
   change_direction_time: 2
   complete_turn_time: 1
-  t: 0.01
+  t: 0.001
   looking_distance: 10
   push_strength: 50
   mask:
     serializedVersion: 2
-    m_Bits: 8755
+    m_Bits: 12851
 --- !u!65 &2591160501736862311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 8229873928790167733}
   - component: {fileID: 695070676887463396}
   - component: {fileID: 6109210337516058811}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2171,7 +2171,7 @@ PrefabInstance:
     - target: {fileID: 80282091421608550, guid: 85c509ddf1c44704cab7094aa7cf2e35, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 04bfb557c8ab79141873e927e449efd2, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 80282091431123432, guid: 85c509ddf1c44704cab7094aa7cf2e35, type: 3}
       propertyPath: m_Name
       value: Jared
@@ -2943,7 +2943,7 @@ PrefabInstance:
     - target: {fileID: 80282091421608550, guid: 85c509ddf1c44704cab7094aa7cf2e35, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 04bfb557c8ab79141873e927e449efd2, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 80282091431123432, guid: 85c509ddf1c44704cab7094aa7cf2e35, type: 3}
       propertyPath: m_Name
       value: Sawyer
