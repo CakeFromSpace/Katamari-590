@@ -89,5 +89,6 @@ public class HomingMissile : MonoBehaviour
         Vector3 push = Vector3.Normalize(player.transform.position - transform.position) * 50000;
         push.y = 0;
         player.gameObject.GetComponent<Rigidbody>().AddForce(push);
+        player.gameObject.GetComponent<PlayerStick>().RemoveObjects();
     }
 }

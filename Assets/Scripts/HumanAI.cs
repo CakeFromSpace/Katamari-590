@@ -125,6 +125,7 @@ public class HumanAI : AI
             Vector3 push = Vector3.Normalize(player.transform.position - transform.position) * push_strength * 10;
             push.y = 0;
             player.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce(push);
+            player.transform.parent.gameObject.GetComponent<PlayerStick>().RemoveObjects();
             if(sound != null)
             {
                 sound.Play();

@@ -1042,6 +1042,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3381653485255252437}
     m_Modifications:
+    - target: {fileID: 2463622087309263765, guid: abe2d68995db81c41aa722b9904fbb6e, type: 3}
+      propertyPath: push_strength
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463622087309263765, guid: abe2d68995db81c41aa722b9904fbb6e, type: 3}
+      propertyPath: looking_distance
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2464623438639239911, guid: abe2d68995db81c41aa722b9904fbb6e, type: 3}
       propertyPath: m_Name
       value: High-pitch
@@ -12504,6 +12512,10 @@ PrefabInstance:
     - target: {fileID: 116584, guid: 96b62898125915e4892dc72bd9f4e420, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 116584, guid: 96b62898125915e4892dc72bd9f4e420, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 478916, guid: 96b62898125915e4892dc72bd9f4e420, type: 3}
       propertyPath: m_LocalPosition.x
