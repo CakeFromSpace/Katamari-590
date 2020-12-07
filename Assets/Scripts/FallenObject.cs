@@ -15,7 +15,14 @@ public class FallenObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if((Vector3.zero - transform.position).magnitude > 40000)
+        {
+            foreach(Transform child in transform)
+            {
+                Destroy(child);
+            }
+            Destroy(this);
+        }
     }
 
     void OnCollisionEnter(Collision other)

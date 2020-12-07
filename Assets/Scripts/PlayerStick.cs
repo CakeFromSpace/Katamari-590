@@ -16,8 +16,11 @@ public class PlayerStick : MonoBehaviour
     public Text PickupUIText;
     public GameObject UIPickup;
     public float attachablemultiplier;
+    public float remove_time;
     private Rigidbody rb;
     private float vel_threshold;
+    private float remove_timer;
+    private bool recently_removed;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,9 @@ public class PlayerStick : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         vel_threshold = GetComponent<Movement>().maxvelocity / 2;
         RadiusUIText.GetComponent<Text>().text = (System.Math.Round(katamari.transform.localScale.x,2) * 10)+" CM";
+        remove_time = 1;
+        remove_timer = 0;
+        recently_removed = false;
     }
 
 
@@ -33,7 +39,15 @@ public class PlayerStick : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         
+        if(recently_removed)
+        {
+            remove_timer += Time.deltaTime;
+        }
 
+        if(remove_timer > remove_time)
+        {
+            recently_removed = false;
+        }
         if (collision.GetComponent<Collider>().gameObject.tag == "pickup" && !collision.isTrigger)
         {
             GameObject other = collision.GetComponent<Collider>().gameObject;
@@ -170,53 +184,63 @@ public class PlayerStick : MonoBehaviour
 
     public void RemoveObjects()
     {
-        // variables to store total radius reduced and number of items to remove
-        int i = 10;
-        Vector3 total_removed = Vector3.zero;
-        // for each child of the picked up objects, set parent to null, increment total removed size, count down to 0
-        foreach(Transform child in constellation.transform)
+        if(!recently_removed)
         {
-            if(i < 0)
+            // variables to store total radius reduced and number of items to remove
+            Vector3 total_removed = Vector3.zero;
+            int n_objects_to_remove = constellation.transform.GetChildCount();
+
+            if(n_objects_to_remove > 10)
             {
-                break;
+                n_objects_to_remove = 10;
+            } 
+            // for each child of the picked up objects, set parent to null, increment total removed size, count down to 0
+            for(int i = constellation.transform.GetChildCount() - n_objects_to_remove; i < constellation.transform.GetChildCount(); i++)
+            { 
+                Transform child = constellation.transform.GetChild(i);
+                if(i < 0)
+                {
+                    break;
+                }
+                
+                child.parent = null;
+                child.gameObject.layer = 0;
+                child.gameObject.AddComponent<Rigidbody>();
+                child.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
+                child.gameObject.GetComponent<Collider>().enabled = true;
+                child.gameObject.layer = 14;
+                
+                Vector3 launchDirection = (child.position - katamari.transform.position);
+                launchDirection.y = 0;
+                launchDirection = Vector3.RotateTowards(launchDirection, Vector3.up, Mathf.PI / 4, 10000);
+                launchDirection.Normalize();
+
+                GameObject ps = Instantiate(particles[UnityEngine.Random.Range(0, particles.Count)]);
+                
+                ps.transform.forward = launchDirection;
+                ps.transform.parent = child.transform;
+                ps.transform.localPosition = new Vector3(0, 0, 0);
+                ps.transform.localScale = new Vector3(2, 2, 2);
+
+
+                rb = child.gameObject.GetComponent<Rigidbody>();
+
+                rb.AddForce(launchDirection * 200 * katamari.transform.localScale.x);
+                
+                SphereCollider s = katamari.gameObject.GetComponent<SphereCollider>();
+                Collider c = child.gameObject.GetComponentInChildren<Collider>();
+                
+                float sizeofobject = c.bounds.size.magnitude;
+                total_removed += new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate/s.transform.localScale.x;
+                
+                child.gameObject.AddComponent<FallenObject>();
+                i--;
             }
-            
-            child.parent = null;
-            child.gameObject.layer = 0;
-            child.gameObject.AddComponent<Rigidbody>();
-            child.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
-            child.gameObject.GetComponent<Collider>().enabled = true;
-            child.gameObject.layer = 14;
-            
-            Vector3 launchDirection = (child.position - katamari.transform.position);
-            launchDirection.y = 0;
-            launchDirection = Vector3.RotateTowards(launchDirection, Vector3.up, Mathf.PI / 4, 10000);
-            launchDirection.Normalize();
 
-            GameObject ps = Instantiate(particles[UnityEngine.Random.Range(0, particles.Count)]);
+            // reset size
+            katamari.transform.localScale -= total_removed;
+            RadiusUIText.GetComponent<Text>().text = (System.Math.Round(katamari.transform.localScale.x,2) * 10)+" CM";
             
-            ps.transform.forward = launchDirection;
-            ps.transform.parent = child.transform;
-            ps.transform.localPosition = new Vector3(0, 0, 0);
-            ps.transform.localScale = new Vector3(2, 2, 2);
-
-
-            rb = child.gameObject.GetComponent<Rigidbody>();
-
-            rb.AddForce(launchDirection * 200 * katamari.transform.localScale.x);
-            
-            SphereCollider s = katamari.gameObject.GetComponent<SphereCollider>();
-            Collider c = child.gameObject.GetComponentInChildren<Collider>();
-            
-            float sizeofobject = c.bounds.size.magnitude;
-            total_removed += new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate/s.transform.localScale.x;
-            
-            child.gameObject.AddComponent<FallenObject>();
-            i--;
         }
-
-        // reset size
-        katamari.transform.localScale -= total_removed;
-        RadiusUIText.GetComponent<Text>().text = (System.Math.Round(katamari.transform.localScale.x,2) * 10)+" CM";
-    }
+    }  
 }
