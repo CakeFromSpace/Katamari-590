@@ -21,6 +21,8 @@ public class NewInputSystemControls : MonoBehaviour
     float spintar;
     float lerp;
 
+    public GameObject pausemenu;
+
     public bool isTutorial;
     public GameObject ControllerTutorial;
     public GameObject KeyboardTutorial;
@@ -114,7 +116,8 @@ public class NewInputSystemControls : MonoBehaviour
             }
         }
         if (!c.performed) return;
-        Debug.Log("imagine it paused");
+        Time.timeScale = Time.timeScale == 1 ? 0 : 1;
+        pausemenu.SetActive(!pausemenu.activeSelf);
     }
     private void Start()
     {
