@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Written by Joe
+//Moves Pickup UI to correct location
 public class MovePickupToCorrectLocation : MonoBehaviour
 {
     

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Author Joe
 public class Rotator : MonoBehaviour
 {
     public float rotatespeed;

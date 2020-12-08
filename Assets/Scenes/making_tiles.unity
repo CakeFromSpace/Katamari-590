@@ -1305,6 +1305,8 @@ MonoBehaviour:
   length: 20
   size_0_prefabs:
   - {fileID: 1190817896268380291, guid: fb69d99fee832a04392b31af18caf77b, type: 3}
+  - {fileID: 8843617560603171575, guid: da118e194069714449dca74f60fee8db, type: 3}
+  - {fileID: 4774587181933345567, guid: 7bee0e3111b44424283312923a95355b, type: 3}
   size_1_prefabs:
   - {fileID: 1190817896268380291, guid: 06d517900edca274c84bb4ccdfa41ff2, type: 3}
   - {fileID: 6175427171809114023, guid: d7401ff6104a26344bb432b181ef24f5, type: 3}

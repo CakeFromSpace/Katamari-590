@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+//Written by Joe
 public class NewInputSystemControls : MonoBehaviour
 {
     PlayerControls controls;
