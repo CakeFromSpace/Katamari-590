@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+//Debankita
 public class mainmenu : MonoBehaviour
 {
     public GameObject player;
     public GameObject menu;
-//player is the activate
+    public GameObject volume;
+    public GameObject timeactive;
+    //player is the activate
     public bool activate;
   
     public void Play()
@@ -16,7 +18,7 @@ public class mainmenu : MonoBehaviour
         {
             player.SetActive(true);
             menu.SetActive(false);
-            
+            timeactive.SetActive(true);
         }
         
     }
@@ -25,6 +27,17 @@ public class mainmenu : MonoBehaviour
     {
 
         SceneManager.LoadScene("Tutorial");
+    }
+    public void Settings()
+    {
+        volume.SetActive(true);
+        menu.SetActive(false);
+
+    }
+    public void Back()
+    {
+        menu.SetActive(true);
+        volume.SetActive(false);
     }
     
     
