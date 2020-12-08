@@ -201,8 +201,8 @@ public class LevelDesigner : MonoBehaviour
 
         foreach(int[] pos in unassigned)
         {
-            Debug.Log(pos[0]);
-            Debug.Log(pos[1]);
+            //Debug.Log(pos[0]);
+            //Debug.Log(pos[1]);
 
             
             Shuffle<int>(ref types);
@@ -255,7 +255,7 @@ public class LevelDesigner : MonoBehaviour
             {
                 if(level[i, j] != -1)
                 {
-                    Debug.Log(level[i,j]);
+                    //Debug.Log(level[i,j]);
                     GameObject current_tile = Instantiate(tiles[current_size][level[i, j]], new Vector3(0, 0, 0), Quaternion.identity);
                     current_tile.transform.position = new Vector3(bounds.min[0] + level_offset + tile_size * (i + 0.5f), 0, bounds.min[2] + level_offset + tile_size * (j + 0.5f));
                     current_tile.transform.parent = this.transform;

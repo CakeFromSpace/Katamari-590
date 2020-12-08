@@ -124,18 +124,39 @@ public class NewInputSystemControls : MonoBehaviour
 
     public void DebugPress(InputAction.CallbackContext c)
     {
+        if (!c.performed) return;
 
-            int i = 0;
-            foreach (GameObject g in GameObject.FindGameObjectsWithTag("pickup"))
+        CullSmall();
+    }
+
+
+    private void CullSmall()
+    {
+        int i = 0;
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("pickup"))
+        {
+            if (g.transform.lossyScale.x < katamari.transform.lossyScale.x * .01)
             {
-                if (g.transform.lossyScale.x < katamari.transform.lossyScale.x * .01)
+                Destroy(g);
+                i += 1;
+            }
+        }
+        Debug.Log("Culled " + i + " objects");
+    }
+
+    void DisableLoading()
+    {
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("loader"))
+        {
+            foreach(Renderer r in g.GetComponent<LoadUnload>().rend)
+            {
+                if (r != null)
                 {
-                    Destroy(g);
-                    i += 1;
+                    r.enabled = true;
                 }
             }
-            Debug.Log("Culled " + i + " objects");
-
+            Destroy(g);
+        }
     }
     private void Start()
     {
