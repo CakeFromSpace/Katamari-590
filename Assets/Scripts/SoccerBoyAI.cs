@@ -137,7 +137,7 @@ public class SoccerBoyAI : AI
 
     void Chase()
     {
-        Debug.Log("Chase");
+        //Debug.Log("Chase");
         // get direction of player
         Vector3 direction_of_player = player.transform.position - transform.position;
         if(direction_of_player.magnitude < looking_distance * 2)
@@ -161,7 +161,7 @@ public class SoccerBoyAI : AI
 
     void Flee()
     {
-        Debug.Log("Flee");
+        //Debug.Log("Flee");
         // get direction of player
         Vector3 direction_of_player = transform.position - player.transform.position;
         direction_of_player = Vector3.Normalize(new Vector3(direction_of_player.x, 0, direction_of_player.z));
