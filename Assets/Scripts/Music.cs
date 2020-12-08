@@ -86,7 +86,7 @@ public class Music : MonoBehaviour
         {
             if(playing[i] == true)
             {
-                StartCoroutine(Fade(tracks[i], 0.2f, vol));
+                StartCoroutine(Fade(tracks[i], 0.01f, vol));
             }
         }
     }
