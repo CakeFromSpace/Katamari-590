@@ -19,7 +19,7 @@ public class FallenObject : MonoBehaviour
         {
             foreach(Transform child in transform)
             {
-                Destroy(child);
+                Destroy(child.gameObject);
             }
             Destroy(this);
         }

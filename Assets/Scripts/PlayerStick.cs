@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-//Author Joseph Yunis
+//Author Joe w/ several edits by Judge
 public class PlayerStick : MonoBehaviour
 {
     public List<GameObject> particles;
@@ -94,13 +94,13 @@ public class PlayerStick : MonoBehaviour
                 }
                 catch(Exception e)
                 {
-                    Debug.Log("Hopefully this is the Tutorial Level");
+                    Debug.Log("This object is not associated with a tile. Did you forget to add the script to the tile?");
                 }
                 //if(m.size.x*m.transform.localScale.x> katamari.transform.lossyScale.x || m.size.y * m.transform.localScale.y > katamari.transform.lossyScale.x|| m.size.z * m.transform.localScale.z >  katamari.transform.lossyScale.x )
                 if(m.bounds.size.x> katamari.transform.lossyScale.x || m.bounds.size.y> katamari.transform.lossyScale.x|| m.bounds.size.z >  katamari.transform.lossyScale.x )
                 {
                     other.layer = 11;
-                    
+                    m.enabled = false;
                     //get rid of collider so that rigidbody doesnt get lopsided
                 }
                 else
@@ -204,7 +204,6 @@ public class PlayerStick : MonoBehaviour
                 }
                 
                 child.parent = null;
-                child.gameObject.layer = 0;
                 child.gameObject.AddComponent<Rigidbody>();
                 child.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
                 child.gameObject.GetComponent<Collider>().enabled = true;

@@ -103,6 +103,7 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/LeanTween/Examples/Prefabs/AvatarEventsCS.prefab
   m_GameObject: {fileID: 100000}
   serializedVersion: 2
   m_Mass: 1
@@ -115,13 +116,50 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!114 &11400000
 MonoBehaviour:
+=======
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7100654712207616114}
+  - component: {fileID: -4206387048261108591}
+  m_Layer: 9
+  m_Name: 1000template 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7100654712207616114
+Transform:
+>>>>>>> refs/remotes/origin/main:Assets/Prefabs/Tiles/250/1000template 1.prefab
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/LeanTween/Examples/Prefabs/AvatarEventsCS.prefab
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd679d4fbbd8d475ba7187561370c3aa, type: 3}
+=======
+  m_GameObject: {fileID: 1190817896268380291}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children:
+  - {fileID: 812132209289564844}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4206387048261108591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190817896268380291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8b0260f1a374745bb2f86c3b1ec91c, type: 3}
+>>>>>>> refs/remotes/origin/main:Assets/Prefabs/Tiles/250/1000template 1.prefab
   m_Name: 
   m_EditorClassIdentifier: 

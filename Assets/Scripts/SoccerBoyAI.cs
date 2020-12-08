@@ -46,6 +46,10 @@ public class SoccerBoyAI : AI
         
         if(gameObject.tag != "sticky")
         {
+            if(soccer_ball == null)
+            {
+                chase_ball = false;
+            }
             
             // rays
             Ray f = new Ray (transform.position + transform.forward * 1.5f + y_offset, transform.forward);
@@ -203,7 +207,7 @@ public class SoccerBoyAI : AI
                 chase = true;
             }
         }
-        else if(!chase_ball && other.gameObject.name == "futebol!!!!")
+        else if(!chase_ball && other.gameObject.name == "thefutebol!!!!")
         {
             soccer_ball = other.gameObject;
             chase_ball = true;

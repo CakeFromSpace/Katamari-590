@@ -20,6 +20,9 @@ public class AISwitch : MonoBehaviour
 
         anim = GetComponentInParent<Animator>();
         if(anim!=null)anim.enabled = false;
+
+        // added by judge, prevent AI from detecting this object
+        gameObject.layer = 2;
     }
 
     private void OnTriggerEnter(Collider other)
