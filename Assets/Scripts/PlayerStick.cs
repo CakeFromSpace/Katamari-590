@@ -188,14 +188,14 @@ public class PlayerStick : MonoBehaviour
         {
             // variables to store total radius reduced and number of items to remove
             Vector3 total_removed = Vector3.zero;
-            int n_objects_to_remove = constellation.transform.GetChildCount();
+            int n_objects_to_remove = constellation.transform.childCount;
 
             if(n_objects_to_remove > 10)
             {
                 n_objects_to_remove = 10;
             } 
             // for each child of the picked up objects, set parent to null, increment total removed size, count down to 0
-            for(int i = constellation.transform.GetChildCount() - n_objects_to_remove; i < constellation.transform.GetChildCount(); i++)
+            for(int i = constellation.transform.childCount - n_objects_to_remove; i < constellation.transform.childCount; i++)
             { 
                 Transform child = constellation.transform.GetChild(i);
                 if(i < 0)
@@ -204,7 +204,6 @@ public class PlayerStick : MonoBehaviour
                 }
                 
                 child.parent = null;
-                child.gameObject.layer = 0;
                 child.gameObject.AddComponent<Rigidbody>();
                 child.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
                 child.gameObject.GetComponent<Collider>().enabled = true;

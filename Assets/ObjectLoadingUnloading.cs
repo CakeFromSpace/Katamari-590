@@ -7,6 +7,7 @@ public class ObjectLoadingUnloading : MonoBehaviour
     private void Awake()
     {
         GameObject s = new GameObject("Loader");
+        s.layer = 2;
         s.AddComponent<LoadUnload>();
         s.transform.parent = transform;
     }

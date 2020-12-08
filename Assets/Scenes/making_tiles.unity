@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 265622681}
   - component: {fileID: 265622680}
   - component: {fileID: 265622679}
+  - component: {fileID: 265622685}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -571,6 +572,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   katamari: {fileID: 56511945}
+--- !u!82 &265622685
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265622678}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e8651d4c087aa67429743440a40260ec, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &428648653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -682,6 +779,10 @@ PrefabInstance:
       propertyPath: particles.Array.data[2]
       value: 
       objectReference: {fileID: 938237733805251262, guid: fe254c6195b12b64f91a14ecfed33f76, type: 3}
+    - target: {fileID: 4425006128879335535, guid: 0b4bbbbca4f6aea4893e5fa48089bc78, type: 3}
+      propertyPath: m_Mass
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4425006129168421779, guid: 0b4bbbbca4f6aea4893e5fa48089bc78, type: 3}
       propertyPath: m_LocalScale.x
       value: 99
@@ -1055,9 +1156,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   katamari: {fileID: 56511945}
   length: 20
-  current_size: 2
-  size_0_prefabs: []
-  size_1_prefabs: []
+  size_0_prefabs:
+  - {fileID: 1190817896268380291, guid: fb69d99fee832a04392b31af18caf77b, type: 3}
+  size_1_prefabs:
+  - {fileID: 1190817896268380291, guid: 06d517900edca274c84bb4ccdfa41ff2, type: 3}
+  - {fileID: 6175427171809114023, guid: d7401ff6104a26344bb432b181ef24f5, type: 3}
   size_2_prefabs:
   - {fileID: 1190817896268380291, guid: f800ea85a9191e141bd051ba0d8581ef, type: 3}
   - {fileID: 1190817896268380291, guid: 8cef77c36657bc44b991f28154f07b63, type: 3}
@@ -1078,6 +1181,10 @@ MonoBehaviour:
   - {fileID: 1190817896268380291, guid: 3c27e242f0fd8494eacc730c1791546e, type: 3}
   - {fileID: 1190817896268380291, guid: e5407f08148edc645831bdb7f3fb4504, type: 3}
   - {fileID: 1190817896268380291, guid: ad7f9db5b814c9541b15424635f83eb1, type: 3}
+  - {fileID: 1190817896268380291, guid: cbb47a59a9bd8f244b8b37f25b7452a6, type: 3}
+  - {fileID: 1190817896268380291, guid: 7f38975e48d5f1045936cfc48232ea85, type: 3}
+  - {fileID: 1190817896268380291, guid: 1e940f5b33639e54db11ce0f6ce31fed, type: 3}
+  - {fileID: 1190817896268380291, guid: 75517a67d44cfcc4287bbff1ae9cabd0, type: 3}
   cullmultiplier: 0.01
 --- !u!4 &1081131603
 Transform:
