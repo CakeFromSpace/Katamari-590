@@ -6,14 +6,20 @@ using System;
 public class Music : MonoBehaviour
 {
     // code by Judge Russell 11 28 2020
+    public float volume;
     public GameObject katamari;
     private AudioSource[] tracks;
+    private bool[] playing;
     private float old_size;
+
     // Start is called before the first frame update
     void Start()
     {
+        volume = 1.0f;
         old_size = 0.0f;
         tracks = GetComponents<AudioSource>();
+        playing = new bool[5];
+        playing[0] = true;
     }
 
     // Update is called once per frame
@@ -22,22 +28,27 @@ public class Music : MonoBehaviour
         if(katamari.transform.localScale.x >= 1 && old_size < 1)
         {
             FadeIn(1);
+            playing[1] = true;
         }
         if(katamari.transform.localScale.x >= 10 && old_size < 10)
         {
             FadeIn(2);
+            playing[2] = true;
         }
         if(katamari.transform.localScale.x >= 25 && old_size < 25)
         {
             FadeIn(3);
+            playing[3] = true;
         }
         if(katamari.transform.localScale.x >= 100 && old_size < 100)
         {
             for(int i = 0; i < 4; i++)
             {
                 FadeOut(i);
+                playing[i] = false;
             }
             FadeIn(4);
+            playing[4] = true;
         }
     
         old_size = katamari.transform.localScale.x;
@@ -66,4 +77,19 @@ public class Music : MonoBehaviour
         }
         yield break;
     }
+
+    public void ChangeVolume(float vol)
+    {
+        volume = vol;
+
+        for(int i = 0; i < playing.Length; i++)
+        {
+            if(playing[i] == true)
+            {
+                StartCoroutine(Fade(tracks[i], 0.2f, vol));
+            }
+        }
+    }
+
+
 }

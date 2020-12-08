@@ -22,6 +22,11 @@ public class LevelDesigner : MonoBehaviour
     private GameObject[][] tiles;
     private Bounds bounds;
 
+    private bool[,] size_0_attr;
+    private bool[,] size_1_attr;
+    private bool[,] size_2_attr;
+    private bool[,] size_3_attr;
+    private bool[][,] attrs;
     private List<int> types;
 
     private int[,] level;
@@ -38,6 +43,23 @@ public class LevelDesigner : MonoBehaviour
 
     void Start()
     {
+        size_3_attr = new bool[,] {{true, false, true},
+                        {true, false, true},
+                        {true, false, true},
+                        {true, false, true},
+                        {true, false, false},
+                        {true, false, true},
+                        {false, false, false},
+                        {false, false, false},
+                        {false, false, false},
+                        {false, true, false},
+                        {false, true, false},
+                        {true, true, true},
+                        {true, true, true},
+                        {true, true, true}};
+        
+        attrs = new bool[][,] {size_0_attr, size_1_attr, size_2_attr, size_3_attr};
+
         current_size = 0;
         // get initial katamari size
         katamari_size = katamari.transform.localScale.x;
@@ -98,45 +120,44 @@ public class LevelDesigner : MonoBehaviour
         }
     }
 
+    bool ForestNextToDesert(int[,] grid, int[] pos)
+    {
+        int desert_count = 0;
+        if(attrs[current_size][grid[pos[0], pos[1]], 1] == false)
+        {
+            int[][] positions;
+            positions = new int[][] { new int[]{ pos[0] - 1, pos[1] - 1 }, new int[]{ pos[0] - 1, pos[1] }, new int[]{ pos[0] - 1, pos[1] + 1 }, new int[]{ pos[0], pos[1] - 1 }, new int[]{ pos[0], pos[1] + 1 }, new int[]{ pos[0] + 1, pos[1] - 1 }, new int[]{ pos[0] + 1, pos[1]}, new int[]{ pos[0] + 1, pos[1] + 1 } };
+        
+            foreach(int[] p in positions)
+            {
+                Debug.Log(length);
+                Debug.Log(p[0]);
+                Debug.Log(p[1]);
+                if(p[0] <= -1 || p[0] >= length || p[1] <= -1 || p[1] >= length || grid[p[0], p[1]] == -1 )
+                {
+                    continue;
+                } 
+                else
+                {
+                    if(attrs[current_size][grid[p[0], p[1]], 1] == true)
+                    {
+                        desert_count++;
+                    }   
+                }
+            }
+
+        }
+        return desert_count > 2;
+    }
+
     // check tile consistency
     bool CheckConsistency(int[,] grid, int[] pos, int tile_type)
     {
+        int old_assn = grid[pos[0], pos[1]];
         grid[pos[0], pos[1]] = tile_type;
-        
-        return true;
-    }
+        bool consistent = !(ForestNextToDesert(grid, pos));
 
-    // do backtracking search to create level
-    bool BackTrackingSearch(int[,] grid, List<int[]> unassigned)
-    {   
-        // when all have been assigned return true
-        if(unassigned.Count < 1)
-        {
-            return true;
-        }
-
-        // select next index on grid to assigned
-        int next_index = UnityEngine.Random.Range(0, unassigned.Count);
-        int[] next_variable = unassigned[next_index];
-        unassigned.RemoveAt(next_index);
-        
-        // shuffle the types
-        Shuffle<int>(ref types);
-
-        // for each value in types, check the consistency, if consistent, assigned
-        foreach(int i in types)
-        {
-            bool consistent = CheckConsistency(level, next_variable, i);
-
-            if(consistent)
-            {
-                level[next_variable[0], next_variable[1]] = i;
-                break;
-            }
-        }
-
-        BackTrackingSearch(level, unassigned);
-        return false;
+        return consistent;
     }
 
     void GenerateLevel()
@@ -163,7 +184,51 @@ public class LevelDesigner : MonoBehaviour
             types.Add(i);
         } 
 
-        BackTrackingSearch(level, unassigned);
+        foreach(int[] pos in unassigned)
+        {
+            Debug.Log(pos[0]);
+            Debug.Log(pos[1]);
+
+            
+            Shuffle<int>(ref types);
+
+            if(current_size == 3)
+            {
+                if(pos[0] >= length / 2 && pos[1] >= length / 2)
+                {
+                // shuffle the types
+                    // for each value in types, check the consistency, if consistent, assigned
+                    for(int i = 0; i < types.Count; i++)
+                    {
+                        if(attrs[current_size][types[i], 1])
+                        {
+                            level[pos[0], pos[1]] = types[i];
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    
+                    for(int i = 0; i < types.Count; i++)
+                    {
+                        if(!attrs[current_size][types[i], 1])
+                        {
+                            level[pos[0], pos[1]] = types[i];
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for(int i = 0; i < types.Count; i++)
+                {
+                    level[pos[0], pos[1]] = types[i];
+                    break;
+                }
+            }
+        }
     }
 
     void DrawLevel()
@@ -175,6 +240,7 @@ public class LevelDesigner : MonoBehaviour
             {
                 if(level[i, j] != -1)
                 {
+                    Debug.Log(level[i,j]);
                     GameObject current_tile = Instantiate(tiles[current_size][level[i, j]], new Vector3(0, 0, 0), Quaternion.identity);
                     current_tile.transform.position = new Vector3(bounds.min[0] + level_offset + tile_size * (i + 0.5f), 0, bounds.min[2] + level_offset + tile_size * (j + 0.5f));
                 } 

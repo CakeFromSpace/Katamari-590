@@ -232,6 +232,8 @@ public class PlayerStick : MonoBehaviour
                 float sizeofobject = c.bounds.size.magnitude;
                 total_removed += new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate/s.transform.localScale.x;
                 
+                AI ai_script = child.GetComponent<AI>();
+                Destroy(ai_script);
                 child.gameObject.AddComponent<FallenObject>();
                 i--;
             }
