@@ -1299,11 +1299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7611985472357275231, guid: 76c5648738b5dda48a176e4233dadd56, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7611985472357275231, guid: 76c5648738b5dda48a176e4233dadd56, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7611985472357275231, guid: 76c5648738b5dda48a176e4233dadd56, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1311,7 +1311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7611985472357275231, guid: 76c5648738b5dda48a176e4233dadd56, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.97733694
+      value: 0.9746614
       objectReference: {fileID: 0}
     - target: {fileID: 7611985473161174533, guid: 76c5648738b5dda48a176e4233dadd56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2263,7 +2263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 1141796922}
   lostmessage: {fileID: 2026555692}
-  t: 15
+  t: 60
 --- !u!114 &1099096385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2927,10 +2927,10 @@ RectTransform:
   m_Father: {fileID: 1269106197}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 323, y: 228}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0.80731463, y: 0.9196614}
+  m_AnchorMax: {x: 0.9533708, y: 0.9706774}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1767753046
 MonoBehaviour:
@@ -2956,10 +2956,10 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 38b125086c96dff4b8d10d3b473e962c, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

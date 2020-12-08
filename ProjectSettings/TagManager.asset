@@ -6,6 +6,7 @@ TagManager:
   tags:
   - pickup
   - sticky
+  - loader
   layers:
   - Default
   - TransparentFX
