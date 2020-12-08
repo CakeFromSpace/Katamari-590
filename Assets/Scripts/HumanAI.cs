@@ -67,10 +67,10 @@ public class HumanAI : AI
             }
             if(Physics.Raycast(l, out hit, looking_distance, mask, QueryTriggerInteraction.Ignore) || Physics.Raycast(r, out hit, looking_distance, mask, QueryTriggerInteraction.Ignore) || Physics.Raycast(f, out hit, looking_distance, mask, QueryTriggerInteraction.Ignore))
             {
-                Debug.DrawLine(transform.position + transform.forward * 1.5f + y_offset, transform.position + transform.forward * 1.5f + y_offset + transform.forward * looking_distance, Color.white, 1f);
-                Debug.DrawLine(transform.position + transform.forward * 1.5f + transform.right * 3 + y_offset, transform.position + transform.forward * 1.5f + transform.right * 3 + y_offset + transform.forward * looking_distance, Color.red, 1f);
-                Debug.DrawLine(transform.position + transform.forward * 1.5f - transform.right * 3 + y_offset, transform.position + transform.forward * 1.5f - transform.right * 3 + y_offset+ transform.forward * looking_distance, Color.blue, 1f);
-                Debug.DrawLine(transform.position + y_offset, hit.transform.position, Color.white, 1f);
+                //Debug.DrawLine(transform.position + transform.forward * 1.5f + y_offset, transform.position + transform.forward * 1.5f + y_offset + transform.forward * looking_distance, Color.white, 1f);
+                //Debug.DrawLine(transform.position + transform.forward * 1.5f + transform.right * 3 + y_offset, transform.position + transform.forward * 1.5f + transform.right * 3 + y_offset + transform.forward * looking_distance, Color.red, 1f);
+                //Debug.DrawLine(transform.position + transform.forward * 1.5f - transform.right * 3 + y_offset, transform.position + transform.forward * 1.5f - transform.right * 3 + y_offset+ transform.forward * looking_distance, Color.blue, 1f);
+                //Debug.DrawLine(transform.position + y_offset, hit.transform.position, Color.white, 1f);
                 direction_timer = change_direction_time;
                 AvoidObstacle(hit);
             }

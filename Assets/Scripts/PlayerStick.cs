@@ -94,7 +94,7 @@ public class PlayerStick : MonoBehaviour
                 }
                 catch(Exception e)
                 {
-                    Debug.Log("This object is not associated with a tile. Did you forget to add the script to the tile?");
+                    Debug.Log("Ignore");
                 }
                 //if(m.size.x*m.transform.localScale.x> katamari.transform.lossyScale.x || m.size.y * m.transform.localScale.y > katamari.transform.lossyScale.x|| m.size.z * m.transform.localScale.z >  katamari.transform.lossyScale.x )
                 if(m.bounds.size.x> katamari.transform.lossyScale.x || m.bounds.size.y> katamari.transform.lossyScale.x|| m.bounds.size.z >  katamari.transform.lossyScale.x )
@@ -117,13 +117,13 @@ public class PlayerStick : MonoBehaviour
                 other.tag = "sticky";
                 
                 //Debug.Log(new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate);
-                katamari.transform.localScale += new Vector3(sizeofobject, sizeofobject, sizeofobject) * growrate;
-                float uisize = katamari.transform.localScale.x;
+                katamari.transform.localScale += new Vector3(sizeofobject, sizeofobject, sizeofobject) * growrate / s.transform.localScale.x;
+                float uisize = katamari.transform.localScale.x*10;
                 string label;
-                if (uisize > 100000)
+                if (uisize > 1000000)
                 {
                     label = "KM";
-                    uisize %= 100000;
+                    uisize %= 1000000;
                 }
                 else if (uisize > 100)
                 {
@@ -157,6 +157,10 @@ public class PlayerStick : MonoBehaviour
                     copy.GetComponent<AI>().enabled = false;
                 }
                 copy.layer = 13;
+                foreach(Transform t in copy.GetComponentsInChildren<Transform>())
+                {
+                    t.gameObject.layer = 13;
+                }
                 PickupUIText.GetComponent<Text>().text = other.name;
                 
                 // changed by judge 12/1 ... added this condition so small objects will stop being rendered at large sizes, and moved it down here in order to keep the object camera working
