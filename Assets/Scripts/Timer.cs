@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     
     public GameObject timer;
     public GameObject lostmessage;
+    public GameObject player;
     public int t;
     // Start is called before the first frame update
     void Start()
@@ -20,8 +21,10 @@ public class Timer : MonoBehaviour
     {
         LeanTween.scaleX(timer, 1, t).setOnComplete(LostMessage);
     }
+    
     void LostMessage()
     {
+        player.SetActive(false);
         lostmessage.SetActive(true);
         
     }
