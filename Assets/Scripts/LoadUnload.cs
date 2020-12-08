@@ -28,7 +28,10 @@ public class LoadUnload : MonoBehaviour
         {
             foreach (Renderer r in rend)
             {
-                r.enabled = true ;
+                if(r != null)
+                {
+                    r.enabled = true;
+                }
             }
         }
     }
@@ -38,7 +41,10 @@ public class LoadUnload : MonoBehaviour
         {
             foreach (Renderer r in rend)
             {
-                r.enabled = false;
+                if(r != null)
+                {
+                    r.enabled = false;
+                }
             }
         }
     }

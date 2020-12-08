@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+// mostly written by judge russell
 
+// our level is made out of rings of tiles of different sizes, growing outwards from the center
+// it's easier just to see the level for yourself than to explain,
+// but i should mention the concept so all of this tile-size/grid-size stuff makes sense
 public class LevelDesigner : MonoBehaviour
 {
     public GameObject katamari;
     public int length;
-    public int current_size;
-
 
     public GameObject[] size_0_prefabs;
     public GameObject[] size_1_prefabs;
@@ -23,100 +25,63 @@ public class LevelDesigner : MonoBehaviour
     private List<int> types;
 
     private int[,] level;
-    private bool[] generated;
 
     private float katamari_size;   
     private float grid_actual_size;
     private float tile_size;
     private float level_offset;
 
+
+    private int current_size;
+
     public float cullmultiplier; //how much smaller than the katamari can the object be before it gets destroyed
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        current_size = 0;
+        // get initial katamari size
         katamari_size = katamari.transform.localScale.x;
-        bounds = GetComponent<Collider>().bounds; 
-        grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
-        tile_size = grid_actual_size / length;
-        level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * length / 2;
-        level = new int[length, length];
-        generated = new bool[4];
 
-        for(int i = 0; i<length; i++)
+        // calculate initial size grid's length and tile size
+        bounds = GetComponent<Collider>().bounds; 
+
+        // tiles stores all of the tile prefabs of all 4 sizes
+        tiles = new GameObject[][] {size_0_prefabs, size_1_prefabs, size_2_prefabs, size_3_prefabs};
+
+        // types is a list tile types represented by an integer
+    
+
+        for(int i = 0; i < 4; i++)
         {
+            level = new int[length, length];
+            // default value of -1 (no tile)
             for(int j = 0; j<length; j++)
             {
-                level[i, j] = -1;
-            }    
-        }
-
-        for(int i = 0; i < generated.Length; i++)
-        {
-            if(i <= current_size)
-            {
-                generated[i] = true;
+                for(int k = 0; k<length; k++)
+                {
+                    level[j, k] = -1;
+                }    
             }
-            else
-            {
-                generated[i] = false;
-            }
-        }
 
-        tiles = new GameObject[][] {size_0_prefabs, size_1_prefabs, size_2_prefabs, size_3_prefabs};
-        types = new List<int>();
-        GenerateLevel();
-        DrawLevel();
+            // set current size
+            current_size = i;
+            // calculate length/width of concentric grid & size of each tile
+            grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
+            tile_size = grid_actual_size / length;
+
+            // find the offset for where to begin the level
+            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * length / 2;
+
+            GenerateLevel();
+            DrawLevel();
+        }
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(katamari.transform.localScale.x >= 1 && katamari_size < 1 && !generated[0])
-        {
-            current_size = 0;
-            generated[current_size] = true;
-            grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
-            tile_size = grid_actual_size / length;
-            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * length / 2;
-            GenerateLevel();
-            DrawLevel();
-        }
-        if(katamari.transform.localScale.x >= 10 && katamari_size < 10 && !generated[1])
-        {
-            current_size = 1;
-            generated[current_size] = true;
-            grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
-            tile_size = grid_actual_size / length;
-            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * length / 2;
-            GenerateLevel();
-            DrawLevel();
-        }
-        if(katamari.transform.localScale.x >= 25 && katamari_size < 25 && !generated[2])
-        {
-            
-            current_size = 2;
-            generated[current_size] = true;
-            grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
-            tile_size = grid_actual_size / length;
-            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * length / 2;
-            GenerateLevel();
-            DrawLevel();
-        }
-        if(katamari.transform.localScale.x >= 100 && katamari_size < 100 && !generated[3])
-        {
-            
-            current_size = 3;
-            generated[current_size] = true;
-            grid_actual_size = (bounds.size[0] / 8) * Mathf.Pow(2, current_size);
-            tile_size = grid_actual_size / length;
-            level_offset = (bounds.max[0] - bounds.min[0]) / 2 - tile_size * length / 2;
-            GenerateLevel();
-            DrawLevel();
-        }
-    
+        // update katamari size
         katamari_size = katamari.transform.localScale.x;
     }
 
@@ -133,12 +98,11 @@ public class LevelDesigner : MonoBehaviour
         }
     }
 
+    // check tile consistency
     bool CheckConsistency(int[,] grid, int[] pos, int tile_type)
     {
         grid[pos[0], pos[1]] = tile_type;
         
-        
-
         return true;
     }
 
@@ -177,12 +141,13 @@ public class LevelDesigner : MonoBehaviour
 
     void GenerateLevel()
     {
+        // create list of unassigned variables (if the current size is not 0 the tiles generated will be a ring, so the center will be assigned)
         List<int[]> unassigned = new List<int[]>();
         for(int i = 0; i < length; i++)
         {
             for(int j = 0; j < length; j++)
             {
-                if(!(current_size > 1 && i >= length / 4 && i < 3 * length / 4 && j >= length / 4 && j < 3 * length / 4))
+                if(!(current_size > 0 && i >= length / 4 && i < 3 * length / 4 && j >= length / 4 && j < 3 * length / 4))
                 {
                     int[] index = new int[]{i, j};
                     unassigned.Add(index);
@@ -190,7 +155,9 @@ public class LevelDesigner : MonoBehaviour
                 
             }
         }
-        
+
+        // reset types list
+        types = new List<int>();
         for(int i = 0; i < tiles[current_size].Length; i++)
         {
             types.Add(i);

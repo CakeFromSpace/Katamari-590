@@ -73,6 +73,7 @@ public class TankAI : AI
                 Debug.DrawLine(transform.position + transform.forward * 1.5f + transform.right * 3 + y_offset, transform.position + transform.forward * 1.5f + transform.right * 3 + y_offset + transform.forward * looking_distance, Color.red, 1f);
                 Debug.DrawLine(transform.position + transform.forward * 1.5f - transform.right * 3 + y_offset, transform.position + transform.forward * 1.5f - transform.right * 3 + y_offset+ transform.forward * looking_distance, Color.blue, 1f);
                 Debug.DrawLine(transform.position + y_offset, hit.transform.position, Color.white, 1f);
+                Debug.Log(hit.transform.name);
                 direction_timer = change_direction_time;
                 AvoidObstacle(hit);
             }

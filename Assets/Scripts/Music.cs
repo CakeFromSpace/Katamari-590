@@ -23,13 +23,21 @@ public class Music : MonoBehaviour
         {
             FadeIn(1);
         }
-        if(katamari.transform.localScale.x >= 25 && old_size < 25)
+        if(katamari.transform.localScale.x >= 10 && old_size < 10)
         {
             FadeIn(2);
         }
-        if(katamari.transform.localScale.x >= 100 && old_size < 100)
+        if(katamari.transform.localScale.x >= 25 && old_size < 25)
         {
             FadeIn(3);
+        }
+        if(katamari.transform.localScale.x >= 100 && old_size < 100)
+        {
+            for(int i = 0; i < 4; i++)
+            {
+                FadeOut(i);
+            }
+            FadeIn(4);
         }
     
         old_size = katamari.transform.localScale.x;
@@ -37,10 +45,15 @@ public class Music : MonoBehaviour
 
     public void FadeIn(int track)
     {
-        StartCoroutine(Fade(tracks[track], 5.0f));
+        StartCoroutine(Fade(tracks[track], 5.0f, 1.0f));
     }
 
-    IEnumerator Fade(AudioSource track, float duration)
+    public void FadeOut(int track)
+    {
+        StartCoroutine(Fade(tracks[track], 5.0f, 0.0f));
+    }
+
+    IEnumerator Fade(AudioSource track, float duration, float level)
     {
         float currentTime = 0;
         float start = track.volume;
@@ -48,7 +61,7 @@ public class Music : MonoBehaviour
         while(currentTime < duration)
         {
             currentTime += Time.deltaTime;
-            track.volume = Mathf.Lerp(start, 1, currentTime / duration);
+            track.volume = Mathf.Lerp(start, level, currentTime / duration);
             yield return null;
         }
         yield break;

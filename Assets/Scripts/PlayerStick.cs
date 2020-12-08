@@ -204,7 +204,6 @@ public class PlayerStick : MonoBehaviour
                 }
                 
                 child.parent = null;
-                child.gameObject.layer = 0;
                 child.gameObject.AddComponent<Rigidbody>();
                 child.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
                 child.gameObject.GetComponent<Collider>().enabled = true;
