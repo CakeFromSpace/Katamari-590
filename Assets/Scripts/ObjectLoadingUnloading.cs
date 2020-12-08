@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectLoadingUnloading : MonoBehaviour
 {
+    /*
     private void Awake()
     {
         GameObject s = new GameObject("Loader");
@@ -12,4 +13,5 @@ public class ObjectLoadingUnloading : MonoBehaviour
         s.AddComponent<LoadUnload>();
         s.transform.parent = transform;
     }
+    */
 }

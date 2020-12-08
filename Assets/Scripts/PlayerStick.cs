@@ -117,20 +117,14 @@ public class PlayerStick : MonoBehaviour
                 other.tag = "sticky";
                 
                 //Debug.Log(new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate);
-<<<<<<< HEAD
                 Vector3 object_size = new Vector3(sizeofobject, sizeofobject, sizeofobject);
 
                 katamari.transform.localScale += object_size * growrate;
 
                 rb.mass = 1.0f + katamari.transform.localScale.x / 100.0f;
 
-                growrate = (katamari.transform.localScale.x / (5 * Mathf.Pow(katamari.transform.localScale.x, 1.7f)));
-
-                float uisize = katamari.transform.localScale.x;
-=======
-                katamari.transform.localScale += new Vector3(sizeofobject, sizeofobject, sizeofobject) * growrate / s.transform.localScale.x;
+                growrate = (katamari.transform.localScale.x / (50 * Mathf.Pow(katamari.transform.localScale.x, 1.7f)));
                 float uisize = katamari.transform.localScale.x*10;
->>>>>>> refs/remotes/origin/main
                 string label;
                 if (uisize > 1000000)
                 {
