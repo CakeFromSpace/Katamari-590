@@ -56,6 +56,6 @@ public class Chase : MonoBehaviour
         }
         transform.position = targetpos;
         transform.Rotate(new Vector3(pandown,0,0));
-        
+        gameObject.GetComponent<Camera>().farClipPlane = 4000 + _trail + _height;
     }
 }

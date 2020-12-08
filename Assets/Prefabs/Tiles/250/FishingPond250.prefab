@@ -3539,7 +3539,7 @@ GameObject:
   - component: {fileID: 9140143355287199563}
   - component: {fileID: 9140143355290627761}
   - component: {fileID: 9140143355289560293}
-  - component: {fileID: 9140143355293836293}
+  - component: {fileID: 4261316771933463634}
   m_Layer: 0
   m_Name: GrassTile (2)
   m_TagString: Untagged
@@ -3610,8 +3610,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &9140143355293836293
-MeshCollider:
+--- !u!65 &4261316771933463634
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3620,10 +3620,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300020, guid: 72e643619fa32984785527a0c110a313, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 8, y: 8, z: 1.0000148}
+  m_Center: {x: -0.00000023841858, y: -0.0000071524937, z: 0.03333334}
 --- !u!1 &9184998621319716982
 GameObject:
   m_ObjectHideFlags: 0
