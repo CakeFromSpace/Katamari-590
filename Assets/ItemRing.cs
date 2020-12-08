@@ -13,6 +13,7 @@ public class ItemRing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speed = 0;
         float d = 2 * Mathf.PI / numberofitems;
         for(int i = 0; i < numberofitems; i++)
         {
@@ -24,7 +25,7 @@ public class ItemRing : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void notUpdate()
     {
         transform.Rotate(0, clockwise?Time.deltaTime*speed: Time.deltaTime * -speed, 0);
         if (transform.childCount == 0) Destroy(this.gameObject);

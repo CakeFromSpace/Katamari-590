@@ -119,6 +119,22 @@ public class NewInputSystemControls : MonoBehaviour
         Time.timeScale = Time.timeScale == 1 ? 0 : 1;
         pausemenu.SetActive(!pausemenu.activeSelf);
     }
+
+    public void DebugPress(InputAction.CallbackContext c)
+    {
+
+            int i = 0;
+            foreach (GameObject g in GameObject.FindGameObjectsWithTag("pickup"))
+            {
+                if (g.transform.lossyScale.x < katamari.transform.lossyScale.x * .01)
+                {
+                    Destroy(g);
+                    i += 1;
+                }
+            }
+            Debug.Log("Culled " + i + " objects");
+
+    }
     private void Start()
     {
         rb = GetComponentInChildren<Rigidbody>();

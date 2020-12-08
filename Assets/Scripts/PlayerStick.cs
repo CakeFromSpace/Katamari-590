@@ -100,7 +100,7 @@ public class PlayerStick : MonoBehaviour
                 if(m.bounds.size.x> katamari.transform.lossyScale.x || m.bounds.size.y> katamari.transform.lossyScale.x|| m.bounds.size.z >  katamari.transform.lossyScale.x )
                 {
                     other.layer = 11;
-                    
+                    m.enabled = false;
                     //get rid of collider so that rigidbody doesnt get lopsided
                 }
                 else
