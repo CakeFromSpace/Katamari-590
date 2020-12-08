@@ -49,6 +49,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Debug"",
+                    ""type"": ""Button"",
+                    ""id"": ""5e783b94-428f-46fc-b162-6ffbd2019702"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -227,6 +235,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""RightMoveTank"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a3210adc-da83-4628-b158-01f6d36ed0bb"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Debug"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -262,6 +281,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Controller_RightMoveTank = m_Controller.FindAction("RightMoveTank", throwIfNotFound: true);
         m_Controller_Spin = m_Controller.FindAction("Spin", throwIfNotFound: true);
         m_Controller_Pause = m_Controller.FindAction("Pause", throwIfNotFound: true);
+        m_Controller_Debug = m_Controller.FindAction("Debug", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -315,6 +335,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Controller_RightMoveTank;
     private readonly InputAction m_Controller_Spin;
     private readonly InputAction m_Controller_Pause;
+    private readonly InputAction m_Controller_Debug;
     public struct ControllerActions
     {
         private @PlayerControls m_Wrapper;
@@ -323,6 +344,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @RightMoveTank => m_Wrapper.m_Controller_RightMoveTank;
         public InputAction @Spin => m_Wrapper.m_Controller_Spin;
         public InputAction @Pause => m_Wrapper.m_Controller_Pause;
+        public InputAction @Debug => m_Wrapper.m_Controller_Debug;
         public InputActionMap Get() { return m_Wrapper.m_Controller; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -344,6 +366,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Pause.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnPause;
+                @Debug.started -= m_Wrapper.m_ControllerActionsCallbackInterface.OnDebug;
+                @Debug.performed -= m_Wrapper.m_ControllerActionsCallbackInterface.OnDebug;
+                @Debug.canceled -= m_Wrapper.m_ControllerActionsCallbackInterface.OnDebug;
             }
             m_Wrapper.m_ControllerActionsCallbackInterface = instance;
             if (instance != null)
@@ -360,6 +385,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @Debug.started += instance.OnDebug;
+                @Debug.performed += instance.OnDebug;
+                @Debug.canceled += instance.OnDebug;
             }
         }
     }
@@ -388,5 +416,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnRightMoveTank(InputAction.CallbackContext context);
         void OnSpin(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnDebug(InputAction.CallbackContext context);
     }
 }

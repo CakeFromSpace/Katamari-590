@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParadeAI : MonoBehaviour
+public class ParadeAI : AI
 {
     public float velocity;
     public float change_direction_time;
