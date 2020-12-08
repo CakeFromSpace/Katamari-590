@@ -123,7 +123,7 @@ public class PlayerStick : MonoBehaviour
                 if (uisize > 100000)
                 {
                     label = "KM";
-                    uisize %= 100000;
+                    uisize %= 10000;
                 }
                 else if (uisize > 100)
                 {
