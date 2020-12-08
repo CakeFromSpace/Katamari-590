@@ -22,7 +22,7 @@ public class PlayerStick : MonoBehaviour
     private float remove_timer;
     private bool recently_removed;
     // Start is called before the first frame update
-    void Start()
+    void Start() 
     {
         katamari = transform.Find("katamari").gameObject;
         constellation = transform.Find("Object Constellation").gameObject;
@@ -117,7 +117,14 @@ public class PlayerStick : MonoBehaviour
                 other.tag = "sticky";
                 
                 //Debug.Log(new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate);
-                katamari.transform.localScale += new Vector3(sizeofobject, sizeofobject, sizeofobject) * growrate;
+                Vector3 object_size = new Vector3(sizeofobject, sizeofobject, sizeofobject);
+
+                katamari.transform.localScale += object_size * growrate;
+
+                rb.mass = 1.0f + katamari.transform.localScale.x / 100.0f;
+
+                growrate = (katamari.transform.localScale.x / (5 * Mathf.Pow(katamari.transform.localScale.x, 1.7f)));
+
                 float uisize = katamari.transform.localScale.x;
                 string label;
                 if (uisize > 100000)
@@ -221,10 +228,9 @@ public class PlayerStick : MonoBehaviour
                 ps.transform.localPosition = new Vector3(0, 0, 0);
                 ps.transform.localScale = new Vector3(2, 2, 2);
 
+                Rigidbody child_rb = child.gameObject.GetComponent<Rigidbody>();
 
-                rb = child.gameObject.GetComponent<Rigidbody>();
-
-                rb.AddForce(launchDirection * 200 * katamari.transform.localScale.x);
+                child_rb.AddForce(launchDirection * 200 * katamari.transform.localScale.x);
                 
                 SphereCollider s = katamari.gameObject.GetComponent<SphereCollider>();
                 Collider c = child.gameObject.GetComponentInChildren<Collider>();

@@ -22,6 +22,8 @@ public class LevelDesigner : MonoBehaviour
     private GameObject[][] tiles;
     private Bounds bounds;
 
+    private bool endgame = false;
+
     private bool[,] size_0_attr;
     private bool[,] size_1_attr;
     private bool[,] size_2_attr;
@@ -43,6 +45,8 @@ public class LevelDesigner : MonoBehaviour
 
     void Start()
     {
+        endgame = false; 
+
         size_3_attr = new bool[,] {{true, false, true},
                         {true, false, true},
                         {true, false, true},
@@ -96,6 +100,9 @@ public class LevelDesigner : MonoBehaviour
 
             GenerateLevel();
             DrawLevel();
+
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<MeshCollider>().enabled = false;
         }
         
     }
@@ -105,6 +112,14 @@ public class LevelDesigner : MonoBehaviour
     {
         // update katamari size
         katamari_size = katamari.transform.localScale.x;
+        if(!endgame && katamari_size > 400)
+        {
+            endgame = true;
+            foreach(Transform child in transform)
+            {
+                child.gameObject.tag = "pickup";
+            }
+        }
     }
 
     private void Shuffle<T>(ref List<T> list)
@@ -243,6 +258,7 @@ public class LevelDesigner : MonoBehaviour
                     Debug.Log(level[i,j]);
                     GameObject current_tile = Instantiate(tiles[current_size][level[i, j]], new Vector3(0, 0, 0), Quaternion.identity);
                     current_tile.transform.position = new Vector3(bounds.min[0] + level_offset + tile_size * (i + 0.5f), 0, bounds.min[2] + level_offset + tile_size * (j + 0.5f));
+                    current_tile.transform.parent = this.transform;
                 } 
             }
         }
