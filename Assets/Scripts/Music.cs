@@ -25,22 +25,22 @@ public class Music : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(katamari.transform.localScale.x >= 1 && old_size < 1)
+        if(katamari.transform.localScale.x >= 10 && old_size < 10)
         {
             FadeIn(1);
             playing[1] = true;
         }
-        if(katamari.transform.localScale.x >= 10 && old_size < 10)
+        if(katamari.transform.localScale.x >= 50 && old_size < 50)
         {
             FadeIn(2);
             playing[2] = true;
         }
-        if(katamari.transform.localScale.x >= 25 && old_size < 25)
+        if(katamari.transform.localScale.x >= 100 && old_size < 100)
         {
             FadeIn(3);
             playing[3] = true;
         }
-        if(katamari.transform.localScale.x >= 100 && old_size < 100)
+        if(katamari.transform.localScale.x >= 400 && old_size < 400)
         {
             for(int i = 0; i < 4; i++)
             {

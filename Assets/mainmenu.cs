@@ -9,6 +9,7 @@ public class mainmenu : MonoBehaviour
     public GameObject menu;
     public GameObject volume;
     public GameObject timeactive;
+    public GameObject numtime;
     //player is the activate
     public bool activate;
   
@@ -19,6 +20,7 @@ public class mainmenu : MonoBehaviour
             player.SetActive(true);
             menu.SetActive(false);
             timeactive.SetActive(true);
+            numtime.SetActive(true);
         }
         
     }
@@ -32,6 +34,7 @@ public class mainmenu : MonoBehaviour
     {
         volume.SetActive(true);
         menu.SetActive(false);
+        
 
     }
     public void Back()
