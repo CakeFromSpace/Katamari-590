@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PauseUI : MonoBehaviour
 {
+    public GameObject menu;
     
+
     public void Unpause()
     {
         Time.timeScale = 1;
@@ -12,6 +14,7 @@ public class PauseUI : MonoBehaviour
     }
     public void ToMainMenu()
     {
-        Debug.Log("Pretend this button brought you to the main menu");
+        menu.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

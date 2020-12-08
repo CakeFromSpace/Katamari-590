@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/making_tiles.unity
+    guid: fcd6cc96615627a449e88dc358067d3e
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 30e020f0538d441408757fcbb79dfbab
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a3d4171151511744a9226622c6f3aaa4, type: 2}
