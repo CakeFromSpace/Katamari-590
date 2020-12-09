@@ -9573,6 +9573,7 @@ PrefabInstance:
     - {fileID: 4846896474464052337, guid: a447a4f429c12504fb5a71cf2e96307d, type: 3}
     - {fileID: 4621571478048496022, guid: a447a4f429c12504fb5a71cf2e96307d, type: 3}
     - {fileID: 4079504830608256814, guid: a447a4f429c12504fb5a71cf2e96307d, type: 3}
+    - {fileID: 4234842517610902106, guid: a447a4f429c12504fb5a71cf2e96307d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a447a4f429c12504fb5a71cf2e96307d, type: 3}
 --- !u!1 &8912204584932190320 stripped
 GameObject:
@@ -9719,6 +9720,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4234842517610902106, guid: a447a4f429c12504fb5a71cf2e96307d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4828934555780128984, guid: a447a4f429c12504fb5a71cf2e96307d, type: 3}
       propertyPath: m_Name
       value: Aflac Advertisement Parade Float
@@ -9734,6 +9739,7 @@ PrefabInstance:
     - {fileID: 4621571478048496022, guid: a447a4f429c12504fb5a71cf2e96307d, type: 3}
     - {fileID: 1932657408386662829, guid: a447a4f429c12504fb5a71cf2e96307d, type: 3}
     - {fileID: 4079504830608256814, guid: a447a4f429c12504fb5a71cf2e96307d, type: 3}
+    - {fileID: 4234842517610902106, guid: a447a4f429c12504fb5a71cf2e96307d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a447a4f429c12504fb5a71cf2e96307d, type: 3}
 --- !u!1 &9194076802748435570 stripped
 GameObject:

@@ -22,6 +22,8 @@ public class PlayerStick : MonoBehaviour
     private float remove_timer;
     private bool recently_removed;
 
+    private float volume_cache;
+
     private float calc_timer;
     // Start is called before the first frame update
     void Start() 
@@ -38,11 +40,14 @@ public class PlayerStick : MonoBehaviour
 
     void Update()
     {
+        if(katamari.transform.localScale.x > 666)
+        {
+            growrate = 0.05f;
+        }
         calc_timer += Time.deltaTime;
         if(calc_timer > 1.0f)
         {
             rb.mass = 1.0f + katamari.transform.localScale.x / 100.0f;
-            growrate = (katamari.transform.localScale.x / (30 * Mathf.Pow(katamari.transform.localScale.x, 1.3f)));
             calc_timer = 0.0f;
         }
     }
@@ -64,7 +69,10 @@ public class PlayerStick : MonoBehaviour
         if ((tag == "pickup" || tag == "tile") && !collision.isTrigger)
         {
             GameObject other = collision.GetComponent<Collider>().gameObject;
-
+            if(tag == "tile")
+            {
+                Debug.Log(other.name);
+            }
             //Debug.Log(name + other.name);
 
             //Vector3 loc = Vector3.Normalize(transform.position - other.transform.position) * katamari.GetComponent<SphereCollider>().radius * -1;
@@ -103,15 +111,16 @@ public class PlayerStick : MonoBehaviour
                     p = p.transform.parent.gameObject;
                 }
                 
-                if(tag != "tile" && (m.bounds.size.x> katamari.transform.lossyScale.x || m.bounds.size.y> katamari.transform.lossyScale.x|| m.bounds.size.z >  katamari.transform.lossyScale.x ))
+                /*if(tag != "tile" && (m.bounds.size.x> katamari.transform.lossyScale.x || m.bounds.size.y> katamari.transform.lossyScale.x|| m.bounds.size.z >  katamari.transform.lossyScale.x ))
                 {
                     other.layer = 11;
                 }
                 else
                 {
-                    other.layer = 8;
-                    m.enabled = false;
-                }
+                */
+                other.layer = 8;
+                m.enabled = false;
+                //}
 
                 if (other.gameObject.GetComponent<AI>() != null)
                 {
@@ -121,22 +130,18 @@ public class PlayerStick : MonoBehaviour
                 other.tag = "sticky";
                 
                 //Debug.Log(new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate);
-                Vector3 object_size = new Vector3(sizeofobject, sizeofobject, sizeofobject);
+                //Vector3 object_size = new Vector3(sizeofobject, sizeofobject, sizeofobject);
 
-                katamari.transform.localScale += object_size * growrate;
+                float growth = 2.0f * (Mathf.Pow(sizeofobject * (3.0f / (4.0f * Mathf.PI)), (1.0f / 3.0f))) * growrate;
 
+                katamari.transform.localScale += new Vector3(growth, growth, growth);
                 
-                float uisize = katamari.transform.localScale.x*10;
+                float uisize = katamari.transform.localScale.x;
                 string label;
-                if (uisize > 1000000)
-                {
-                    label = "KM";
-                    uisize %= 1000000;
-                }
-                else if (uisize > 100)
+                if (uisize > 100)
                 {
                     label = "M";
-                    uisize %= 100;
+                    uisize /= 100;
                 }
                 else
                 {
@@ -172,11 +177,14 @@ public class PlayerStick : MonoBehaviour
                     }
                     PickupUIText.GetComponent<Text>().text = other.name;
                     
-                    
-
+                    foreach (Transform child in other.transform)
+                    {
+                        GameObject.Destroy(child.gameObject);
+                    }
                 }
                 else
                 {
+                    // for children of tile, delete non-ground tiles, make ground tiles pickup tag
                     foreach(Transform child in other.transform)
                     {
                         if(child.gameObject.layer != 12)
@@ -200,7 +208,7 @@ public class PlayerStick : MonoBehaviour
                 }
                 else
                 {
-                    other.SetActive(false);
+                    Destroy(other.gameObject);
                 }
                 Rigidbody rd = other.GetComponent<Rigidbody>();
                 Destroy(rd);

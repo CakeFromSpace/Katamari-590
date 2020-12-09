@@ -8,6 +8,7 @@ TagManager:
   - sticky
   - loader
   - tile
+  - katamari
   layers:
   - Default
   - TransparentFX

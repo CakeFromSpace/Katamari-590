@@ -11,6 +11,7 @@ using System;
 public class LevelDesigner : MonoBehaviour
 {
     public GameObject katamari;
+    public GameObject youwin;
     public int length;
 
     public GameObject[] size_0_prefabs;
@@ -22,7 +23,8 @@ public class LevelDesigner : MonoBehaviour
     private GameObject[][] tiles;
     private Bounds bounds;
 
-    private bool endgame = false;
+    private bool endgame;
+    private bool won;
 
     private bool[,] size_0_attr;
     private bool[,] size_1_attr;
@@ -53,7 +55,7 @@ public class LevelDesigner : MonoBehaviour
     {
         // update katamari size
         katamari_size = katamari.transform.localScale.x;
-        if(!endgame && katamari_size > 400)
+        if(!endgame && katamari_size > 666)
         {
             endgame = true;
             foreach(Transform child in transform)
@@ -61,10 +63,16 @@ public class LevelDesigner : MonoBehaviour
                 child.gameObject.tag = "tile";
             }
         }
+
+        if(endgame && transform.childCount < 1)
+        {
+            won = true;
+            youwin.SetActive(true);
+        }
     }
     public void Play()
     {
-        katamari.transform.localScale = new Vector3(600, 600, 600);
+        katamari.transform.localScale = new Vector3(10, 10, 10);
     }
 
     public void Restart()
@@ -75,6 +83,7 @@ public class LevelDesigner : MonoBehaviour
 
     private void CreateLevel()
     {
+        won = false;
         endgame = false; 
 
         size_3_attr = new bool[,] {{true, false, true},

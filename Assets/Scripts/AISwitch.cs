@@ -27,7 +27,7 @@ public class AISwitch : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "katamari")
         {
             //Debug.Log("entered");
             aiscript.enabled = true;
@@ -36,7 +36,7 @@ public class AISwitch : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "katamari")
         {
             //Debug.Log("Exited");
             aiscript.enabled = false;
