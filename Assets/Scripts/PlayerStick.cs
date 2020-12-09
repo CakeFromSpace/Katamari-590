@@ -123,7 +123,7 @@ public class PlayerStick : MonoBehaviour
 
                 rb.mass = 1.0f + katamari.transform.localScale.x / 100.0f;
 
-                growrate = (katamari.transform.localScale.x / (50 * Mathf.Pow(katamari.transform.localScale.x, 1.7f)));
+                growrate = (katamari.transform.localScale.x / (30 * Mathf.Pow(katamari.transform.localScale.x, 1.6f)));
                 float uisize = katamari.transform.localScale.x*10;
                 string label;
                 if (uisize > 1000000)
