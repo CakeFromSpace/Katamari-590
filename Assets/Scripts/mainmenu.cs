@@ -9,6 +9,7 @@ public class mainmenu : MonoBehaviour
     public GameObject menu;
     public GameObject volume;
     public GameObject timeactive;
+    public GameObject greenbaractive;
     public GameObject numtime;
     //player is the activate
     public bool activate;
@@ -24,7 +25,7 @@ public class mainmenu : MonoBehaviour
         }
         
     }
-  
+   
     public void HowtoPlay()
     {
 
