@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2553698829280604870}
   - component: {fileID: 2553698829279508626}
   - component: {fileID: 2669377607001041883}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GrassTile (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,6 +251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5386126655932611042}
+  - component: {fileID: 1880568958430148154}
   m_Layer: 9
   m_Name: DaikonTile
   m_TagString: Untagged
@@ -277,6 +278,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1880568958430148154
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4085724659855108371}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 25, y: 0.1, z: 25}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2897444583398220039
 PrefabInstance:
   m_ObjectHideFlags: 0
