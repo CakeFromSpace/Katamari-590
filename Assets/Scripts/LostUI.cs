@@ -18,6 +18,7 @@ public class LostUI : MonoBehaviour
     public void Quit()
     {
         menu.SetActive(true);
+        timeactive.SetActive(false);
         lostmessage.SetActive(false);
 
     }
