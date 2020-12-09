@@ -29,5 +29,6 @@ public class Timer : MonoBehaviour
         lostmessage.SetActive(true);
         LeanTween.reset();
 
+
     }
 }
