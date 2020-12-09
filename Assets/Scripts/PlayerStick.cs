@@ -21,6 +21,8 @@ public class PlayerStick : MonoBehaviour
     private float vel_threshold;
     private float remove_timer;
     private bool recently_removed;
+
+    private float calc_timer;
     // Start is called before the first frame update
     void Start() 
     {
@@ -34,6 +36,16 @@ public class PlayerStick : MonoBehaviour
         recently_removed = false;
     }
 
+    void Update()
+    {
+        calc_timer += Time.deltaTime;
+        if(calc_timer > 1.0f)
+        {
+            rb.mass = 1.0f + katamari.transform.localScale.x / 100.0f;
+            growrate = (katamari.transform.localScale.x / (30 * Mathf.Pow(katamari.transform.localScale.x, 1.3f)));
+            calc_timer = 0.0f;
+        }
+    }
 
 
     private void OnTriggerEnter(Collider collision)
@@ -48,7 +60,8 @@ public class PlayerStick : MonoBehaviour
         {
             recently_removed = false;
         }
-        if (collision.GetComponent<Collider>().gameObject.tag == "pickup" && !collision.isTrigger)
+        string tag = collision.GetComponent<Collider>().gameObject.tag;
+        if ((tag == "pickup" || tag == "tile") && !collision.isTrigger)
         {
             GameObject other = collision.GetComponent<Collider>().gameObject;
 
@@ -76,10 +89,12 @@ public class PlayerStick : MonoBehaviour
                     mesh.convex = true;
                 }
 
-
-                
-                GameObject copy = Instantiate(other);
-                Destroy(copy.GetComponent<Rigidbody>());
+                GameObject copy = null;
+                if(tag != "tile")
+                {
+                    copy = Instantiate(other);
+                    Destroy(copy.GetComponent<Rigidbody>());
+                }
 
                 //Finding the tile object the item is part of
                 GameObject p = other;
@@ -87,21 +102,10 @@ public class PlayerStick : MonoBehaviour
                 {
                     p = p.transform.parent.gameObject;
                 }
-                //remove the item on the katamari from the loading and unloading script
-                try
-                {
-                    p.GetComponentInChildren<LoadUnload>().rend.Remove(other.GetComponent<MeshRenderer>());
-                }
-                catch(Exception e)
-                {
-                    Debug.Log("Ignore");
-                }
-                //if(m.size.x*m.transform.localScale.x> katamari.transform.lossyScale.x || m.size.y * m.transform.localScale.y > katamari.transform.lossyScale.x|| m.size.z * m.transform.localScale.z >  katamari.transform.lossyScale.x )
-                if(m.bounds.size.x> katamari.transform.lossyScale.x || m.bounds.size.y> katamari.transform.lossyScale.x|| m.bounds.size.z >  katamari.transform.lossyScale.x )
+                
+                if(tag != "tile" && (m.bounds.size.x> katamari.transform.lossyScale.x || m.bounds.size.y> katamari.transform.lossyScale.x|| m.bounds.size.z >  katamari.transform.lossyScale.x ))
                 {
                     other.layer = 11;
-                    m.enabled = false;
-                    //get rid of collider so that rigidbody doesnt get lopsided
                 }
                 else
                 {
@@ -121,9 +125,7 @@ public class PlayerStick : MonoBehaviour
 
                 katamari.transform.localScale += object_size * growrate;
 
-                rb.mass = 1.0f + katamari.transform.localScale.x / 100.0f;
-
-                growrate = (katamari.transform.localScale.x / (30 * Mathf.Pow(katamari.transform.localScale.x, 1.6f)));
+                
                 float uisize = katamari.transform.localScale.x*10;
                 string label;
                 if (uisize > 1000000)
@@ -150,25 +152,43 @@ public class PlayerStick : MonoBehaviour
                 }
 
                 
-                
-                copy.transform.parent = UIPickup.transform;
-                copy.transform.localPosition = new Vector3(0, 0, 0);
+                if(copy != null && tag != "tile")
+                {
+                    copy.transform.parent = UIPickup.transform;
+                    copy.transform.localPosition = new Vector3(0, 0, 0);
 
-                
-                // judge added 11/30, to scale the items being picked up by camera -- not perfect however.
-                Vector3 size = copy.GetComponent<Collider>().bounds.size;
-                copy.transform.localScale = copy.transform.localScale / Mathf.Max(size.x, size.y, size.z);
-                if(copy.GetComponent<AI>() != null)
-                {
-                    copy.GetComponent<AI>().enabled = false;
+                    
+                    // judge added 11/30, to scale the items being picked up by camera -- not perfect however.
+                    Vector3 size = copy.GetComponent<Collider>().bounds.size;
+                    copy.transform.localScale = copy.transform.localScale / Mathf.Max(size.x, size.y, size.z);
+                    if(copy.GetComponent<AI>() != null)
+                    {
+                        copy.GetComponent<AI>().enabled = false;
+                    }
+                    copy.layer = 13;
+                    foreach(Transform t in copy.GetComponentsInChildren<Transform>())
+                    {
+                        t.gameObject.layer = 13;
+                    }
+                    PickupUIText.GetComponent<Text>().text = other.name;
+                    
+                    
+
                 }
-                copy.layer = 13;
-                foreach(Transform t in copy.GetComponentsInChildren<Transform>())
+                else
                 {
-                    t.gameObject.layer = 13;
+                    foreach(Transform child in other.transform)
+                    {
+                        if(child.gameObject.layer != 12)
+                        {
+                            Destroy(child.gameObject);
+                        }
+                        else
+                        {
+                            child.gameObject.layer = 8;
+                        }
+                    }
                 }
-                PickupUIText.GetComponent<Text>().text = other.name;
-                
                 // changed by judge 12/1 ... added this condition so small objects will stop being rendered at large sizes, and moved it down here in order to keep the object camera working
                 if(sizeofplayer * attachablemultiplier < 5 * sizeofobject)
                 {
@@ -182,13 +202,9 @@ public class PlayerStick : MonoBehaviour
                 {
                     other.SetActive(false);
                 }
-
                 Rigidbody rd = other.GetComponent<Rigidbody>();
                 Destroy(rd);
-            }
-
-            
-
+            }           
         }
     }
 

@@ -58,13 +58,13 @@ public class LevelDesigner : MonoBehaviour
             endgame = true;
             foreach(Transform child in transform)
             {
-                child.gameObject.tag = "pickup";
+                child.gameObject.tag = "tile";
             }
         }
     }
     public void Play()
     {
-        katamari.transform.localScale = new Vector3(10, 10, 10);
+        katamari.transform.localScale = new Vector3(600, 600, 600);
     }
 
     public void Restart()
