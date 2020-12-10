@@ -16,6 +16,7 @@ public class mainmenu : MonoBehaviour
   
     public void Play()
     {
+        activate = true;
         if (activate == true)
         {
             player.SetActive(true);
@@ -28,11 +29,12 @@ public class mainmenu : MonoBehaviour
    
     public void HowtoPlay()
     {
-
+        activate = false;
         SceneManager.LoadScene("Tutorial");
     }
     public void Settings()
     {
+        activate = false;
         volume.SetActive(true);
         menu.SetActive(false);
         
@@ -40,6 +42,7 @@ public class mainmenu : MonoBehaviour
     }
     public void Back()
     {
+        activate = false;
         menu.SetActive(true);
         volume.SetActive(false);
     }
