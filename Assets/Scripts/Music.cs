@@ -29,27 +29,27 @@ public class Music : MonoBehaviour
     {
         if(katamari.transform.localScale.x >= 10 && old_size < 10)
         {
-            fade_tracks[1] = StartCoroutine(Fade(tracks[1], 5.0f, volume));;
+            fade_tracks[1] = StartCoroutine(Fade(tracks[1], 5.0f, volume));
             playing[1] = true;
         }
         if(katamari.transform.localScale.x >= 25 && old_size < 25)
         {
-            fade_tracks[2] = StartCoroutine(Fade(tracks[2], 5.0f, volume));;
+            fade_tracks[2] = StartCoroutine(Fade(tracks[2], 5.0f, volume));
             playing[2] = true;
         }
         if(katamari.transform.localScale.x >= 200 && old_size < 200)
         {
-            fade_tracks[3] = StartCoroutine(Fade(tracks[3], 5.0f, volume));;
+            fade_tracks[3] = StartCoroutine(Fade(tracks[3], 5.0f, volume));
             playing[3] = true;
         }
-        if(katamari.transform.localScale.x >= 666 && old_size < 666)
+        if(katamari.transform.localScale.x >= 400 && old_size < 400)
         {
             for(int i = 0; i < 4; i++)
             {
                 StartCoroutine(Fade(tracks[i], 5.0f, 0.0f));
                 playing[i] = false;
             }
-            fade_tracks[4] = StartCoroutine(Fade(tracks[4], 5.0f, volume));;
+            fade_tracks[4] = StartCoroutine(Fade(tracks[4], 5.0f, volume));
             playing[4] = true;
         }
     

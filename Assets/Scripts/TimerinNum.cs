@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class TimerinNum : MonoBehaviour
 {
-    //float currtime = 1020.0f;
-    float currtime = 5f;
+    float currtime = 1020.0f;
+    //float currtime = 5f;
 
     public Text num;
     public GameObject lostmessage;
@@ -29,12 +29,13 @@ public class TimerinNum : MonoBehaviour
             int min = (int)(currtime / 60) % 60;
             string format = string.Format("{0:00}:{1:00}", min, sec);
             num.text = format;
-            if (currtime <= 0)
+            /*if (currtime <= 0)
             {
                 m.activate = false;
                 Reload();
 
             }
+            */
         }
     }
     void Reload()
