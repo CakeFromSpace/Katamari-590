@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System;
 
 // mostly written by judge russell
@@ -40,7 +41,7 @@ public class LevelDesigner : MonoBehaviour
     private float tile_size;
     private float level_offset;
 
-    public Text sizetext;
+    public GameObject sizetext;
     private int current_size;
 
     public float cullmultiplier; //how much smaller than the katamari can the object be before it gets destroyed
@@ -83,7 +84,8 @@ public class LevelDesigner : MonoBehaviour
     }
 
     public void Restart()
-    {   
+    {
+        SceneManager.LoadScene("making_tiles");
         player.GetComponent<PlayerStick>().ResetUICam();
         Reset();
         CreateLevel();
@@ -108,7 +110,7 @@ public class LevelDesigner : MonoBehaviour
         }
         katamari.transform.position = new Vector3(0, 10, 0);
         katamari.transform.localScale = new Vector3(10, 10, 10);
-        sizetext.GetComponent<Text>().text = "";
+        sizetext.SetActive(false);
     }
 
     private void CreateLevel()

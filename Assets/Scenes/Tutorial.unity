@@ -18032,7 +18032,7 @@ MonoBehaviour:
     on Tile Island, but before you do that lets practice rolling up in this area.
     Try to pick up enough items to roll up the golden pedestal you are on right now
     by using the actions shown on the right of the screen. You should be able to
-    pick it up when you get around 2.5 CM in diameter. Additionally in case you didn''t
+    pick it up when you get around 25 CM in diameter. Additionally in case you didn''t
     know you can also control yourself with a controller, just plug it in and play!'
 --- !u!222 &1472579778
 CanvasRenderer:
@@ -23580,7 +23580,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1.5 CM
+  m_Text: 15 CM
 --- !u!224 &7611985474048603171
 RectTransform:
   m_ObjectHideFlags: 0

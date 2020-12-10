@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class TimerinNum : MonoBehaviour
-{   
-    float currtime = 1020.0f;
-
+{
+    //float currtime = 1020.0f;
+    float currtime = 5f;
 
     public Text num;
     public GameObject lostmessage;
