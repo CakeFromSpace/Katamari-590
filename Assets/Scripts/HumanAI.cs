@@ -11,6 +11,9 @@ public class HumanAI : AI
     public float looking_distance;
     public float push_strength;
     public LayerMask mask;
+    private float cooldown_time;
+    private float cooldown_timer;
+    private bool cooldown;
     private float direction_timer;
     private float moveAngle;
     private float size;
@@ -31,6 +34,8 @@ public class HumanAI : AI
     // Start is called before the first frame update
     void Start()
     {   
+        cooldown_time = 6.0f;
+        cooldown_timer = 0.0f;
         sound = GetComponent<AudioSource>();
         Bounds bounds = GetComponent<Collider>().bounds;
         y_offset = new Vector3(0, bounds.center.y / 2, 0);
@@ -48,7 +53,14 @@ public class HumanAI : AI
     {
         
         direction_timer += Time.deltaTime;
+        cooldown_timer += Time.deltaTime;
         
+        if(cooldown_timer > cooldown_time)
+        {
+            cooldown = false;
+            cooldown_timer = 0.0f;
+        }
+
         if(gameObject.tag != "sticky")
         {
             
@@ -78,7 +90,7 @@ public class HumanAI : AI
             {
                 Flee();
             }
-            else if(chase)
+            else if(chase && !cooldown)
             {
                 Chase();
             }
@@ -122,6 +134,7 @@ public class HumanAI : AI
         Vector3 direction_of_player = player.transform.position - transform.position;
         if(direction_of_player.magnitude < looking_distance * 2)
         {
+            cooldown = true;
             Vector3 push = Vector3.Normalize(player.transform.position - transform.position) * push_strength * 10;
             push.y = 0;
             player.transform.parent.gameObject.GetComponent<Rigidbody>().AddForce(push);

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class TimerinNum : MonoBehaviour
 {   
     float currtime = 0f;
-    float starttime = 20f;
+    float starttime = 900f;
     public Text num;
     public GameObject lostmessage;
     public GameObject time;

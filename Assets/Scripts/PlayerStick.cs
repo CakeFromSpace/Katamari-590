@@ -40,7 +40,7 @@ public class PlayerStick : MonoBehaviour
 
     void Update()
     {
-        if(katamari.transform.localScale.x > 666)
+        if(katamari.transform.localScale.x > 400)
         {
             growrate = 0.05f;
         }
@@ -136,7 +136,7 @@ public class PlayerStick : MonoBehaviour
 
                 katamari.transform.localScale += new Vector3(growth, growth, growth);
                 
-                float uisize = katamari.transform.localScale.x;
+                float uisize = katamari.transform.localScale.x*10;
                 string label;
                 if (uisize > 100)
                 {

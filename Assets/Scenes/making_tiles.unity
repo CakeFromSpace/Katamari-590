@@ -2122,6 +2122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   katamari: {fileID: 56511945}
+  constellation: {fileID: 1138053366}
   youwin: {fileID: 2876291741234468789}
   length: 12
   size_0_prefabs:
@@ -2461,6 +2462,11 @@ MonoBehaviour:
   player: {fileID: 1565367250}
   lostmessage: {fileID: 2026555692}
   timeactive: {fileID: 883821292}
+--- !u!1 &1138053366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4425006129929270034, guid: 0b4bbbbca4f6aea4893e5fa48089bc78, type: 3}
+  m_PrefabInstance: {fileID: 428648653}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1141796922
 GameObject:
   m_ObjectHideFlags: 0
@@ -2620,6 +2626,22 @@ PrefabInstance:
     - target: {fileID: 8962052798138222500, guid: e6d74da1acb44bc40888d72b72b7cba9, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962052798138222502, guid: e6d74da1acb44bc40888d72b72b7cba9, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962052798138222502, guid: e6d74da1acb44bc40888d72b72b7cba9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6084906
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962052798138222502, guid: e6d74da1acb44bc40888d72b72b7cba9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9334559
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962052798138222502, guid: e6d74da1acb44bc40888d72b72b7cba9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8962052798138222503, guid: e6d74da1acb44bc40888d72b72b7cba9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3778,18 +3800,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1099096385}
         m_TargetAssemblyTypeName: LostUI, Assembly-CSharp
         m_MethodName: Quit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1081131602}
-        m_TargetAssemblyTypeName: LevelDesigner, Assembly-CSharp
-        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
