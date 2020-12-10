@@ -11,19 +11,24 @@ public class mainmenu : MonoBehaviour
     public GameObject timeactive;
     public GameObject greenbaractive;
     public GameObject numtime;
+    public GameObject hud;
     //player is the activate
     public bool activate;
+
+    void Start()
+    {
+        hud.SetActive(false);
+    }
   
     public void Play()
     {
         activate = true;
-        if (activate == true)
-        {
-            player.SetActive(true);
-            menu.SetActive(false);
-            timeactive.SetActive(true);
-            numtime.SetActive(true);
-        }
+        player.SetActive(true);
+        menu.SetActive(false);
+        timeactive.SetActive(true);
+        numtime.SetActive(true);
+        hud.SetActive(true);
+        Time.timeScale = 1;
         
     }
    
