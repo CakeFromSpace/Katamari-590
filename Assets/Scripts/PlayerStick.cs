@@ -221,8 +221,10 @@ public class PlayerStick : MonoBehaviour
         }
     }
 
+    // remove objects from player and make them fly outwards
     public void RemoveObjects()
     {
+        // don't run if this was just recently called
         if(!recently_removed)
         {
             // variables to store total radius reduced and number of items to remove
@@ -242,6 +244,7 @@ public class PlayerStick : MonoBehaviour
                     break;
                 }
                 
+                // prepare for adding force to object, put it in falling object layer
                 child.transform.localScale = child.parent.transform.lossyScale;
                 child.parent = fallen_objects.transform;
                 child.gameObject.AddComponent<Rigidbody>();
@@ -249,11 +252,13 @@ public class PlayerStick : MonoBehaviour
                 child.gameObject.GetComponent<Collider>().enabled = true;
                 child.gameObject.layer = 14;
                 
+                // calculate force
                 Vector3 launchDirection = (child.position - katamari.transform.position);
                 launchDirection.y = 0;
                 launchDirection = Vector3.RotateTowards(launchDirection, Vector3.up, Mathf.PI / 4, 10000);
                 launchDirection.Normalize();
 
+                // add particle effect
                 GameObject ps = Instantiate(particles[UnityEngine.Random.Range(0, particles.Count)]);
                 
                 ps.transform.forward = launchDirection;
@@ -261,29 +266,35 @@ public class PlayerStick : MonoBehaviour
                 ps.transform.localPosition = new Vector3(0, 0, 0);
                 ps.transform.localScale = new Vector3(2, 2, 2);
 
+                // apply force
                 Rigidbody child_rb = child.gameObject.GetComponent<Rigidbody>();
 
                 child_rb.AddForce(launchDirection * 200 * katamari.transform.localScale.x);
                 
+                // calculate size of removed object, for subtraction
                 SphereCollider s = katamari.gameObject.GetComponent<SphereCollider>();
                 Collider c = child.gameObject.GetComponentInChildren<Collider>();
                 
                 float sizeofobject = c.bounds.size.magnitude;
                 total_removed += new Vector3(sizeofobject,sizeofobject,sizeofobject)*growrate/s.transform.localScale.x;
                 
+                // if there is an AI script on, destroy it
                 AI ai_script = child.GetComponent<AI>();
                 Destroy(ai_script);
+
+                // add fallen object script, which determines behavior after removed
                 child.gameObject.AddComponent<FallenObject>();
                 i--;
             }
 
-            // reset size
+            // decrease size
             katamari.transform.localScale -= total_removed;
             RadiusUIText.GetComponent<Text>().text = (System.Math.Round(katamari.transform.localScale.x,2) * 10)+" CM";
             
         }
     }
 
+    // resets the UI camera (for level restarts)
     public void ResetUICam()
     {
         PickupUIText.GetComponent<Text>().text = "";

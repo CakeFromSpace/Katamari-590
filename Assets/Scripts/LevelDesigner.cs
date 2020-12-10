@@ -55,6 +55,9 @@ public class LevelDesigner : MonoBehaviour
     {
         // update katamari size
         katamari_size = katamari.transform.localScale.x;
+
+        // if not already in endgame (picking up the tiles themselves) & size is over threshold
+        // allow tiles to be picked up
         if(!endgame && katamari_size > 400)
         {
             endgame = true;
@@ -64,12 +67,15 @@ public class LevelDesigner : MonoBehaviour
             }
         }
 
+        // if all tiles are picked up, the game is over
         if(endgame && transform.childCount < 1)
         {
             won = true;
             youwin.SetActive(true);
         }
     }
+
+    // enable camera
     public void Play()
     {
         Camera.main.GetComponent<Chase>().enabled = true;

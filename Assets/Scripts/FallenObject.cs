@@ -15,6 +15,7 @@ public class FallenObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if out of bounds, destroy game object
         if((Vector3.zero - transform.position).magnitude > 40000)
         {
             foreach(Transform child in transform)
@@ -27,6 +28,8 @@ public class FallenObject : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+        // when it collides with ground layer (physics settings is set so it can only collide with ground)
+        // destroy particles, rigidbody, move back to default layer, add pickup tag, destroy this script instance
         if(rb != null)
         {
             Destroy(GetComponentInChildren<ParticleSystem>());
