@@ -45,6 +45,7 @@ public class PlayerStick : MonoBehaviour
             growrate = 0.05f;
         }
         calc_timer += Time.deltaTime;
+        if (rb == null) calc_timer = 0;//for tutorial
         if(calc_timer > 1.0f)
         {
             rb.mass = 1.0f + katamari.transform.localScale.x / 100.0f;

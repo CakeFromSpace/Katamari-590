@@ -126,7 +126,7 @@ public class NewInputSystemControls : MonoBehaviour
     {
         if (!c.performed) return;
 
-        CullSmall();
+        //CullSmall();
     }
 
 
