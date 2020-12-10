@@ -4,36 +4,47 @@ using UnityEngine;
 using UnityEngine.UI;
 public class TimerinNum : MonoBehaviour
 {   
-    float currtime = 0f;
-    float starttime = 300.0f;
+    float currtime = 11f;
+
+
     public Text num;
     public GameObject lostmessage;
     public GameObject time;
     public GameObject player;
-    
+    mainmenu m; 
 
     // Start is called before the first frame update
     void Start()
-    {   
-        currtime = starttime;
+    {
+        m = GetComponent<mainmenu>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        currtime -= 1 * Time.deltaTime;
-        num.text = currtime.ToString("0");
-        if (currtime <= 0)
+        if (m.activate == true)
         {
-            currtime = 0f;
+            currtime -= Time.deltaTime;
+            int sec = (int)(currtime % 60);
+            int min = (int)(currtime / 60) % 60;
+            string format = string.Format("{0:00}:{1:00}", min, sec);
+            num.text = format;
+            if (currtime <= 0)
+            {
+                m.activate = false;
+                Reload();
+
+            }
+        }
+    }
+    void Reload()
+    {
+        
+       
+            currtime = 11f;
             player.SetActive(false);
             time.SetActive(false);
             lostmessage.SetActive(true);
-            
-            Start();
-            
-            
-            
-        }
+        
     }
 }

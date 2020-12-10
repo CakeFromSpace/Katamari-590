@@ -5249,7 +5249,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1578830224910802, guid: 2030e0fa2aadfed4b9f99149cab54c72, type: 3}
       propertyPath: m_Name
-      value: House
+      value: Judge's House
       objectReference: {fileID: 0}
     - target: {fileID: 1578830224910802, guid: 2030e0fa2aadfed4b9f99149cab54c72, type: 3}
       propertyPath: m_TagString

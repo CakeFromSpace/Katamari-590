@@ -1688,7 +1688,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6482816, y: 0.79829055}
   m_AnchorMax: {x: 0.8447185, y: 0.8652464}
-  m_AnchoredPosition: {x: 53, y: 20}
+  m_AnchoredPosition: {x: 139, y: 6}
   m_SizeDelta: {x: -2, y: -7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &883821294
@@ -1704,7 +1704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1713,7 +1713,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 38b125086c96dff4b8d10d3b473e962c, type: 3}
-    m_FontSize: 20
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -2447,7 +2447,7 @@ MonoBehaviour:
   timeactive: {fileID: 883821292}
   greenbaractive: {fileID: 0}
   numtime: {fileID: 883821292}
-  activate: 1
+  activate: 0
 --- !u!114 &1099096384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2480,6 +2480,7 @@ MonoBehaviour:
   player: {fileID: 1565367250}
   lostmessage: {fileID: 2026555692}
   timeactive: {fileID: 883821292}
+  m: {fileID: 0}
 --- !u!1 &1138053366 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4425006129929270034, guid: 0b4bbbbca4f6aea4893e5fa48089bc78, type: 3}
@@ -3228,7 +3229,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.79857284, y: 0.8833694}
   m_AnchorMax: {x: 0.99029124, y: 0.9375652}
-  m_AnchoredPosition: {x: -2, y: 1}
+  m_AnchoredPosition: {x: -2, y: 6}
   m_SizeDelta: {x: 2, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1767753046
