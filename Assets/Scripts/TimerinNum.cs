@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class TimerinNum : MonoBehaviour
-{
+{   
     float currtime = 0f;
-    float starttime = 15f;
-    private Text num;
+    float starttime = 20f;
+    public Text num;
+    public GameObject lostmessage;
     public GameObject time;
+    public GameObject player;
+    
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -20,6 +24,16 @@ public class TimerinNum : MonoBehaviour
         currtime -= 1 * Time.deltaTime;
         num.text = currtime.ToString("0");
         if (currtime <= 0)
-            currtime = 0;
+        {
+            currtime = 0f;
+            player.SetActive(false);
+            time.SetActive(false);
+            lostmessage.SetActive(true);
+            
+            Start();
+            
+            
+            
+        }
     }
 }
