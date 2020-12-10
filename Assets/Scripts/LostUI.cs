@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //Debankita
 public class LostUI : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class LostUI : MonoBehaviour
     }
     public void PlayAgain()
     {
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         m.activate = true;
         if (m.activate == true)
         {
