@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: -4458552362609863974}
   - component: {fileID: 652716249484905364}
   m_Layer: 12
-  m_Name: DesertRoad
+  m_Name: Desert Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

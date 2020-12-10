@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 1925207625349729192}
   - component: {fileID: -6907286537682023579}
   m_Layer: 9
-  m_Name: ArmyBase 1
+  m_Name: Army Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

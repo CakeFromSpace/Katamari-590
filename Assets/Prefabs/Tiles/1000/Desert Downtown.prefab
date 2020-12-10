@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 1694488972132876317}
   - component: {fileID: 8640990656106830600}
   m_Layer: 0
-  m_Name: Light_01 (2)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: 8480814036801337232}
   - component: {fileID: 1112484147909757344}
   m_Layer: 0
-  m_Name: Light_01 (3)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -984,7 +984,7 @@ GameObject:
   - component: {fileID: 4403803889624053378}
   - component: {fileID: 5112298395043035420}
   m_Layer: 9
-  m_Name: DesertDowntown
+  m_Name: Desert Downtown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1061,7 +1061,7 @@ GameObject:
   - component: {fileID: 3433889765658865124}
   - component: {fileID: 3450493398090690478}
   m_Layer: 0
-  m_Name: Light_01 (13)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 8932756463765989573}
   - component: {fileID: 2819165184861391886}
   m_Layer: 0
-  m_Name: Light_01 (1)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1541,7 +1541,7 @@ GameObject:
   - component: {fileID: 2967495062796747893}
   - component: {fileID: 611924796044643820}
   m_Layer: 0
-  m_Name: Light_01 (10)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2117,7 +2117,7 @@ GameObject:
   - component: {fileID: 6145765734401215231}
   - component: {fileID: 7733945704127967668}
   m_Layer: 0
-  m_Name: Light_01 (12)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3805,7 +3805,7 @@ GameObject:
   - component: {fileID: 372144166269101973}
   - component: {fileID: 7050827792426827543}
   m_Layer: 0
-  m_Name: Light_01 (10)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4010,7 +4010,7 @@ GameObject:
   - component: {fileID: 509602210746532618}
   - component: {fileID: 7967716932777687446}
   m_Layer: 0
-  m_Name: Light_01 (13)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4503,7 +4503,7 @@ GameObject:
   - component: {fileID: 3525538549886379650}
   - component: {fileID: 7708096553191227203}
   m_Layer: 0
-  m_Name: Light_01 (2)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4791,7 +4791,7 @@ GameObject:
   - component: {fileID: 2763418631529244013}
   - component: {fileID: 3451019396120394995}
   m_Layer: 0
-  m_Name: Light_01 (4)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4983,7 +4983,7 @@ GameObject:
   - component: {fileID: 6637172942828179079}
   - component: {fileID: 1833850353839786897}
   m_Layer: 0
-  m_Name: Light_01
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6148,7 +6148,7 @@ GameObject:
   - component: {fileID: 1838034627573566897}
   - component: {fileID: 2193197194623616408}
   m_Layer: 0
-  m_Name: Light_01 (14)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6340,7 +6340,7 @@ GameObject:
   - component: {fileID: 7386385145927172269}
   - component: {fileID: 941530949989275197}
   m_Layer: 0
-  m_Name: Light_01 (11)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6532,7 +6532,7 @@ GameObject:
   - component: {fileID: 1889026925180654982}
   - component: {fileID: 6968359324181433884}
   m_Layer: 0
-  m_Name: Light_01 (4)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7653,7 +7653,7 @@ GameObject:
   - component: {fileID: 3587208912812895041}
   - component: {fileID: 3787423042966414479}
   m_Layer: 0
-  m_Name: Light_01 (12)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7941,7 +7941,7 @@ GameObject:
   - component: {fileID: 730939894098522682}
   - component: {fileID: 761997604179630640}
   m_Layer: 0
-  m_Name: Light_01 (1)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8037,7 +8037,7 @@ GameObject:
   - component: {fileID: 368029360297331224}
   - component: {fileID: 3814174265474844691}
   m_Layer: 0
-  m_Name: Light_01 (3)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8229,7 +8229,7 @@ GameObject:
   - component: {fileID: 5257450998923039835}
   - component: {fileID: 8339149983492744489}
   m_Layer: 0
-  m_Name: Light_01
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8700,7 +8700,7 @@ GameObject:
   - component: {fileID: 9018094352141783870}
   - component: {fileID: 7443579709744692177}
   m_Layer: 0
-  m_Name: Light_01 (11)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8796,7 +8796,7 @@ GameObject:
   - component: {fileID: 1189722981293619573}
   - component: {fileID: 3606076072082055770}
   m_Layer: 0
-  m_Name: Light_01 (14)
+  m_Name: Lamppost
   m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

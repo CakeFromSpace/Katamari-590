@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 3154651966948361051}
   - component: {fileID: 8262558875745664052}
   m_Layer: 9
-  m_Name: ParkTile
+  m_Name: City Park
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2198,7 +2198,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 148980, guid: 00d08a984a77d7e43b1a3547211f47d5, type: 3}
       propertyPath: m_Name
-      value: Trassh Bin (1)
+      value: Trash Bin
       objectReference: {fileID: 0}
     - target: {fileID: 148980, guid: 00d08a984a77d7e43b1a3547211f47d5, type: 3}
       propertyPath: m_TagString
@@ -2691,7 +2691,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 106578, guid: ccf13c7381ca25349b107bbb9423e1bd, type: 3}
       propertyPath: m_Name
-      value: Bench (3)
+      value: Bench
       objectReference: {fileID: 0}
     - target: {fileID: 106578, guid: ccf13c7381ca25349b107bbb9423e1bd, type: 3}
       propertyPath: m_TagString
@@ -3269,7 +3269,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 106578, guid: ccf13c7381ca25349b107bbb9423e1bd, type: 3}
       propertyPath: m_Name
-      value: Bench (4)
+      value: Bench
       objectReference: {fileID: 0}
     - target: {fileID: 106578, guid: ccf13c7381ca25349b107bbb9423e1bd, type: 3}
       propertyPath: m_TagString
@@ -4426,7 +4426,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 106578, guid: ccf13c7381ca25349b107bbb9423e1bd, type: 3}
       propertyPath: m_Name
-      value: Bench (1)
+      value: Bench
       objectReference: {fileID: 0}
     - target: {fileID: 106578, guid: ccf13c7381ca25349b107bbb9423e1bd, type: 3}
       propertyPath: m_TagString
@@ -5326,7 +5326,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 148980, guid: 00d08a984a77d7e43b1a3547211f47d5, type: 3}
       propertyPath: m_Name
-      value: Trassh Bin
+      value: Trash Bin
       objectReference: {fileID: 0}
     - target: {fileID: 148980, guid: 00d08a984a77d7e43b1a3547211f47d5, type: 3}
       propertyPath: m_TagString
@@ -5736,7 +5736,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 148980, guid: 00d08a984a77d7e43b1a3547211f47d5, type: 3}
       propertyPath: m_Name
-      value: Trassh Bin (2)
+      value: Trash Bin
       objectReference: {fileID: 0}
     - target: {fileID: 148980, guid: 00d08a984a77d7e43b1a3547211f47d5, type: 3}
       propertyPath: m_TagString
@@ -6803,7 +6803,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 106578, guid: ccf13c7381ca25349b107bbb9423e1bd, type: 3}
       propertyPath: m_Name
-      value: Bench (2)
+      value: Bench
       objectReference: {fileID: 0}
     - target: {fileID: 106578, guid: ccf13c7381ca25349b107bbb9423e1bd, type: 3}
       propertyPath: m_TagString
