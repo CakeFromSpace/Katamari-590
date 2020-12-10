@@ -424,8 +424,8 @@ GameObject:
   - component: {fileID: 8379664980106889264}
   - component: {fileID: 1297284909534988267}
   m_Layer: 0
-  m_Name: Hood (2)
-  m_TagString: Untagged
+  m_Name: RV
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1129,8 +1129,8 @@ GameObject:
   - component: {fileID: 5553110378379208466}
   - component: {fileID: 8803409601976676843}
   m_Layer: 0
-  m_Name: Hood
-  m_TagString: Untagged
+  m_Name: RV
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3762,8 +3762,8 @@ GameObject:
   - component: {fileID: 5218801125631878161}
   - component: {fileID: 2823916532772087718}
   m_Layer: 0
-  m_Name: Hood (1)
-  m_TagString: Untagged
+  m_Name: RV
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
