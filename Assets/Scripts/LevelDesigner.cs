@@ -11,6 +11,7 @@ using System;
 public class LevelDesigner : MonoBehaviour
 {
     public GameObject katamari;
+    public GameObject constellation;
     public GameObject youwin;
     public int length;
 
@@ -55,7 +56,7 @@ public class LevelDesigner : MonoBehaviour
     {
         // update katamari size
         katamari_size = katamari.transform.localScale.x;
-        if(!endgame && katamari_size > 666)
+        if(!endgame && katamari_size > 400)
         {
             endgame = true;
             foreach(Transform child in transform)
@@ -76,9 +77,25 @@ public class LevelDesigner : MonoBehaviour
     }
 
     public void Restart()
-    {
-        katamari.transform.localScale = new Vector3(10, 10, 10);
+    {   
+        Reset();
         CreateLevel();
+    }
+
+    public void Reset()
+    {
+        
+        GetComponent<MeshRenderer>().enabled = true;
+        GetComponent<MeshCollider>().enabled = true;
+        foreach(Transform child in constellation.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach(Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+        katamari.transform.localScale = new Vector3(10, 10, 10);
     }
 
     private void CreateLevel()

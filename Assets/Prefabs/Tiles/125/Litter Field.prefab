@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 7100654712207616114}
   - component: {fileID: 7951622443752457002}
   m_Layer: 9
-  m_Name: 125template 1
+  m_Name: Litter Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,7 +163,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000013510310660, guid: 1545f108cd3ab184cadcfd3b27755317, type: 3}
       propertyPath: m_Name
-      value: Joghurt_Yellow (1)
+      value: Yogurt Container
       objectReference: {fileID: 0}
     - target: {fileID: 4000011827724524, guid: 1545f108cd3ab184cadcfd3b27755317, type: 3}
       propertyPath: m_LocalPosition.x
@@ -237,7 +237,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000013510310660, guid: 1545f108cd3ab184cadcfd3b27755317, type: 3}
       propertyPath: m_Name
-      value: Joghurt_Yellow (2)
+      value: Yogurt Container
       objectReference: {fileID: 0}
     - target: {fileID: 4000011827724524, guid: 1545f108cd3ab184cadcfd3b27755317, type: 3}
       propertyPath: m_LocalPosition.x
@@ -311,7 +311,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000014284767730, guid: ca391d485f1dee040975932fd1c862e6, type: 3}
       propertyPath: m_Name
-      value: BeerBox_Green
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 4000010946495358, guid: ca391d485f1dee040975932fd1c862e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -385,7 +385,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000013929301108, guid: f45dd85a422d0ed4a907ac22a4b6e546, type: 3}
       propertyPath: m_Name
-      value: Joghurt_Blue (3)
+      value: Yogurt Container
       objectReference: {fileID: 0}
     - target: {fileID: 4000010320231238, guid: f45dd85a422d0ed4a907ac22a4b6e546, type: 3}
       propertyPath: m_LocalPosition.x
@@ -459,7 +459,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000013510310660, guid: 1545f108cd3ab184cadcfd3b27755317, type: 3}
       propertyPath: m_Name
-      value: Joghurt_Yellow
+      value: Yogurt Container
       objectReference: {fileID: 0}
     - target: {fileID: 4000011827724524, guid: 1545f108cd3ab184cadcfd3b27755317, type: 3}
       propertyPath: m_LocalPosition.x
@@ -533,7 +533,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000013726019612, guid: 0a4a1e0beead959468df9b439d11a557, type: 3}
       propertyPath: m_Name
-      value: BeerBox_Red
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 4000012568007052, guid: 0a4a1e0beead959468df9b439d11a557, type: 3}
       propertyPath: m_LocalPosition.x
@@ -607,7 +607,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000013929301108, guid: f45dd85a422d0ed4a907ac22a4b6e546, type: 3}
       propertyPath: m_Name
-      value: Joghurt_Blue
+      value: Yogurt Container
       objectReference: {fileID: 0}
     - target: {fileID: 4000010320231238, guid: f45dd85a422d0ed4a907ac22a4b6e546, type: 3}
       propertyPath: m_LocalPosition.x
@@ -681,7 +681,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000013929301108, guid: f45dd85a422d0ed4a907ac22a4b6e546, type: 3}
       propertyPath: m_Name
-      value: Joghurt_Blue (2)
+      value: Yogurt Container
       objectReference: {fileID: 0}
     - target: {fileID: 4000010320231238, guid: f45dd85a422d0ed4a907ac22a4b6e546, type: 3}
       propertyPath: m_LocalPosition.x
@@ -755,7 +755,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000013929301108, guid: f45dd85a422d0ed4a907ac22a4b6e546, type: 3}
       propertyPath: m_Name
-      value: Joghurt_Blue (1)
+      value: Yogurt Container
       objectReference: {fileID: 0}
     - target: {fileID: 4000010320231238, guid: f45dd85a422d0ed4a907ac22a4b6e546, type: 3}
       propertyPath: m_LocalPosition.x
@@ -829,7 +829,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000013510310660, guid: 1545f108cd3ab184cadcfd3b27755317, type: 3}
       propertyPath: m_Name
-      value: Joghurt_Yellow (3)
+      value: Yogurt Container
       objectReference: {fileID: 0}
     - target: {fileID: 4000011827724524, guid: 1545f108cd3ab184cadcfd3b27755317, type: 3}
       propertyPath: m_LocalPosition.x
@@ -903,7 +903,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000012120616464, guid: 232e380ac4bac584eb640418254c6585, type: 3}
       propertyPath: m_Name
-      value: BeerBox_Blue
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 4000013824679042, guid: 232e380ac4bac584eb640418254c6585, type: 3}
       propertyPath: m_LocalPosition.x
@@ -977,7 +977,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000012120616464, guid: 232e380ac4bac584eb640418254c6585, type: 3}
       propertyPath: m_Name
-      value: BeerBox_Blue
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 4000013824679042, guid: 232e380ac4bac584eb640418254c6585, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1051,7 +1051,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000014284767730, guid: ca391d485f1dee040975932fd1c862e6, type: 3}
       propertyPath: m_Name
-      value: BeerBox_Green
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 4000010946495358, guid: ca391d485f1dee040975932fd1c862e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1125,7 +1125,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000013726019612, guid: 0a4a1e0beead959468df9b439d11a557, type: 3}
       propertyPath: m_Name
-      value: BeerBox_Red
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 4000012568007052, guid: 0a4a1e0beead959468df9b439d11a557, type: 3}
       propertyPath: m_LocalPosition.x

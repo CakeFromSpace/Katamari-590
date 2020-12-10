@@ -32,7 +32,7 @@ public class Music : MonoBehaviour
             fade_tracks[1] = StartCoroutine(Fade(tracks[1], 5.0f, volume));;
             playing[1] = true;
         }
-        if(katamari.transform.localScale.x >= 50 && old_size < 50)
+        if(katamari.transform.localScale.x >= 25 && old_size < 25)
         {
             fade_tracks[2] = StartCoroutine(Fade(tracks[2], 5.0f, volume));;
             playing[2] = true;

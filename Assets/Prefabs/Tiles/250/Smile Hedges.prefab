@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 4667698195847106701}
   - component: {fileID: -1284298695904053992}
   m_Layer: 9
-  m_Name: SmileTile250
+  m_Name: Smile Hedges
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -782,7 +782,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2627620842855188708, guid: a2a499deb7eba2e43b745efb3fbc0bf5, type: 3}
       propertyPath: m_Name
-      value: Male 4
+      value: Peter
       objectReference: {fileID: 0}
     - target: {fileID: 2627620842855224516, guid: a2a499deb7eba2e43b745efb3fbc0bf5, type: 3}
       propertyPath: m_LocalPosition.x

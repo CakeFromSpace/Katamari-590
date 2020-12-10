@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //Author Joe
 public class TutorialLevel : MonoBehaviour
 {
@@ -13,5 +14,10 @@ public class TutorialLevel : MonoBehaviour
         player.GetComponent<NewInputSystemControls>().enabled = true;
         startbox.SetActive(false);
         camera.GetComponent<Chase>().enabled = true;
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("making_tiles");
     }
 }

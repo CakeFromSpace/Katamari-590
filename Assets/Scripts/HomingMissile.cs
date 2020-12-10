@@ -20,7 +20,7 @@ public class HomingMissile : MonoBehaviour
         acceleration = 1f;
         max_turn = 5;
         explode_distance = 4;
-        player = GameObject.FindWithTag("katamari");
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
