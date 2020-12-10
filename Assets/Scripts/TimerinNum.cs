@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class TimerinNum : MonoBehaviour
 {   
-    float currtime = 11f;
+    float currtime = 1020.0f;
 
 
     public Text num;

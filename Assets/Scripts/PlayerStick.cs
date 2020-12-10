@@ -41,10 +41,13 @@ public class PlayerStick : MonoBehaviour
 
     void Update()
     {
+        // updating grow scale, in order to finish the game
         if(katamari.transform.localScale.x > 400)
         {
             growrate = 0.05f;
         }
+        
+        // calculate mass every second to help performance
         calc_timer += Time.deltaTime;
         if (rb == null) calc_timer = 0;//for tutorial
         if(calc_timer > 1.0f)
@@ -58,6 +61,7 @@ public class PlayerStick : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         
+        // if player has been kicked, count timer, don't let them get repeatedly hit by AI
         if(recently_removed)
         {
             remove_timer += Time.deltaTime;
@@ -67,38 +71,38 @@ public class PlayerStick : MonoBehaviour
         {
             recently_removed = false;
         }
+
+        // find tag of object, if pickup or tile (tiles act differently) start pickup routine
         string tag = collision.GetComponent<Collider>().gameObject.tag;
         if ((tag == "pickup" || tag == "tile") && !collision.isTrigger)
         {
-            GameObject other = collision.GetComponent<Collider>().gameObject;
-            if(tag == "tile")
-            {
-                Debug.Log(other.name);
-            }
-            //Debug.Log(name + other.name);
 
-            //Vector3 loc = Vector3.Normalize(transform.position - other.transform.position) * katamari.GetComponent<SphereCollider>().radius * -1;
+            // get collided game object
+            // distance to collision
+            // colliders for both objects in collision
+            GameObject other = collision.GetComponent<Collider>().gameObject;
+
             Vector3 loc = (transform.position - other.transform.position) * -1;
-            //Debug.Log();
 
             SphereCollider s = katamari.gameObject.GetComponent<SphereCollider>();
-            //Debug.Log(Mathf.Pow(s.radius, 3) * 4 / 3 * Mathf.PI);
-            Collider m = other.gameObject.GetComponent<Collider>();
-            //Debug.Log(m.bounds.size.x * m.bounds.size.y * m.bounds.size.z * m.transform.localScale.x * m.transform.localScale.y * m.transform.localScale.z);
-            
+            Collider m = other.gameObject.GetComponent<Collider>();     
             
             // changed in by judge 11/14 to fix mesh collider issues
+
+            // compare sizes, attach if smaller
             float sizeofobject = m.bounds.size.magnitude;
             float sizeofplayer = s.bounds.size.magnitude;
-            Debug.Log(sizeofobject + " " + sizeofplayer);
+            //Debug.Log(sizeofobject + " " + sizeofplayer);
             if (sizeofplayer * attachablemultiplier > sizeofobject)
             {
+                // avoid unity errors :p 
                 MeshCollider mesh = other.GetComponentInChildren<MeshCollider>();
                 if(mesh != null)
                 {
                     mesh.convex = true;
                 }
 
+                // create copy of
                 GameObject copy = null;
                 if(tag != "tile")
                 {
@@ -177,7 +181,6 @@ public class PlayerStick : MonoBehaviour
                     {
                         t.gameObject.layer = 13;
                     }
-                    PickupUIText.GetComponent<Text>().text = other.name;
                     
                     foreach (Transform child in other.transform)
                     {
@@ -199,12 +202,12 @@ public class PlayerStick : MonoBehaviour
                         }
                     }
                 }
+
+                
+                PickupUIText.GetComponent<Text>().text = other.name;
                 // changed by judge 12/1 ... added this condition so small objects will stop being rendered at large sizes, and moved it down here in order to keep the object camera working
                 if(sizeofplayer * attachablemultiplier < 5 * sizeofobject)
                 {
-                    //Debug.Log("pickup");
-                    //Debug.Log(sizeofplayer);
-                    //Debug.Log(sizeofobject);
                     other.transform.position = transform.position + loc;
                     other.transform.parent = constellation.transform;
                 }
