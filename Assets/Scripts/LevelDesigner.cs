@@ -10,8 +10,10 @@ using System;
 // but i should mention the concept so all of this tile-size/grid-size stuff makes sense
 public class LevelDesigner : MonoBehaviour
 {
+    public GameObject player;
     public GameObject katamari;
     public GameObject constellation;
+    public GameObject fallen_objects;
     public GameObject youwin;
     public int length;
 
@@ -27,11 +29,7 @@ public class LevelDesigner : MonoBehaviour
     private bool endgame;
     private bool won;
 
-    private bool[,] size_0_attr;
-    private bool[,] size_1_attr;
-    private bool[,] size_2_attr;
     private bool[,] size_3_attr;
-    private bool[][,] attrs;
     private List<int> types;
 
     private int[,] level;
@@ -78,6 +76,7 @@ public class LevelDesigner : MonoBehaviour
 
     public void Restart()
     {   
+        player.GetComponent<PlayerStick>().ResetUICam();
         Reset();
         CreateLevel();
     }
@@ -95,6 +94,11 @@ public class LevelDesigner : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+        foreach(Transform child in fallen_objects.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        katamari.transform.position = new Vector3(0, 10, 0);
         katamari.transform.localScale = new Vector3(10, 10, 10);
     }
 
@@ -118,8 +122,6 @@ public class LevelDesigner : MonoBehaviour
                         {true, true, true},
                         {true, true, true}};
         
-        attrs = new bool[][,] {size_0_attr, size_1_attr, size_2_attr, size_3_attr};
-
         current_size = 0;
         // get initial katamari size
         katamari_size = katamari.transform.localScale.x;
@@ -176,7 +178,7 @@ public class LevelDesigner : MonoBehaviour
     bool ForestNextToDesert(int[,] grid, int[] pos)
     {
         int desert_count = 0;
-        if(attrs[current_size][grid[pos[0], pos[1]], 1] == false)
+        if(size_3_attr[grid[pos[0], pos[1]], 1] == false)
         {
             int[][] positions;
             positions = new int[][] { new int[]{ pos[0] - 1, pos[1] - 1 }, new int[]{ pos[0] - 1, pos[1] }, new int[]{ pos[0] - 1, pos[1] + 1 }, new int[]{ pos[0], pos[1] - 1 }, new int[]{ pos[0], pos[1] + 1 }, new int[]{ pos[0] + 1, pos[1] - 1 }, new int[]{ pos[0] + 1, pos[1]}, new int[]{ pos[0] + 1, pos[1] + 1 } };
@@ -192,7 +194,7 @@ public class LevelDesigner : MonoBehaviour
                 } 
                 else
                 {
-                    if(attrs[current_size][grid[p[0], p[1]], 1] == true)
+                    if(size_3_attr[grid[p[0], p[1]], 1] == true)
                     {
                         desert_count++;
                     }   
@@ -253,7 +255,7 @@ public class LevelDesigner : MonoBehaviour
                     // for each value in types, check the consistency, if consistent, assigned
                     for(int i = 0; i < types.Count; i++)
                     {
-                        if(attrs[current_size][types[i], 1])
+                        if(size_3_attr[types[i], 1])
                         {
                             level[pos[0], pos[1]] = types[i];
                             break;
@@ -265,7 +267,7 @@ public class LevelDesigner : MonoBehaviour
                     
                     for(int i = 0; i < types.Count; i++)
                     {
-                        if(!attrs[current_size][types[i], 1])
+                        if(!size_3_attr[types[i], 1])
                         {
                             level[pos[0], pos[1]] = types[i];
                             break;
@@ -286,7 +288,6 @@ public class LevelDesigner : MonoBehaviour
 
     void DrawLevel()
     {
-        CullSmall();
         for(int i=0; i<length; i++)
         {
             for(int j=0; j<length; j++)

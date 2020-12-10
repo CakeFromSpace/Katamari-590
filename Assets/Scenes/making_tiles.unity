@@ -804,7 +804,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &265622684
 MonoBehaviour:
@@ -1071,6 +1071,10 @@ PrefabInstance:
       propertyPath: particles.Array.data[2]
       value: 
       objectReference: {fileID: 938237733805251262, guid: fe254c6195b12b64f91a14ecfed33f76, type: 3}
+    - target: {fileID: 4425006128879335534, guid: 0b4bbbbca4f6aea4893e5fa48089bc78, type: 3}
+      propertyPath: fallen_objects
+      value: 
+      objectReference: {fileID: 1461233300}
     - target: {fileID: 4425006128879335535, guid: 0b4bbbbca4f6aea4893e5fa48089bc78, type: 3}
       propertyPath: m_Mass
       value: 3
@@ -1185,7 +1189,7 @@ Transform:
   m_LocalScale: {x: 0.50537, y: 0.50537, z: 0.50537}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &625971183
 GameObject:
@@ -1823,6 +1827,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1081131602}
+        m_TargetAssemblyTypeName: LevelDesigner, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &943482340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1940,7 +1956,7 @@ Transform:
   m_LocalScale: {x: 4000, y: 4000, z: 4000}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1025368885 stripped
 GameObject:
@@ -2121,8 +2137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 297e15f2d5d21374584f31879baab754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1565367250}
   katamari: {fileID: 56511945}
   constellation: {fileID: 1138053366}
+  fallen_objects: {fileID: 1461233300}
   youwin: {fileID: 2876291741234468789}
   length: 12
   size_0_prefabs:
@@ -2409,7 +2427,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 28.89, y: 0, z: 0}
 --- !u!114 &1099096383
 MonoBehaviour:
@@ -2836,6 +2854,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1461233300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1461233301}
+  m_Layer: 0
+  m_Name: FallenObjects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1461233301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461233300}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1524745055 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4039560548166740212, guid: 2b645835423b8ba4392efd6bf4c92224, type: 3}
@@ -3713,7 +3761,7 @@ Transform:
   m_LocalScale: {x: 2000, y: 2000, z: 2000}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2123040121
 GameObject:
@@ -3800,6 +3848,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1099096385}
         m_TargetAssemblyTypeName: LostUI, Assembly-CSharp
         m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1081131602}
+        m_TargetAssemblyTypeName: LevelDesigner, Assembly-CSharp
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4194,6 +4254,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1081131602}
+        m_TargetAssemblyTypeName: LevelDesigner, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4675,7 +4747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4039560548166740209, guid: 2b645835423b8ba4392efd6bf4c92224, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4039560548166740209, guid: 2b645835423b8ba4392efd6bf4c92224, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

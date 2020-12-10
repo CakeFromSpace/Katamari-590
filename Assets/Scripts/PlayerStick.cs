@@ -11,6 +11,7 @@ public class PlayerStick : MonoBehaviour
     public List<GameObject> particles;
     GameObject katamari;
     GameObject constellation;
+    public GameObject fallen_objects;
     public float growrate;
     public Text RadiusUIText;
     public Text PickupUIText;
@@ -89,7 +90,7 @@ public class PlayerStick : MonoBehaviour
             // changed in by judge 11/14 to fix mesh collider issues
             float sizeofobject = m.bounds.size.magnitude;
             float sizeofplayer = s.bounds.size.magnitude;
-            //Debug.Log(sizeofobject + " " + sizeofplayer);
+            Debug.Log(sizeofobject + " " + sizeofplayer);
             if (sizeofplayer * attachablemultiplier > sizeofobject)
             {
                 MeshCollider mesh = other.GetComponentInChildren<MeshCollider>();
@@ -238,7 +239,8 @@ public class PlayerStick : MonoBehaviour
                     break;
                 }
                 
-                child.parent = null;
+                child.transform.localScale = child.parent.transform.lossyScale;
+                child.parent = fallen_objects.transform;
                 child.gameObject.AddComponent<Rigidbody>();
                 child.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
                 child.gameObject.GetComponent<Collider>().enabled = true;
@@ -276,6 +278,16 @@ public class PlayerStick : MonoBehaviour
             katamari.transform.localScale -= total_removed;
             RadiusUIText.GetComponent<Text>().text = (System.Math.Round(katamari.transform.localScale.x,2) * 10)+" CM";
             
+        }
+    }
+
+    public void ResetUICam()
+    {
+        PickupUIText.GetComponent<Text>().text = "";
+        
+        foreach (Transform child in UIPickup.transform)
+        {
+            GameObject.Destroy(child.gameObject);
         }
     }  
 }
