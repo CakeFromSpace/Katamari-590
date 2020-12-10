@@ -16,6 +16,7 @@ public class LostUI : MonoBehaviour
     }
     public void PlayAgain()
     {
+        m.activate = true;
         if (m.activate == true)
         {
             player.SetActive(true);
