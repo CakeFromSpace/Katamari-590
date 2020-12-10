@@ -17,7 +17,7 @@ public class LostUI : MonoBehaviour
     }
     public void PlayAgain()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("making_tiles");
         m.activate = true;
         if (m.activate == true)
         {
@@ -28,6 +28,7 @@ public class LostUI : MonoBehaviour
     }
     public void Quit()
     {
+        SceneManager.LoadScene("making_tiles");
         m.activate = false;
         menu.SetActive(true);
         timeactive.SetActive(false);

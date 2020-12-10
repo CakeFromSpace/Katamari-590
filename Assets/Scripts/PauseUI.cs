@@ -15,6 +15,7 @@ public class PauseUI : MonoBehaviour
     }
     public void ToMainMenu()
     {
+        SceneManager.LoadScene("making_tiles");
         menu.SetActive(true);
         gameObject.SetActive(false);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
