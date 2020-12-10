@@ -17,14 +17,14 @@ public class LostUI : MonoBehaviour
     }
     public void PlayAgain()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //m.activate = true;
-        //if (m.activate == true)
-        //{
-        //    player.SetActive(true);
-         //   lostmessage.SetActive(false);
-         //   timeactive.SetActive(true);
-        //}
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        m.activate = true;
+        if (m.activate == true)
+        {
+            player.SetActive(true);
+            lostmessage.SetActive(false);
+            timeactive.SetActive(true);
+        }
     }
     public void Quit()
     {

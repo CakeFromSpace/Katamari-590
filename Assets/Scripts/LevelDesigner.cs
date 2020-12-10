@@ -72,6 +72,7 @@ public class LevelDesigner : MonoBehaviour
     }
     public void Play()
     {
+        Camera.main.GetComponent<Chase>().enabled = true;
         katamari.transform.localScale = new Vector3(10, 10, 10);
     }
 

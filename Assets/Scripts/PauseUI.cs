@@ -15,8 +15,8 @@ public class PauseUI : MonoBehaviour
     }
     public void ToMainMenu()
     {
-        //menu.SetActive(true);
-        //gameObject.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        menu.SetActive(true);
+        gameObject.SetActive(false);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
