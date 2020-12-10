@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 5386126655932611042}
   - component: {fileID: 1880568958430148154}
   m_Layer: 9
-  m_Name: DaikonTile
+  m_Name: Daikon Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

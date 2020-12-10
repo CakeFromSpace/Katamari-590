@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 627937784862018054}
   - component: {fileID: 8857271581930991052}
   m_Layer: 9
-  m_Name: GrassyTile125
+  m_Name: Grassy Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

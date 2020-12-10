@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3480870162932083694}
   - component: {fileID: 3371002837728895015}
   m_Layer: 9
-  m_Name: RockCircle125
+  m_Name: Rock Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
